@@ -1,6 +1,7 @@
 import os
 import environ
 from pathlib import Path
+from datetime import timedelta
 
 env = environ.Env()
 environ.Env.read_env()
@@ -24,6 +25,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'accounts',
     'subscriptions',
+    'workspace',
 ]
 
 MIDDLEWARE = [
@@ -102,3 +104,22 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=7),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'snagadevteam@gmail.com'
+EMAIL_HOST_PASSWORD = env('GOOGLE_PASSW')
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
