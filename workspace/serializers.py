@@ -20,11 +20,12 @@ class WorkspaceSerializer(serializers.ModelSerializer):
 
 class WorkspaceMembershipSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(write_only=True)
-    role = serializers.PrimaryKeyRelatedField(queryset=WorkspaceRole.objects.all(), required=False, allow_null=True)
+    role_id = serializers.IntegerField(write_only=True, required=False)
+    role = serializers.CharField(write_only=True, required=False)
 
     class Meta:
         model = WorkspaceMembership
-        fields = ['email', 'role', 'joined_at']
+        fields = ['email', 'role_id', 'role', 'joined_at']
         read_only_fields = ['joined_at']
 
     def validate(self, data):
@@ -48,7 +49,24 @@ class WorkspaceMembershipSerializer(serializers.ModelSerializer):
             if WorkspaceMembership.objects.filter(workspace=workspace, user=user).exists():
                 raise serializers.ValidationError("User is already a member.")
 
+        role_id = data.get('role_id')
+        role_name = data.get('role')
+        role = None
+
+        if role_id:
+            try:
+                role = WorkspaceRole.objects.get(id=role_id, workspace=workspace)
+            except WorkspaceRole.DoesNotExist:
+                raise serializers.ValidationError({"role_id": "Role does not exist in this workspace."})
+
+        elif role_name:
+            try:
+                role = WorkspaceRole.objects.get(name=role_name, workspace=workspace)
+            except WorkspaceRole.DoesNotExist:
+                raise serializers.ValidationError({"role": f"Role '{role_name}' does not exist in this workspace."})
+
         data['user'] = user
+        data['role'] = role
         return data
 
     def create(self, validated_data):
