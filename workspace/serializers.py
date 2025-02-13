@@ -1,6 +1,10 @@
 from rest_framework import serializers
 from workspace.models import Workspace, WorkspaceMembership, WorkspaceRole
+from django.conf import settings
+from rest_framework_simplejwt.tokens import RefreshToken
 from accounts.models import CustomUser
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
 
 
 class WorkspaceSerializer(serializers.ModelSerializer):
@@ -30,7 +34,7 @@ class WorkspaceMembershipSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         """
-        Проверяем, что пользователь не является владельцем или уже не добавлен в workspace.
+        We check that the user is not the owner or has not already been added to the workspace.
         """
         email = data.get('email')
         workspace = self.context.get('workspace')
@@ -41,7 +45,7 @@ class WorkspaceMembershipSerializer(serializers.ModelSerializer):
         try:
             user = CustomUser.objects.get(email=email)
         except CustomUser.DoesNotExist:
-            user = None  # Позже отправим письмо
+            user = None  # We'll send a letter later
 
         if user:
             if user == workspace.owner:
@@ -76,17 +80,34 @@ class WorkspaceMembershipSerializer(serializers.ModelSerializer):
 
         user = validated_data.get('user')
 
-        # Если пользователя нет, отправляем приглашение по email
         if not user:
-            from django.core.mail import send_mail
-            send_mail(
-                subject="Приглашение в рабочее пространство",
-                message=f"Вас пригласили в workspace {workspace.name}. Пройдите регистрацию.",
-                from_email="snagadevteam@gmail.com",
-                recipient_list=[email],
-                fail_silently=False,
+            user = CustomUser.objects.create(email=email, is_active=False)
+
+            token = RefreshToken.for_user(user).access_token
+            reset_link = f"{settings.FRONTEND_URL}/accounts/set-password/?token={token}"
+
+            # from django.core.mail import send_mail
+            # send_mail(
+            #     subject="Invitation to workspace",
+            #     message=f"You have been invited to workspace {workspace.name}. Set a password using the link: {reset_link}",
+            #     from_email="snagadevteam@gmail.com",
+            #     recipient_list=[email],
+            #     fail_silently=False,
+            # )
+
+            html_content = render_to_string("emails/set_password_email.html", {
+                "workspace_name": workspace.name,
+                "reset_link": reset_link
+            })
+
+            email_message = EmailMultiAlternatives(
+                subject="Set password.",
+                body=f"Follow the link to set a password: {reset_link}",
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[email]
             )
-            return {"message": "Invitation email sent"}
+            email_message.attach_alternative(html_content, "text/html")
+            email_message.send()
 
         membership = WorkspaceMembership.objects.create(user=user, workspace=workspace, role=role)
         return membership

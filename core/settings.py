@@ -52,7 +52,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +123,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'snagadevteam@gmail.com'
 EMAIL_HOST_PASSWORD = env('GOOGLE_PASSW')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:8000")
