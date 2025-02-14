@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import generics, permissions
 from workspace.models import Workspace, WorkspaceMembership
-from workspace.serializers import WorkspaceSerializer, WorkspaceMembershipSerializer
+from workspace.serializers import WorkspaceSerializer, WorkspaceMembershipSerializer, WorkspaceDetailSerializer
 
 
 class WorkspaceCreateAPIView(generics.CreateAPIView):
@@ -41,3 +41,15 @@ class AddWorkspaceMembershipAPIView(APIView):
             return Response({"message": "User added to workspace"} if isinstance(result, WorkspaceMembership) else result, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
+
+class WorkspaceDetailAPIView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, workspace_id):
+        try:
+            workspace = Workspace.objects.prefetch_related("memberships__user", "memberships__role").get(id=workspace_id)
+        except Workspace.DoesNotExist:
+            return Response({"error": "Workspace not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = WorkspaceDetailSerializer(workspace)
+        return Response(serializer.data, status=status.HTTP_200_OK)

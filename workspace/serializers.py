@@ -111,3 +111,26 @@ class WorkspaceMembershipSerializer(serializers.ModelSerializer):
 
         membership = WorkspaceMembership.objects.create(user=user, workspace=workspace, role=role)
         return membership
+    
+
+class WorkspaceMemberSerializer(serializers.ModelSerializer):
+    user_email = serializers.EmailField(source="user.email")
+    first_name = serializers.CharField(source="user.first_name", allow_blank=True)
+    last_name = serializers.CharField(source="user.last_name", allow_blank=True)
+    is_active = serializers.BooleanField(source="user.is_active")
+    date_joined_to_system = serializers.DateTimeField(source="user.date_joined", format="%Y-%m-%d %H:%M:%S")
+    role_name = serializers.CharField(source="role.name", allow_null=True)
+    date_joined_to_workspace = serializers.DateTimeField(source="joined_at", format="%Y-%m-%d %H:%M:%S")
+
+    class Meta:
+        model = WorkspaceMembership
+        fields = ["user_email", "first_name", "last_name", "is_active", "date_joined_to_system", "role_name", "date_joined_to_workspace"]
+
+
+class WorkspaceDetailSerializer(serializers.ModelSerializer):
+    members = WorkspaceMemberSerializer(source="memberships", many=True)
+
+    class Meta:
+        model = Workspace
+        fields = ["id", "name", "description", "created_at", "updated_at", "members"]
+        read_only_fields = ["id", "created_at", "updated_at"]
