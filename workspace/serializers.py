@@ -114,6 +114,7 @@ class WorkspaceMembershipSerializer(serializers.ModelSerializer):
     
 
 class WorkspaceMemberSerializer(serializers.ModelSerializer):
+    member_id = serializers.IntegerField(source="user.id")
     user_email = serializers.EmailField(source="user.email")
     first_name = serializers.CharField(source="user.first_name", allow_blank=True)
     last_name = serializers.CharField(source="user.last_name", allow_blank=True)
@@ -124,7 +125,7 @@ class WorkspaceMemberSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = WorkspaceMembership
-        fields = ["user_email", "first_name", "last_name", "is_active", "date_joined_to_system", "role_name", "date_joined_to_workspace"]
+        fields = ["member_id", "user_email", "first_name", "last_name", "is_active", "date_joined_to_system", "role_name", "date_joined_to_workspace"]
 
 
 class WorkspaceDetailSerializer(serializers.ModelSerializer):

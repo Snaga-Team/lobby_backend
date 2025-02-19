@@ -44,7 +44,9 @@ class SetPasswordSerializer(serializers.Serializer):
     
 
 class ProfileSerializer(serializers.ModelSerializer):
+    date_joined_to_system = serializers.DateTimeField(source="date_joined", format="%Y-%m-%d %H:%M:%S")
+
     class Meta:
         model = CustomUser
-        fields = ['email', 'first_name', 'last_name', 'is_active', 'is_staff', 'date_joined']
-        read_only_fields = ['email', 'date_joined', 'is_staff']
+        fields = ['id', 'email', 'first_name', 'last_name', 'is_active', 'is_staff', 'date_joined_to_system']
+        read_only_fields = ['id', 'email', 'date_joined_to_system', 'is_staff']
