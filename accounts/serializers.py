@@ -41,3 +41,10 @@ class SetPasswordSerializer(serializers.Serializer):
         user.save()
 
         return {"message": "Password successfully set"}
+    
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ['email', 'first_name', 'last_name', 'is_active', 'is_staff', 'date_joined']
+        read_only_fields = ['email', 'date_joined', 'is_staff']
