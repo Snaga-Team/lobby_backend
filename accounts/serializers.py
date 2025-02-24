@@ -1,7 +1,8 @@
 from rest_framework import serializers
-from accounts.models import CustomUser
+from accounts.models import CustomUser, PasswordResetCode
 from django.contrib.auth.hashers import make_password
 from rest_framework_simplejwt.tokens import AccessToken
+
 
 class RegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})
@@ -50,3 +51,50 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = CustomUser
         fields = ['id', 'email', 'first_name', 'last_name', 'is_active', 'is_staff', 'date_joined_to_system']
         read_only_fields = ['id', 'email', 'date_joined_to_system', 'is_staff']
+
+
+class PasswordResetRequestSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+
+    def validate_email(self, value):
+        if not CustomUser.objects.filter(email=value).exists():
+            raise serializers.ValidationError("User with this email does not exist.")
+        return value
+
+
+class PasswordResetCheckSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    code = serializers.CharField(max_length=6)
+
+    def validate(self, data):
+        email = data.get("email")
+        code = data.get("code")
+
+        try:
+            user = CustomUser.objects.get(email=email)
+        except CustomUser.DoesNotExist:
+            raise serializers.ValidationError({"email": "User not found."})
+
+        try:
+            reset_code = PasswordResetCode.objects.get(user=user, code=code)
+        except PasswordResetCode.DoesNotExist:
+            raise serializers.ValidationError({"code": "Invalid code."})
+
+        if reset_code.is_expired():
+            raise serializers.ValidationError({"code": "Code expired."})
+
+        data["user"] = user
+        data["reset_code"] = reset_code
+        return data
+
+
+class PasswordResetConfirmSerializer(PasswordResetCheckSerializer):
+    password = serializers.CharField(write_only=True, min_length=8)
+
+    def validate(self, data):
+        data = super().validate(data)
+
+        if "password" not in data:
+            raise serializers.ValidationError({"password": "Password is required."})
+
+        return data

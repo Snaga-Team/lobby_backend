@@ -1,6 +1,11 @@
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.db import models
 
+import uuid
+from django.utils.timezone import now
+from django.db import models
+
+
 class CustomUserManager(BaseUserManager):
     """Mansger for custom user model/"""
     
@@ -44,3 +49,14 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+    
+
+class PasswordResetCode(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="reset_codes")
+    code = models.CharField(max_length=6)
+    created_at = models.DateTimeField(auto_now_add=True)
+    token = models.UUIDField(default=uuid.uuid4, unique=True)
+
+    def is_expired(self):
+        """Code is avalible 10 min"""
+        return (now() - self.created_at).total_seconds() > 600  # 600 sec = 10 min
