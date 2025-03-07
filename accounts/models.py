@@ -1,9 +1,16 @@
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.db import models
-
+from django.core.exceptions import ValidationError
+import re
 import uuid
 from django.utils.timezone import now
 from django.db import models
+
+
+def validate_hex_color(value):
+    """Checks that the string is a valid HEX code (e.g. #ffffff)."""
+    if not re.match(r'^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', value):
+        raise ValidationError("Invalid HEX color code.")
 
 
 class CustomUserManager(BaseUserManager):
@@ -37,6 +44,17 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=150, blank=True)
     last_name = models.CharField(max_length=150, blank=True)
+    avatar_background = models.CharField(
+        max_length=7, 
+        default="#ffffff", 
+        validators=[validate_hex_color], 
+        null=True, blank=True
+    )
+    avatar_emoji = models.CharField(max_length=1, default="👤")
+    avatar_image = models.ImageField(
+        upload_to="avatars/", 
+        null=True, blank=True
+    )
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)

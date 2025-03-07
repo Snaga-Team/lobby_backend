@@ -49,8 +49,18 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CustomUser
-        fields = ['id', 'email', 'first_name', 'last_name', 'is_active', 'is_staff', 'date_joined_to_system']
+        fields = [
+            'id', 'email', 'first_name', 'last_name', 'is_active', 'is_staff', 
+            'date_joined_to_system', 'avatar_background', 'avatar_emoji', 'avatar_image'
+        ]
         read_only_fields = ['id', 'email', 'date_joined_to_system', 'is_staff']
+
+    def get_avatar_image(self, obj):
+        """Returns the full URL for the avatar image if it is loaded."""
+        request = self.context.get('request')
+        if obj.avatar_image:
+            return request.build_absolute_uri(obj.avatar_image.url) if request else obj.avatar_image.url
+        return None
 
 
 class PasswordResetRequestSerializer(serializers.Serializer):
