@@ -50,7 +50,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         validators=[validate_hex_color], 
         null=True, blank=True
     )
-    avatar_emoji = models.CharField(max_length=1, default="👤")
+    avatar_emoji = models.CharField(max_length=3, default="👤")
     avatar_image = models.ImageField(
         upload_to="avatars/", 
         null=True, blank=True
