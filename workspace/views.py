@@ -4,7 +4,7 @@ from rest_framework import status
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from rest_framework import generics, permissions
-from workspace.models import Workspace, WorkspaceMembership
+from workspace.models import Workspace, WorkspaceMembership, WorkspaceRole
 from workspace.serializers import WorkspaceSerializer, WorkspaceMembershipSerializer, WorkspaceDetailSerializer
 
 
@@ -97,6 +97,58 @@ class DeactivateWorkspaceMembershipAPIView(APIView):
             # Admin can deactivate only ordinary users (not admins)
             return target_membership.role is None or target_membership.role.name not in ["admin", ]
 
+        return False
+
+
+class ChangeWorkspaceRoleAPIView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def patch(self, request, workspace_id):
+        """Changing user roles in the `Workspace`"""
+        workspace = get_object_or_404(
+            Workspace.objects.filter(Q(owner=request.user) | Q(memberships__user=request.user)).distinct(),
+            id=workspace_id
+        )
+        
+        user_id = request.data.get("user_id")
+        email = request.data.get("email")
+        new_role_name = request.data.get("new_role", "").strip().lower()
+
+        if user_id and email:
+            return Response({"error": "Provide either `user_id` or `email`, not both."}, status=status.HTTP_400_BAD_REQUEST)
+        if not new_role_name:
+            return Response({"error": "`new_role` is required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        if user_id:
+            target_membership = get_object_or_404(WorkspaceMembership, workspace=workspace, user_id=user_id)
+        else:
+            target_membership = get_object_or_404(WorkspaceMembership, workspace=workspace, user__email=email)
+
+        if not target_membership.is_active:
+            return Response({"error": "Cannot change role of a deactivated user."}, status=status.HTTP_400_BAD_REQUEST)
+
+        new_role = get_object_or_404(WorkspaceRole, workspace=workspace, name=new_role_name)
+
+        if not self.has_permission_to_change_role(request.user, workspace, target_membership, new_role_name):
+            return Response({"error": "You do not have permission to change this user's role."}, status=status.HTTP_403_FORBIDDEN)
+
+        target_membership.role = new_role
+        target_membership.save()
+
+        return Response({"message": f"User's role changed to {new_role_name}."}, status=status.HTTP_200_OK)
+
+    def has_permission_to_change_role(self, user, workspace, target_membership, new_role_name):
+        """
+        Checks if the user can change the role
+            - Owner can assign any roles
+            - Admin can only assign `user`, `client`, but not `admin`
+        """
+        if workspace.owner == user:
+            return True
+
+        user_membership = WorkspaceMembership.objects.filter(user=user, workspace=workspace, role__name="admin").first()
+        if user_membership:
+            return not (new_role_name == "admin" or (target_membership.role and target_membership.role.name == "admin"))
         return False
 
 
