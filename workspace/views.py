@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import get_object_or_404
+from django.db import models
 from rest_framework import generics, permissions
 from workspace.models import Workspace, WorkspaceMembership
 from workspace.serializers import WorkspaceSerializer, WorkspaceMembershipSerializer, WorkspaceDetailSerializer
@@ -41,7 +42,52 @@ class AddWorkspaceMembershipAPIView(APIView):
             result = serializer.save()
             return Response({"message": "User added to workspace"} if isinstance(result, WorkspaceMembership) else result, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class DeactivateWorkspaceMembershipAPIView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def patch(self, request, workspace_id):
+        workspace = get_object_or_404(
+            Workspace.objects.prefetch_related("memberships__user", "memberships__role")
+            .filter(models.Q(owner=request.user) | models.Q(memberships__user=request.user))
+            .distinct(),
+            id=workspace_id
+        )
         
+        user_id = request.data.get("user_id")
+        email = request.data.get("email")
+        if not user_id and not email:
+            return Response({"error": "User ID is required."}, status=status.HTTP_400_BAD_REQUEST)
+        
+        if user_id:
+            target_membership = get_object_or_404(WorkspaceMembership, workspace=workspace, user_id=user_id)
+        else:
+            target_membership = get_object_or_404(WorkspaceMembership, workspace=workspace, user__email=email)
+
+        if not self.has_permission_to_deactivate(request.user, workspace, target_membership):
+            return Response({"error": "You do not have permission to deactivate this user."}, status=status.HTTP_403_FORBIDDEN)
+
+        if not target_membership.is_active:
+            return Response({"message": "User is already deactivated."}, status=status.HTTP_400_BAD_REQUEST)
+
+        target_membership.is_active = False
+        target_membership.save()
+
+        return Response({"message": "User has been deactivated."}, status=status.HTTP_200_OK)
+
+    def has_permission_to_deactivate(self, user, workspace, target_membership):
+        """ Checks whether it is possible to deactivate the participant """
+        if workspace.owner == user:
+            return True
+
+        user_membership = WorkspaceMembership.objects.filter(user=user, workspace=workspace).first()
+        if user_membership and user_membership.role and user_membership.role.name == "admin":
+            # Admin can deactivate only ordinary users (not admins)
+            return target_membership.role is None or target_membership.role.name not in ["admin", ]
+
+        return False
+
 
 class WorkspaceDetailAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]

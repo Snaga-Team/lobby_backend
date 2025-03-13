@@ -5,6 +5,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from accounts.models import CustomUser
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+from accounts.serializers import ProfileSerializer
 
 
 class WorkspaceSerializer(serializers.ModelSerializer):
@@ -114,24 +115,23 @@ class WorkspaceMembershipSerializer(serializers.ModelSerializer):
     
 
 class WorkspaceMemberSerializer(serializers.ModelSerializer):
-    member_id = serializers.IntegerField(source="user.id")
-    user_email = serializers.EmailField(source="user.email")
-    first_name = serializers.CharField(source="user.first_name", allow_blank=True)
-    last_name = serializers.CharField(source="user.last_name", allow_blank=True)
-    is_active = serializers.BooleanField(source="user.is_active")
-    date_joined_to_system = serializers.DateTimeField(source="user.date_joined", format="%Y-%m-%d %H:%M:%S")
+    member_id = serializers.IntegerField(source="id")
     role_name = serializers.CharField(source="role.name", allow_null=True)
     date_joined_to_workspace = serializers.DateTimeField(source="joined_at", format="%Y-%m-%d %H:%M:%S")
+    member_is_active = serializers.CharField(source="is_active", allow_null=True)
+    
+    user_info = ProfileSerializer(source="user")
 
     class Meta:
         model = WorkspaceMembership
-        fields = ["member_id", "user_email", "first_name", "last_name", "is_active", "date_joined_to_system", "role_name", "date_joined_to_workspace"]
+        fields = ["member_id", "role_name", "date_joined_to_workspace", "member_is_active", "user_info"]
 
 
 class WorkspaceDetailSerializer(serializers.ModelSerializer):
     members = WorkspaceMemberSerializer(source="memberships", many=True)
+    owner_info = ProfileSerializer(source="owner")
 
     class Meta:
         model = Workspace
-        fields = ["id", "name", "description", "created_at", "updated_at", "members"]
+        fields = ["id", "name", "description", "owner_info", "created_at", "updated_at", "members"]
         read_only_fields = ["id", "created_at", "updated_at"]
