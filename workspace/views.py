@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import get_object_or_404
-from django.db import models
+from django.db.models import Q
 from rest_framework import generics, permissions
 from workspace.models import Workspace, WorkspaceMembership
 from workspace.serializers import WorkspaceSerializer, WorkspaceMembershipSerializer, WorkspaceDetailSerializer
@@ -19,10 +19,7 @@ class WorkspaceListAPIView(generics.ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        owned_workspaces = Workspace.objects.filter(owner=user)
-        member_workspaces = Workspace.objects.filter(memberships__user=user)
-    
-        return owned_workspaces.union(member_workspaces)
+        return Workspace.objects.filter(Q(owner=user) | Q(memberships__user=user)).distinct()
     
 
 class AddWorkspaceMembershipAPIView(APIView):
@@ -55,9 +52,7 @@ class AddWorkspaceMembershipAPIView(APIView):
         user_membership = WorkspaceMembership.objects.filter(user=user, workspace=workspace, role__name="admin").first()
         if user_membership:
             new_role_name = request_data.get("role", "").lower()
-            if new_role_name == "admin":
-                return False
-            return True
+            return new_role_name != "admin"
         
         return False
 
@@ -67,16 +62,14 @@ class DeactivateWorkspaceMembershipAPIView(APIView):
 
     def patch(self, request, workspace_id):
         workspace = get_object_or_404(
-            Workspace.objects.prefetch_related("memberships__user", "memberships__role")
-            .filter(models.Q(owner=request.user) | models.Q(memberships__user=request.user))
-            .distinct(),
+            Workspace.objects.filter(Q(owner=request.user) | Q(memberships__user=request.user)).distinct(),
             id=workspace_id
         )
         
         user_id = request.data.get("user_id")
         email = request.data.get("email")
-        if not user_id and not email:
-            return Response({"error": "User ID is required."}, status=status.HTTP_400_BAD_REQUEST)
+        if user_id and email:
+            return Response({"error": "Provide either user_id or email, not both."}, status=status.HTTP_400_BAD_REQUEST)
         
         if user_id:
             target_membership = get_object_or_404(WorkspaceMembership, workspace=workspace, user_id=user_id)
@@ -111,11 +104,10 @@ class WorkspaceDetailAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, workspace_id):
-        try:
-            workspace = Workspace.objects.prefetch_related("memberships__user", "memberships__role").get(id=workspace_id)
-        except Workspace.DoesNotExist:
-            return Response({"error": "Workspace not found"}, status=status.HTTP_404_NOT_FOUND)
-        
+        workspace = get_object_or_404(
+            Workspace.objects.prefetch_related("memberships__user", "memberships__role"),
+            id=workspace_id
+        )
         if not self.has_permission_to_view(request.user, workspace):
             return Response({"error": "You do not have permission to view this workspace."}, status=status.HTTP_403_FORBIDDEN)
 
