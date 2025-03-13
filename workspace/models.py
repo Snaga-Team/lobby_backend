@@ -1,11 +1,29 @@
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.db import models
+from django.core.exceptions import ValidationError
+import re
 from accounts.models import CustomUser
+
+def validate_hex_color(value):
+    """Checks that the string is a valid HEX code (e.g. #ffffff)."""
+    if not re.match(r'^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', value):
+        raise ValidationError("Invalid HEX color code.")
 
 
 class Workspace(models.Model):
     name = models.CharField(max_length=255, verbose_name="Name")
     description = models.TextField(blank=True, null=True, verbose_name="Description")
+    avatar_background = models.CharField(
+        max_length=7, 
+        default="#ffffff", 
+        validators=[validate_hex_color], 
+        null=True, blank=True
+    )
+    avatar_emoji = models.CharField(max_length=3, default="🚀")
+    avatar_image = models.ImageField(
+        upload_to="workspaces/", 
+        null=True, blank=True
+    )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date of create")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Date of update")
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="workspace_owner", verbose_name="Owner")

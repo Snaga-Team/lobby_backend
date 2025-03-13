@@ -133,5 +133,8 @@ class WorkspaceDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Workspace
-        fields = ["id", "name", "description", "owner_info", "created_at", "updated_at", "members"]
+        fields = [
+            "id", "name", "description", "owner_info", "avatar_background", 
+            "avatar_emoji", "avatar_image", "created_at", "updated_at", "members"
+        ]
         read_only_fields = ["id", "created_at", "updated_at"]
