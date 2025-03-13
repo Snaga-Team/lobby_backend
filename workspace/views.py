@@ -29,10 +29,10 @@ class AddWorkspaceMembershipAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request, workspace_id):
-        try:
-            workspace = Workspace.objects.get(id=workspace_id)
-        except Workspace.DoesNotExist:
-            return Response({"error": "Workspace not found"}, status=status.HTTP_404_NOT_FOUND)
+        workspace = get_object_or_404(Workspace, id=workspace_id)
+
+        if not self.has_permission_to_add(request.user, workspace, request.data):
+            return Response({"error": "You do not have permission to add users."}, status=status.HTTP_403_FORBIDDEN)
 
         serializer = WorkspaceMembershipSerializer(
             data=request.data, 
@@ -42,6 +42,24 @@ class AddWorkspaceMembershipAPIView(APIView):
             result = serializer.save()
             return Response({"message": "User added to workspace"} if isinstance(result, WorkspaceMembership) else result, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def has_permission_to_add(self, user, workspace, request_data):
+        """
+        Checks whether the user can add participants to `Workspace`
+            - The owner can add any users
+            - Admin can only add ordinary participants (not other admins)
+        """
+        if workspace.owner == user:
+            return True
+
+        user_membership = WorkspaceMembership.objects.filter(user=user, workspace=workspace, role__name="admin").first()
+        if user_membership:
+            new_role_name = request_data.get("role", "").lower()
+            if new_role_name == "admin":
+                return False
+            return True
+        
+        return False
 
 
 class DeactivateWorkspaceMembershipAPIView(APIView):
