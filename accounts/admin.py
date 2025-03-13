@@ -6,7 +6,7 @@ from accounts.models import CustomUser
 @admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
     list_display = (
-        'email', 'first_name', 'last_name', 'avatar_preview', 
+        'id', 'email', 'first_name', 'last_name', 'avatar_preview', 
         'avatar_background_display', 'avatar_emoji', 'is_staff', 
         'is_active'
     )

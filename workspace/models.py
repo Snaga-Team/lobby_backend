@@ -9,6 +9,7 @@ class Workspace(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date of create")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Date of update")
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="workspace_owner", verbose_name="Owner")
+    is_active = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
         is_new = self.pk is None
@@ -39,6 +40,7 @@ class WorkspaceMembership(models.Model):
     workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE, related_name="memberships", verbose_name="Workspace")
     role = models.ForeignKey(WorkspaceRole, on_delete=models.SET_NULL, null=True, blank=True, related_name="memberships", verbose_name="Role")
     joined_at = models.DateTimeField(auto_now_add=True, verbose_name="Date of joined")
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         unique_together = ('user', 'workspace')  # One user can be added only once to the current workspace.

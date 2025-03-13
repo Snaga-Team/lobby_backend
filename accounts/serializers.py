@@ -50,8 +50,9 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = [
-            'id', 'email', 'first_name', 'last_name', 'is_active', 'is_staff', 
-            'date_joined_to_system', 'avatar_background', 'avatar_emoji', 'avatar_image'
+            'id', 'email', 'first_name', 'last_name', 'avatar_background', 
+            'avatar_emoji', 'avatar_image' , 'is_active', 'is_staff', 
+            'date_joined_to_system',
         ]
         read_only_fields = ['id', 'email', 'date_joined_to_system', 'is_staff']
 
