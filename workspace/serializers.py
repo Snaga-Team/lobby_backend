@@ -129,7 +129,7 @@ class WorkspaceMemberSerializer(serializers.ModelSerializer):
 
 class WorkspaceDetailSerializer(serializers.ModelSerializer):
     members = WorkspaceMemberSerializer(source="memberships", many=True)
-    owner_info = ProfileSerializer(source="owner")
+    owner_info = ProfileSerializer(source="owner", read_only=True)
 
     class Meta:
         model = Workspace
@@ -138,3 +138,7 @@ class WorkspaceDetailSerializer(serializers.ModelSerializer):
             "avatar_emoji", "avatar_image", "created_at", "updated_at", "members"
         ]
         read_only_fields = ["id", "created_at", "updated_at"]
+
+    def update(self, instance, validated_data):
+        validated_data.pop('owner', None)
+        return super().update(instance, validated_data)
