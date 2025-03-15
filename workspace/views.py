@@ -6,11 +6,26 @@ from django.db.models import Q
 from rest_framework import generics, permissions
 from workspace.models import Workspace, WorkspaceMembership, WorkspaceRole
 from workspace.serializers import WorkspaceSerializer, WorkspaceMembershipSerializer, WorkspaceDetailSerializer
+from accounts.models import CustomUser as User
 
 
 class WorkspaceCreateAPIView(generics.CreateAPIView):
     serializer_class = WorkspaceSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+    def perform_create(self, serializer):
+        workspace = serializer.save()
+
+        admin_role = WorkspaceRole.objects.filter(name="admin").first()
+        if not admin_role:
+            raise ValueError("Admin role not found in the system.")
+
+        WorkspaceMembership.objects.create(
+            user=self.request.user,
+            workspace=workspace,
+            role=admin_role,
+            is_active=True,
+        )
 
 
 class WorkspaceListAPIView(generics.ListAPIView):
@@ -196,3 +211,80 @@ class WorkspaceDetailAPIView(APIView):
 
         is_member = WorkspaceMembership.objects.filter(user=user, workspace=workspace).exists()
         return is_member
+
+
+class WorkspaceOwnerChangeAPIView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request, workspace_id):
+        workspace = get_object_or_404(Workspace, id=workspace_id)
+
+        if workspace.owner != request.user:
+            return Response(
+                {"error": "Only the current owner can change the workspace owner."},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        new_owner_id = request.data.get("new_owner_id")
+        new_owner_email = request.data.get("new_owner_email")
+        new_member_id = request.data.get("new_member_id")
+
+        if not any([new_owner_id, new_owner_email, new_member_id]):
+            return Response(
+                {"error": "One of new_owner_id, new_owner_email, or new_member_id is required."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        new_owner = None
+        if new_member_id:
+            membership = WorkspaceMembership.objects.filter(
+                id=new_member_id, workspace=workspace
+            ).select_related("user").first()
+            if membership:
+                new_owner = membership.user
+        elif new_owner_id:
+            new_owner = User.objects.filter(id=new_owner_id).first()
+        elif new_owner_email:
+            new_owner = User.objects.filter(email=new_owner_email).first()
+
+        if not new_owner:
+            return Response(
+                {"error": "User not found."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        if not new_member_id:
+            new_owner_membership = WorkspaceMembership.objects.filter(
+                user=new_owner, workspace=workspace
+            ).first()
+            if not new_owner_membership:
+                return Response(
+                    {"error": "The new owner must be a member of the workspace."},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+
+        current_owner = workspace.owner
+        current_owner_membership = WorkspaceMembership.objects.filter(
+            user=current_owner, workspace=workspace
+        ).first()
+
+        if not current_owner_membership:
+            admin_role = WorkspaceRole.objects.filter(name="admin").first()
+            if not admin_role:
+                return Response(
+                    {"error": "Admin role not found in the system."},
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                )
+            WorkspaceMembership.objects.create(
+                user=current_owner,
+                workspace=workspace,
+                role=admin_role,
+                is_active=True
+            )
+
+
+        workspace.owner = new_owner
+        workspace.save()
+
+        serializer = WorkspaceDetailSerializer(workspace)
+        return Response(serializer.data, status=status.HTTP_200_OK)
