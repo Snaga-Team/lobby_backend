@@ -23,6 +23,23 @@ class WorkspaceSerializer(serializers.ModelSerializer):
         return Workspace.objects.create(owner=request.user, **validated_data)
     
 
+class RoleSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = WorkspaceRole
+        fields = ['id', 'name', 'description']
+        read_only_fields = ['id']
+
+
+class WorkspaceWithRolesSerializer(serializers.ModelSerializer):
+    roles = RoleSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Workspace
+        fields = ['id', 'name', 'description', 'created_at', 'updated_at', 'roles']
+        read_only_fields = ['id', 'created_at', 'updated_at']
+
+
 class WorkspaceMembershipSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(write_only=True)
     role_id = serializers.IntegerField(write_only=True, required=False)
