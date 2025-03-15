@@ -5,7 +5,10 @@ from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from rest_framework import generics, permissions
 from workspace.models import Workspace, WorkspaceMembership, WorkspaceRole
-from workspace.serializers import WorkspaceSerializer, WorkspaceMembershipSerializer, WorkspaceDetailSerializer
+from workspace.serializers import (
+    WorkspaceSerializer, WorkspaceMembershipSerializer, 
+    WorkspaceDetailSerializer, WorkspaceWithRolesSerializer
+)
 from accounts.models import CustomUser as User
 
 
@@ -35,7 +38,26 @@ class WorkspaceListAPIView(generics.ListAPIView):
     def get_queryset(self):
         user = self.request.user
         return Workspace.objects.filter(Q(owner=user) | Q(memberships__user=user)).distinct()
-    
+
+
+class WorkspaceRoleListAPIView(generics.RetrieveAPIView):
+    serializer_class = WorkspaceWithRolesSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        user = self.request.user
+        workspace_id = self.kwargs['workspace_id']
+
+        workspace = get_object_or_404(Workspace, id=workspace_id)
+
+        is_owner = workspace.owner == user
+        is_member = WorkspaceMembership.objects.filter(user=user, workspace=workspace).exists()
+
+        if not (is_owner or is_member):
+            raise generics.PermissionDenied("You do not have access to this workspace.")
+
+        return workspace
+
 
 class AddWorkspaceMembershipAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
