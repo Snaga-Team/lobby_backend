@@ -9,7 +9,7 @@ from workspace.serializers import (
     WorkspaceSerializer, WorkspaceMembershipSerializer, 
     WorkspaceDetailSerializer, WorkspaceWithRolesSerializer
 )
-from accounts.models import CustomUser as User
+from accounts.models import User
 
 
 class WorkspaceCreateAPIView(generics.CreateAPIView):

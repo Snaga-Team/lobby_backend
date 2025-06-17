@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from accounts.models import CustomUser, PasswordResetCode
+from accounts.models import User, PasswordResetCode
 from django.contrib.auth.hashers import make_password
 from rest_framework_simplejwt.tokens import AccessToken
 
@@ -9,7 +9,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})
 
     class Meta:
-        model = CustomUser
+        model = User
         fields = ['email', 'first_name', 'last_name', 'password', 'password2']
 
     def validate(self, data):
@@ -19,7 +19,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         validated_data.pop('password2')
-        return CustomUser.objects.create_user(**validated_data)
+        return User.objects.create_user(**validated_data)
 
 
 class SetPasswordSerializer(serializers.Serializer):
@@ -32,7 +32,7 @@ class SetPasswordSerializer(serializers.Serializer):
 
         try:
             access_token = AccessToken(token)
-            user = CustomUser.objects.get(id=access_token['user_id'])
+            user = User.objects.get(id=access_token['user_id'])
         except Exception:
             raise serializers.ValidationError({"token": "Invalid or expired token"})
 
@@ -48,7 +48,7 @@ class ProfileSerializer(serializers.ModelSerializer):
     date_joined_to_system = serializers.DateTimeField(source="date_joined", format="%Y-%m-%d %H:%M:%S")
 
     class Meta:
-        model = CustomUser
+        model = User
         fields = [
             'id', 'email', 'first_name', 'last_name', 'avatar_background', 
             'avatar_emoji', 'avatar_image' , 'is_active', 'is_staff', 
@@ -68,7 +68,7 @@ class PasswordResetRequestSerializer(serializers.Serializer):
     email = serializers.EmailField()
 
     def validate_email(self, value):
-        if not CustomUser.objects.filter(email=value).exists():
+        if not User.objects.filter(email=value).exists():
             raise serializers.ValidationError("User with this email does not exist.")
         return value
 
@@ -82,8 +82,8 @@ class PasswordResetCheckSerializer(serializers.Serializer):
         code = data.get("code")
 
         try:
-            user = CustomUser.objects.get(email=email)
-        except CustomUser.DoesNotExist:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
             raise serializers.ValidationError({"email": "User not found."})
 
         try:

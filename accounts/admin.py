@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from django.contrib.auth.admin import UserAdmin
-from accounts.models import CustomUser
+from accounts.models import User
 
-@admin.register(CustomUser)
-class CustomUserAdmin(UserAdmin):
+@admin.register(User)
+class MainUserAdmin(UserAdmin):
     list_display = (
         'id', 'email', 'first_name', 'last_name', 'avatar_preview', 
         'avatar_background_display', 'avatar_emoji', 'is_staff', 

@@ -6,7 +6,7 @@ from accounts.serializers import (
     ProfileSerializer, PasswordResetRequestSerializer,
     PasswordResetConfirmSerializer, PasswordResetCheckSerializer
 )
-from accounts.models import CustomUser, PasswordResetCode
+from accounts.models import User, PasswordResetCode
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.core.mail import EmailMultiAlternatives
 from django.contrib.auth.hashers import make_password
@@ -36,7 +36,7 @@ class PasswordResetRequestAPIView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         email = serializer.validated_data["email"]
-        user = CustomUser.objects.get(email=email)
+        user = User.objects.get(email=email)
 
         code = f"{random.randint(100000, 999999)}"
 
@@ -121,8 +121,8 @@ class UserProfileAPIView(APIView):
 
     def get(self, request, pk):
         try:
-            user = CustomUser.objects.get(id=pk)
-        except CustomUser.DoesNotExist:
+            user = User.objects.get(id=pk)
+        except User.DoesNotExist:
             return Response({"message": "User not found"}, status=status.HTTP_404_NOT_FOUND)
         
         serializer = ProfileSerializer(user)

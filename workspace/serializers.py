@@ -2,7 +2,7 @@ from rest_framework import serializers
 from workspace.models import Workspace, WorkspaceMembership, WorkspaceRole
 from django.conf import settings
 from rest_framework_simplejwt.tokens import RefreshToken
-from accounts.models import CustomUser
+from accounts.models import User
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from accounts.serializers import ProfileSerializer
@@ -61,8 +61,8 @@ class WorkspaceMembershipSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"workspace": "Workspace is required."})
 
         try:
-            user = CustomUser.objects.get(email=email)
-        except CustomUser.DoesNotExist:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
             user = None  # We'll send a letter later
 
         if user:
@@ -99,7 +99,7 @@ class WorkspaceMembershipSerializer(serializers.ModelSerializer):
         user = validated_data.get('user')
 
         if not user:
-            user = CustomUser.objects.create(email=email, is_active=False)
+            user = User.objects.create(email=email, is_active=False)
 
             token = RefreshToken.for_user(user).access_token
             reset_link = f"{settings.FRONTEND_URL}/accounts/set-password/?token={token}"

@@ -2,7 +2,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 from django.db import models
 from django.core.exceptions import ValidationError
 import re
-from accounts.models import CustomUser
+from accounts.models import User
 
 def validate_hex_color(value):
     """Checks that the string is a valid HEX code (e.g. #ffffff)."""
@@ -26,7 +26,7 @@ class Workspace(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date of create")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Date of update")
-    owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="workspace_owner", verbose_name="Owner")
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="workspace_owner", verbose_name="Owner")
     is_active = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
@@ -54,7 +54,7 @@ class WorkspaceRole(models.Model):
     
 
 class WorkspaceMembership(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="workspace_memberships", verbose_name="User")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="workspace_memberships", verbose_name="User")
     workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE, related_name="memberships", verbose_name="Workspace")
     role = models.ForeignKey(WorkspaceRole, on_delete=models.SET_NULL, null=True, blank=True, related_name="memberships", verbose_name="Role")
     joined_at = models.DateTimeField(auto_now_add=True, verbose_name="Date of joined")

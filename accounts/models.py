@@ -13,7 +13,7 @@ def validate_hex_color(value):
         raise ValidationError("Invalid HEX color code.")
 
 
-class CustomUserManager(BaseUserManager):
+class UserManager(BaseUserManager):
     """Mansger for custom user model/"""
     
     def create_user(self, email, password=None, **extra_fields):
@@ -38,7 +38,7 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 
-class CustomUser(AbstractBaseUser, PermissionsMixin):
+class User(AbstractBaseUser, PermissionsMixin):
     """Custom user model."""
     
     email = models.EmailField(unique=True)
@@ -60,7 +60,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(auto_now_add=True)
 
     # Join with custom manager
-    objects = CustomUserManager()
+    objects = UserManager()
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name']
@@ -70,7 +70,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     
 
 class PasswordResetCode(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="reset_codes")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reset_codes")
     code = models.CharField(max_length=6)
     created_at = models.DateTimeField(auto_now_add=True)
     token = models.UUIDField(default=uuid.uuid4, unique=True)
