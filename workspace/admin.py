@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from workspace.models import Workspace, WorkspaceRole, WorkspaceMembership
+from workspace.models import Workspace, WorkspaceRole, WorkspaceMember
 
 
 @admin.register(Workspace)
@@ -40,8 +40,8 @@ class WorkspaceRoleAdmin(admin.ModelAdmin):
     list_filter = ('workspace',)
 
 
-@admin.register(WorkspaceMembership)
-class WorkspaceMembershipAdmin(admin.ModelAdmin):
+@admin.register(WorkspaceMember)
+class WorkspaceMemberAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'workspace', 'role', 'joined_at')
     search_fields = ('id', 'user__email', 'workspace__name', 'role__name')
     list_filter = ('workspace', 'role')

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from workspace.models import Workspace, WorkspaceMembership, WorkspaceRole
+from workspace.models import Workspace, WorkspaceMember, WorkspaceRole
 from django.conf import settings
 from rest_framework_simplejwt.tokens import RefreshToken
 from accounts.models import User
@@ -40,13 +40,13 @@ class WorkspaceWithRolesSerializer(serializers.ModelSerializer):
         read_only_fields = ['id', 'created_at', 'updated_at']
 
 
-class WorkspaceMembershipSerializer(serializers.ModelSerializer):
+class WorkspaceMemberSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(write_only=True)
     role_id = serializers.IntegerField(write_only=True, required=False)
     role = serializers.CharField(write_only=True, required=False)
 
     class Meta:
-        model = WorkspaceMembership
+        model = WorkspaceMember
         fields = ['email', 'role_id', 'role', 'joined_at']
         read_only_fields = ['joined_at']
 
@@ -68,7 +68,7 @@ class WorkspaceMembershipSerializer(serializers.ModelSerializer):
         if user:
             if user == workspace.owner:
                 raise serializers.ValidationError("Owner cannot be added as a member.")
-            if WorkspaceMembership.objects.filter(workspace=workspace, user=user).exists():
+            if WorkspaceMember.objects.filter(workspace=workspace, user=user).exists():
                 raise serializers.ValidationError("User is already a member.")
 
         role_id = data.get('role_id')
@@ -127,7 +127,7 @@ class WorkspaceMembershipSerializer(serializers.ModelSerializer):
             email_message.attach_alternative(html_content, "text/html")
             email_message.send()
 
-        membership = WorkspaceMembership.objects.create(user=user, workspace=workspace, role=role)
+        membership = WorkspaceMember.objects.create(user=user, workspace=workspace, role=role)
         return membership
     
 
@@ -140,7 +140,7 @@ class WorkspaceMemberSerializer(serializers.ModelSerializer):
     user_info = ProfileSerializer(source="user")
 
     class Meta:
-        model = WorkspaceMembership
+        model = WorkspaceMember
         fields = ["member_id", "role_name", "date_joined_to_workspace", "member_is_active", "user_info"]
 
 

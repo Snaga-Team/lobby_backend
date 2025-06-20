@@ -52,7 +52,7 @@ class Workspace(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="workspace_owner", verbose_name="Owner")
     is_active = models.BooleanField(default=True, verbose_name="Is Active")
 
-    def save(self, *args, **kwargs):
+    def save(self, *args, **kwargs) -> None:
         is_new = self.pk is None
         super().save(*args, **kwargs)
 
@@ -63,7 +63,7 @@ class Workspace(models.Model):
                 WorkspaceRole(name="client", description="Client with limited access", workspace=self),
             ])
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
 
@@ -90,7 +90,7 @@ class WorkspaceRole(models.Model):
     workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE, related_name="roles", verbose_name="Workspace")
     settings = models.JSONField(default=dict, blank=True, verbose_name="Role Settings")
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name} ({self.workspace.name})"
 
 
@@ -136,6 +136,6 @@ class WorkspaceMember(models.Model):
         verbose_name = "Workspace Member"
         verbose_name_plural = "Workspace Members"
 
-    def __str__(self):
+    def __str__(self) -> str:
         role_name = self.role.name if self.role else 'No Role'
         return f"{self.user.email} in {self.workspace.name} as {role_name}"

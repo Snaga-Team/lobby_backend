@@ -4,9 +4,9 @@ from rest_framework import status
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from rest_framework import generics, permissions
-from workspace.models import Workspace, WorkspaceMembership, WorkspaceRole
+from workspace.models import Workspace, WorkspaceMember, WorkspaceMember, WorkspaceRole
 from workspace.serializers import (
-    WorkspaceSerializer, WorkspaceMembershipSerializer, 
+    WorkspaceSerializer, WorkspaceMemberSerializer, 
     WorkspaceDetailSerializer, WorkspaceWithRolesSerializer
 )
 from accounts.models import User
@@ -23,7 +23,7 @@ class WorkspaceCreateAPIView(generics.CreateAPIView):
         if not admin_role:
             raise ValueError("Admin role not found in the system.")
 
-        WorkspaceMembership.objects.create(
+        WorkspaceMember.objects.create(
             user=self.request.user,
             workspace=workspace,
             role=admin_role,
@@ -51,7 +51,7 @@ class WorkspaceRoleListAPIView(generics.RetrieveAPIView):
         workspace = get_object_or_404(Workspace, id=workspace_id)
 
         is_owner = workspace.owner == user
-        is_member = WorkspaceMembership.objects.filter(user=user, workspace=workspace).exists()
+        is_member = WorkspaceMember.objects.filter(user=user, workspace=workspace).exists()
 
         if not (is_owner or is_member):
             raise generics.PermissionDenied("You do not have access to this workspace.")
@@ -59,7 +59,7 @@ class WorkspaceRoleListAPIView(generics.RetrieveAPIView):
         return workspace
 
 
-class AddWorkspaceMembershipAPIView(APIView):
+class AddWorkspaceMemberAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request, workspace_id):
@@ -68,13 +68,13 @@ class AddWorkspaceMembershipAPIView(APIView):
         if not self.has_permission_to_add(request.user, workspace, request.data):
             return Response({"error": "You do not have permission to add users."}, status=status.HTTP_403_FORBIDDEN)
 
-        serializer = WorkspaceMembershipSerializer(
+        serializer = WorkspaceMemberSerializer(
             data=request.data, 
             context={"request": request, "workspace": workspace}
         )
         if serializer.is_valid():
             result = serializer.save()
-            return Response({"message": "User added to workspace"} if isinstance(result, WorkspaceMembership) else result, status=status.HTTP_201_CREATED)
+            return Response({"message": "User added to workspace"} if isinstance(result, WorkspaceMember) else result, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     def has_permission_to_add(self, user, workspace, request_data):
@@ -86,7 +86,7 @@ class AddWorkspaceMembershipAPIView(APIView):
         if workspace.owner == user:
             return True
 
-        user_membership = WorkspaceMembership.objects.filter(user=user, workspace=workspace, role__name="admin").first()
+        user_membership = WorkspaceMember.objects.filter(user=user, workspace=workspace, role__name="admin").first()
         if user_membership:
             new_role_name = request_data.get("role", "").lower()
             return new_role_name != "admin"
@@ -94,7 +94,7 @@ class AddWorkspaceMembershipAPIView(APIView):
         return False
 
 
-class DeactivateWorkspaceMembershipAPIView(APIView):
+class DeactivateWorkspaceMemberAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def patch(self, request, workspace_id):
@@ -109,9 +109,9 @@ class DeactivateWorkspaceMembershipAPIView(APIView):
             return Response({"error": "Provide either user_id or email, not both."}, status=status.HTTP_400_BAD_REQUEST)
         
         if user_id:
-            target_membership = get_object_or_404(WorkspaceMembership, workspace=workspace, user_id=user_id)
+            target_membership = get_object_or_404(WorkspaceMember, workspace=workspace, user_id=user_id)
         else:
-            target_membership = get_object_or_404(WorkspaceMembership, workspace=workspace, user__email=email)
+            target_membership = get_object_or_404(WorkspaceMember, workspace=workspace, user__email=email)
 
         if not self.has_permission_to_deactivate(request.user, workspace, target_membership):
             return Response({"error": "You do not have permission to deactivate this user."}, status=status.HTTP_403_FORBIDDEN)
@@ -129,7 +129,7 @@ class DeactivateWorkspaceMembershipAPIView(APIView):
         if workspace.owner == user:
             return True
 
-        user_membership = WorkspaceMembership.objects.filter(user=user, workspace=workspace).first()
+        user_membership = WorkspaceMember.objects.filter(user=user, workspace=workspace).first()
         if user_membership and user_membership.role and user_membership.role.name == "admin":
             # Admin can deactivate only ordinary users (not admins)
             return target_membership.role is None or target_membership.role.name not in ["admin", ]
@@ -157,9 +157,9 @@ class ChangeWorkspaceRoleAPIView(APIView):
             return Response({"error": "`new_role` is required."}, status=status.HTTP_400_BAD_REQUEST)
 
         if user_id:
-            target_membership = get_object_or_404(WorkspaceMembership, workspace=workspace, user_id=user_id)
+            target_membership = get_object_or_404(WorkspaceMember, workspace=workspace, user_id=user_id)
         else:
-            target_membership = get_object_or_404(WorkspaceMembership, workspace=workspace, user__email=email)
+            target_membership = get_object_or_404(WorkspaceMember, workspace=workspace, user__email=email)
 
         if not target_membership.is_active:
             return Response({"error": "Cannot change role of a deactivated user."}, status=status.HTTP_400_BAD_REQUEST)
@@ -183,7 +183,7 @@ class ChangeWorkspaceRoleAPIView(APIView):
         if workspace.owner == user:
             return True
 
-        user_membership = WorkspaceMembership.objects.filter(user=user, workspace=workspace, role__name="admin").first()
+        user_membership = WorkspaceMember.objects.filter(user=user, workspace=workspace, role__name="admin").first()
         if user_membership:
             return not (new_role_name == "admin" or (target_membership.role and target_membership.role.name == "admin"))
         return False
@@ -220,7 +220,7 @@ class WorkspaceDetailAPIView(APIView):
         if workspace.owner == user:
             return True
         
-        membership = WorkspaceMembership.objects.filter(user=user, workspace=workspace, role__name="admin").first()
+        membership = WorkspaceMember.objects.filter(user=user, workspace=workspace, role__name="admin").first()
         if membership:
             return True
         
@@ -231,7 +231,7 @@ class WorkspaceDetailAPIView(APIView):
         if workspace.owner == user:
             return True
 
-        is_member = WorkspaceMembership.objects.filter(user=user, workspace=workspace).exists()
+        is_member = WorkspaceMember.objects.filter(user=user, workspace=workspace).exists()
         return is_member
 
 
@@ -259,7 +259,7 @@ class WorkspaceOwnerChangeAPIView(APIView):
 
         new_owner = None
         if new_member_id:
-            membership = WorkspaceMembership.objects.filter(
+            membership = WorkspaceMember.objects.filter(
                 id=new_member_id, workspace=workspace
             ).select_related("user").first()
             if membership:
@@ -276,7 +276,7 @@ class WorkspaceOwnerChangeAPIView(APIView):
             )
 
         if not new_member_id:
-            new_owner_membership = WorkspaceMembership.objects.filter(
+            new_owner_membership = WorkspaceMember.objects.filter(
                 user=new_owner, workspace=workspace
             ).first()
             if not new_owner_membership:
@@ -286,7 +286,7 @@ class WorkspaceOwnerChangeAPIView(APIView):
                 )
 
         current_owner = workspace.owner
-        current_owner_membership = WorkspaceMembership.objects.filter(
+        current_owner_membership = WorkspaceMember.objects.filter(
             user=current_owner, workspace=workspace
         ).first()
 
@@ -297,7 +297,7 @@ class WorkspaceOwnerChangeAPIView(APIView):
                     {"error": "Admin role not found in the system."},
                     status=status.HTTP_500_INTERNAL_SERVER_ERROR
                 )
-            WorkspaceMembership.objects.create(
+            WorkspaceMember.objects.create(
                 user=current_owner,
                 workspace=workspace,
                 role=admin_role,
