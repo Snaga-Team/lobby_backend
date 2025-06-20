@@ -14,7 +14,7 @@ class MainUserAdmin(UserAdmin):
 
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal Info', {'fields': ('first_name', 'last_name')}),
+        ('Personal Info', {'fields': ('first_name', 'last_name', 'bio')}),
         ('Avatar Settings', {'fields': (
             'avatar_background', 'avatar_emoji', 
             'avatar_image', 'avatar_preview'
