@@ -1,0 +1,1202 @@
+[
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Jackson, Brown and Fuller",
+            "description": "Central body group beautiful decade design test pattern. About store high dinner.",
+            "currency": "USD",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-05-30T16:03:46",
+            "updated_at": "2025-03-13T21:11:58",
+            "owner": 88,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Payne, Jones and Ward",
+            "description": "Shake police prepare around. Space community open voice.",
+            "currency": "UAH",
+            "avatar_background": "#8e44ad",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-04-21T03:38:36",
+            "updated_at": "2025-06-12T11:31:30",
+            "owner": 85,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Richardson, Martinez and Wagner",
+            "description": "Reveal management trade despite cause. Suddenly give cell sea. Realize now prove number around suddenly idea point.",
+            "currency": "USD",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "💼",
+            "avatar_image": null,
+            "created_at": "2025-02-28T01:59:35",
+            "updated_at": "2025-04-25T19:30:16",
+            "owner": 16,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Bauer, Kane and Schmidt",
+            "description": "Budget including court Mrs use. Close single street white indicate meet laugh. Production mouth someone answer break.",
+            "currency": "EUR",
+            "avatar_background": "#3357ff",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-01-27T08:20:23",
+            "updated_at": "2025-05-04T04:56:33",
+            "owner": 61,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Lee, Mosley and Roberts",
+            "description": "Star hand exist town fast arm. Management argue learn market beat.",
+            "currency": "EUR",
+            "avatar_background": "#3357ff",
+            "avatar_emoji": "🧪",
+            "avatar_image": null,
+            "created_at": "2025-03-12T17:44:17",
+            "updated_at": "2025-04-26T04:16:15",
+            "owner": 65,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Morris-Navarro",
+            "description": "Husband attention necessary marriage music. Entire drop let until. Stop hundred Democrat point behind happy about.",
+            "currency": "EUR",
+            "avatar_background": "#3357ff",
+            "avatar_emoji": "🔧",
+            "avatar_image": null,
+            "created_at": "2025-01-23T08:57:11",
+            "updated_at": "2025-04-11T03:04:30",
+            "owner": 75,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Lane-Roberts",
+            "description": "Course fact chance operation. Save them land fear.",
+            "currency": "EUR",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "🔧",
+            "avatar_image": null,
+            "created_at": "2025-03-22T14:34:23",
+            "updated_at": "2025-02-15T23:52:44",
+            "owner": 29,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Bond-Carr",
+            "description": "Society sign visit group defense institution.\nTreatment site everything figure all. Theory item prepare respond.",
+            "currency": "UAH",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "🔧",
+            "avatar_image": null,
+            "created_at": "2025-01-27T02:23:22",
+            "updated_at": "2025-01-03T03:25:42",
+            "owner": 27,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Decker, Booker and Collins",
+            "description": "Few carry what town news. Person station explain standard method five small. Agree hot onto population.",
+            "currency": "UAH",
+            "avatar_background": "#3357ff",
+            "avatar_emoji": "💼",
+            "avatar_image": null,
+            "created_at": "2025-01-08T14:53:58",
+            "updated_at": "2025-05-01T09:40:17",
+            "owner": 1,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Vang-Hall",
+            "description": "Purpose once hot. Become magazine glass mouth.",
+            "currency": "EUR",
+            "avatar_background": "#8e44ad",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-05-12T03:13:36",
+            "updated_at": "2025-01-25T18:46:13",
+            "owner": 52,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Morales Ltd",
+            "description": "Security commercial seek. Window affect rich. Effect brother three close feel pressure bag.",
+            "currency": "USD",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-04-04T18:44:16",
+            "updated_at": "2025-01-06T03:07:55",
+            "owner": 19,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Green, Baker and Morse",
+            "description": "Police technology big behind meet.",
+            "currency": "USD",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-05-10T15:46:48",
+            "updated_at": "2025-01-28T10:42:07",
+            "owner": 99,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Davis, Rosario and Hernandez",
+            "description": "What late firm recently. Generation health show shake cold. Long become take.",
+            "currency": "USD",
+            "avatar_background": "#3357ff",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-05-12T01:59:47",
+            "updated_at": "2025-03-28T02:41:25",
+            "owner": 47,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Delgado, Cooper and Gibbs",
+            "description": "What during garden until information entire career itself. Scene ever push my course finish two.",
+            "currency": "EUR",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "🧪",
+            "avatar_image": null,
+            "created_at": "2025-04-18T15:09:24",
+            "updated_at": "2025-01-13T23:34:49",
+            "owner": 22,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Roberts, Pope and Leach",
+            "description": "Doctor move operation buy director truth personal. Pick wrong all before reality which sea. Individual dark upon.",
+            "currency": "USD",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-04-22T14:39:48",
+            "updated_at": "2025-01-11T11:16:24",
+            "owner": 99,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Smith LLC",
+            "description": "Vote century after learn put record. Yet quality director exist. Year teacher store.",
+            "currency": "EUR",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-04-27T09:59:51",
+            "updated_at": "2025-02-07T15:47:40",
+            "owner": 12,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Cox, Brooks and Duncan",
+            "description": "Official along quickly sound. Race option blood same hour our.",
+            "currency": "USD",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-03-26T06:02:37",
+            "updated_at": "2025-01-16T13:05:06",
+            "owner": 93,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Williams LLC",
+            "description": "Describe make discussion number produce. Space song bit beat. Hundred face bar someone.",
+            "currency": "USD",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "💼",
+            "avatar_image": null,
+            "created_at": "2025-01-24T09:14:28",
+            "updated_at": "2025-03-12T02:27:40",
+            "owner": 79,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Scott, Mcmillan and Petersen",
+            "description": "International way college various food agreement compare.",
+            "currency": "USD",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-02-07T19:53:02",
+            "updated_at": "2025-01-10T07:26:37",
+            "owner": 38,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Velez, Johnson and Walker",
+            "description": "Room pressure test anything.\nProgram ahead crime score amount. City artist bill floor issue himself.",
+            "currency": "UAH",
+            "avatar_background": "#8e44ad",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-04-30T06:34:48",
+            "updated_at": "2025-02-12T01:15:03",
+            "owner": 17,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Burns, Higgins and Harper",
+            "description": "Director particular dream plan anything. Last example price own. Poor not certainly tough.",
+            "currency": "EUR",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-01-30T06:40:54",
+            "updated_at": "2025-01-25T00:47:32",
+            "owner": 93,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Parker, Huynh and Clark",
+            "description": "Detail address check claim. Return government person capital.",
+            "currency": "EUR",
+            "avatar_background": "#f1c40f",
+            "avatar_emoji": "🔧",
+            "avatar_image": null,
+            "created_at": "2025-05-31T11:33:20",
+            "updated_at": "2025-02-16T23:45:05",
+            "owner": 55,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Cain and Sons",
+            "description": "With hair play wonder hear however. Collection if town green paper radio. Watch first game food ten.",
+            "currency": "EUR",
+            "avatar_background": "#3357ff",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-01-12T01:49:49",
+            "updated_at": "2025-04-05T21:06:40",
+            "owner": 72,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Steele PLC",
+            "description": "Common real federal travel. Prove new we southern itself history read. Great data song interview single deep cause.",
+            "currency": "USD",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-03-16T18:15:24",
+            "updated_at": "2025-03-13T15:50:13",
+            "owner": 28,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Harris-Lopez",
+            "description": "Doctor sing build. Later then coach thank age center degree. Effect building point sea body you low piece.",
+            "currency": "UAH",
+            "avatar_background": "#3357ff",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-01-26T13:30:21",
+            "updated_at": "2025-05-29T01:02:57",
+            "owner": 48,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Marks Inc",
+            "description": "Begin wear today. City investment score both inside car. Until office product.\nAmerican child paper great five.",
+            "currency": "USD",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-06-05T01:29:37",
+            "updated_at": "2025-04-13T06:38:29",
+            "owner": 77,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Smith, Armstrong and Burns",
+            "description": "Common place him bed night man. Ready color ever feeling hour. Strong significant discover week hold.",
+            "currency": "EUR",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "🧪",
+            "avatar_image": null,
+            "created_at": "2025-04-24T14:33:53",
+            "updated_at": "2025-01-05T01:14:41",
+            "owner": 15,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Rowland, Abbott and Lee",
+            "description": "Everyone wonder read raise pick. Week race young today place memory increase key.",
+            "currency": "EUR",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-02-09T09:23:51",
+            "updated_at": "2025-05-31T15:00:03",
+            "owner": 7,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Taylor-Gonzalez",
+            "description": "If able individual indicate since walk not. Company year serious several.",
+            "currency": "USD",
+            "avatar_background": "#f1c40f",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-05-05T06:29:50",
+            "updated_at": "2025-02-03T15:04:37",
+            "owner": 86,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Hernandez Group",
+            "description": "Control live picture rather in remain discussion computer. Other act already front relate ask coach miss.",
+            "currency": "USD",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-06-21T07:16:19",
+            "updated_at": "2025-03-12T03:08:13",
+            "owner": 33,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Foley, Clark and Johnson",
+            "description": "Race identify meet former yeah kitchen let able.",
+            "currency": "USD",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "🔧",
+            "avatar_image": null,
+            "created_at": "2025-02-28T03:13:45",
+            "updated_at": "2025-05-30T09:40:32",
+            "owner": 66,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Miller-Yang",
+            "description": "Account easy system sort stand civil. Decide field discuss energy hotel particular wife. Building know huge impact.",
+            "currency": "UAH",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-04-13T16:11:59",
+            "updated_at": "2025-04-12T15:16:45",
+            "owner": 37,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Finley, Brown and Thomas",
+            "description": "Debate both energy generation.",
+            "currency": "UAH",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "💼",
+            "avatar_image": null,
+            "created_at": "2025-05-12T19:02:40",
+            "updated_at": "2025-02-08T07:45:12",
+            "owner": 4,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Foster-Hubbard",
+            "description": "Meeting party remember. Since every strong baby attorney game. Add newspaper specific son rock some.",
+            "currency": "USD",
+            "avatar_background": "#f1c40f",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-04-05T19:08:41",
+            "updated_at": "2025-03-18T06:49:24",
+            "owner": 32,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Rogers, Anderson and Carney",
+            "description": "Turn yes ability use stand apply. Operation mission risk outside.",
+            "currency": "UAH",
+            "avatar_background": "#f1c40f",
+            "avatar_emoji": "🧪",
+            "avatar_image": null,
+            "created_at": "2025-03-21T00:42:45",
+            "updated_at": "2025-02-17T20:05:38",
+            "owner": 55,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Morgan Group",
+            "description": "Almost could second mention lot general. Type source everybody wind there discussion trouble.",
+            "currency": "EUR",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "💼",
+            "avatar_image": null,
+            "created_at": "2025-05-25T01:35:13",
+            "updated_at": "2025-01-31T00:38:09",
+            "owner": 72,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Estrada and Sons",
+            "description": "Main individual any operation. State treatment form. Than become billion.",
+            "currency": "USD",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-05-01T12:30:29",
+            "updated_at": "2025-03-08T20:18:00",
+            "owner": 98,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Hull-Estes",
+            "description": "Church trial room drug system long. Science red him answer education. Save account Congress eat reduce.",
+            "currency": "EUR",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-02-16T00:19:53",
+            "updated_at": "2025-04-24T07:29:22",
+            "owner": 36,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Maddox and Sons",
+            "description": "Nor finish customer term policy move who. Visit country consumer personal pattern. Let move course risk.",
+            "currency": "UAH",
+            "avatar_background": "#f1c40f",
+            "avatar_emoji": "🔧",
+            "avatar_image": null,
+            "created_at": "2025-01-30T15:32:28",
+            "updated_at": "2025-01-13T11:57:21",
+            "owner": 38,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Hines PLC",
+            "description": "Major throughout beyond senior catch. Interview say audience.",
+            "currency": "UAH",
+            "avatar_background": "#f1c40f",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-04-29T00:04:08",
+            "updated_at": "2025-02-24T08:47:03",
+            "owner": 30,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Ballard, Dixon and Taylor",
+            "description": "Attorney hope item race arm. Include quite country maybe.",
+            "currency": "EUR",
+            "avatar_background": "#3357ff",
+            "avatar_emoji": "🔧",
+            "avatar_image": null,
+            "created_at": "2025-05-01T03:52:15",
+            "updated_at": "2025-05-24T02:05:37",
+            "owner": 50,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Cooper-Cowan",
+            "description": "Pass matter side. Machine various or air thought. Quality certain important leg of.",
+            "currency": "EUR",
+            "avatar_background": "#f1c40f",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-04-14T11:34:13",
+            "updated_at": "2025-06-10T14:37:36",
+            "owner": 37,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Carter-Garner",
+            "description": "Land owner analysis do. Site political pressure our. Mission bad rich box industry later laugh much.",
+            "currency": "UAH",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "🧪",
+            "avatar_image": null,
+            "created_at": "2025-05-26T16:54:33",
+            "updated_at": "2025-06-02T23:48:57",
+            "owner": 57,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Harper, Golden and Miller",
+            "description": "Event direction when foot class fast. Investment bill head goal.",
+            "currency": "USD",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-02-27T13:18:56",
+            "updated_at": "2025-01-28T09:41:54",
+            "owner": 6,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Brown, Hernandez and Kaiser",
+            "description": "Record Mrs too hear shoulder one administration. Worker resource least pay piece sit.",
+            "currency": "USD",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "🔧",
+            "avatar_image": null,
+            "created_at": "2025-06-18T07:43:08",
+            "updated_at": "2025-03-28T21:57:40",
+            "owner": 55,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Thomas Ltd",
+            "description": "Answer account former population sing shake accept. Opportunity check stock forget project me.",
+            "currency": "EUR",
+            "avatar_background": "#3357ff",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-05-31T06:04:58",
+            "updated_at": "2025-03-09T01:52:05",
+            "owner": 9,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Hamilton PLC",
+            "description": "Investment newspaper role student financial travel soldier.",
+            "currency": "EUR",
+            "avatar_background": "#f1c40f",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-01-17T06:28:01",
+            "updated_at": "2025-05-10T11:28:59",
+            "owner": 10,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Johnston-Dixon",
+            "description": "Kind central general event indicate actually American. Ask hold energy hit man about address.",
+            "currency": "EUR",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "🔧",
+            "avatar_image": null,
+            "created_at": "2025-05-10T22:03:43",
+            "updated_at": "2025-04-30T07:14:24",
+            "owner": 71,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Bradshaw, Robinson and Anderson",
+            "description": "Another read food her have identify. Better must represent including this wear will rule. Month hand if box.",
+            "currency": "USD",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-04-25T02:38:59",
+            "updated_at": "2025-05-13T12:03:57",
+            "owner": 13,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Joyce-Howard",
+            "description": "Study my time check major.\nReturn forget establish of answer bit chance. News today subject pressure probably.",
+            "currency": "USD",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "🔧",
+            "avatar_image": null,
+            "created_at": "2025-03-12T00:17:56",
+            "updated_at": "2025-05-03T11:57:53",
+            "owner": 37,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Brown-Sherman",
+            "description": "Law career window condition you talk show. Modern mouth face student buy run.\nTask boy dark continue hospital.",
+            "currency": "USD",
+            "avatar_background": "#8e44ad",
+            "avatar_emoji": "🧪",
+            "avatar_image": null,
+            "created_at": "2025-01-26T00:00:26",
+            "updated_at": "2025-01-15T00:46:27",
+            "owner": 42,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Wells, Jackson and Jenkins",
+            "description": "Mention any well television. Might lose address. Responsibility fast also.",
+            "currency": "EUR",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "🧪",
+            "avatar_image": null,
+            "created_at": "2025-06-02T16:21:12",
+            "updated_at": "2025-02-10T02:05:25",
+            "owner": 77,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Stone Inc",
+            "description": "Prevent show across center right edge.",
+            "currency": "EUR",
+            "avatar_background": "#3357ff",
+            "avatar_emoji": "💼",
+            "avatar_image": null,
+            "created_at": "2025-02-06T16:41:50",
+            "updated_at": "2025-04-04T10:29:56",
+            "owner": 62,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Morton-Sullivan",
+            "description": "Read national hot. Central window author none prepare. Direction son charge week yard issue care.",
+            "currency": "USD",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-05-02T21:03:35",
+            "updated_at": "2025-03-04T15:51:02",
+            "owner": 29,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Campbell Group",
+            "description": "Program study career room card sort work. Resource evening hair of.",
+            "currency": "EUR",
+            "avatar_background": "#f1c40f",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-05-27T13:30:13",
+            "updated_at": "2025-03-31T18:38:51",
+            "owner": 91,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Osborne Ltd",
+            "description": "Get system help happen wish. Defense quality director beat easy pattern week north. See learn letter approach others.",
+            "currency": "UAH",
+            "avatar_background": "#3357ff",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-02-23T08:45:17",
+            "updated_at": "2025-01-01T12:16:18",
+            "owner": 15,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Chavez-Warner",
+            "description": "Describe sound one ok also then couple. Difficult can top system feeling try.",
+            "currency": "UAH",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "🧪",
+            "avatar_image": null,
+            "created_at": "2025-03-17T15:36:52",
+            "updated_at": "2025-02-19T22:27:24",
+            "owner": 75,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Miller-Boyer",
+            "description": "Arrive boy product center action. Draw tough answer sound win mouth. May research special check.",
+            "currency": "USD",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-02-26T03:54:50",
+            "updated_at": "2025-05-25T07:58:50",
+            "owner": 98,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Rodriguez-Howard",
+            "description": "Far foot behavior job open language under.\nThose product property pass he key exactly.",
+            "currency": "EUR",
+            "avatar_background": "#f1c40f",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-01-02T11:35:54",
+            "updated_at": "2025-01-09T11:00:09",
+            "owner": 83,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Oneal and Sons",
+            "description": "Be account score these. How behavior special plan. Fill way ball employee available loss later.",
+            "currency": "USD",
+            "avatar_background": "#8e44ad",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-05-09T07:18:36",
+            "updated_at": "2025-04-05T15:29:03",
+            "owner": 95,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Gonzalez-Perez",
+            "description": "Skin wall huge team most dream get parent. Old friend similar arrive.",
+            "currency": "UAH",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-01-28T11:07:20",
+            "updated_at": "2025-05-02T20:13:23",
+            "owner": 40,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Hawkins-Lee",
+            "description": "Face argue system tell issue recently. Stuff media give radio.",
+            "currency": "USD",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-06-07T00:27:03",
+            "updated_at": "2025-05-13T14:20:04",
+            "owner": 93,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Matthews PLC",
+            "description": "Front central before. Sound anything later.\nBegin town allow Mrs budget where great. Staff risk white policy.",
+            "currency": "UAH",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "🚀",
+            "avatar_image": null,
+            "created_at": "2025-04-27T00:47:14",
+            "updated_at": "2025-02-22T17:37:38",
+            "owner": 29,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Ramirez, Gordon and Cummings",
+            "description": "Ever center enter across itself pay especially. Age reduce form water eight low last it. Large walk personal left.",
+            "currency": "UAH",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "🧪",
+            "avatar_image": null,
+            "created_at": "2025-03-08T21:20:16",
+            "updated_at": "2025-04-12T15:58:12",
+            "owner": 42,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Hawkins-Patel",
+            "description": "Different including simply edge fly friend less.",
+            "currency": "USD",
+            "avatar_background": "#8e44ad",
+            "avatar_emoji": "🔧",
+            "avatar_image": null,
+            "created_at": "2025-01-30T19:41:10",
+            "updated_at": "2025-02-25T22:44:11",
+            "owner": 22,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Anderson Inc",
+            "description": "Performance high still building debate. Simple despite car try.",
+            "currency": "EUR",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "🧪",
+            "avatar_image": null,
+            "created_at": "2025-01-09T14:41:07",
+            "updated_at": "2025-04-11T14:44:45",
+            "owner": 62,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Garza Ltd",
+            "description": "Current design modern body area contain term. Fear court drive by economy watch.",
+            "currency": "USD",
+            "avatar_background": "#8e44ad",
+            "avatar_emoji": "🔧",
+            "avatar_image": null,
+            "created_at": "2025-05-29T00:04:58",
+            "updated_at": "2025-06-13T07:25:14",
+            "owner": 59,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Boyer Inc",
+            "description": "Herself keep Democrat film prevent personal. Determine participant plant campaign national suffer step.",
+            "currency": "UAH",
+            "avatar_background": "#f1c40f",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-05-18T07:10:11",
+            "updated_at": "2025-02-18T16:27:56",
+            "owner": 11,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Peterson PLC",
+            "description": "Pull loss apply begin red many rate. Hospital include indeed fast commercial hundred purpose.",
+            "currency": "EUR",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "🧪",
+            "avatar_image": null,
+            "created_at": "2025-04-26T21:31:43",
+            "updated_at": "2025-02-21T23:47:25",
+            "owner": 99,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Houston-Dunlap",
+            "description": "Over provide country authority manage. Whole decision law through heavy.",
+            "currency": "USD",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-04-20T02:01:45",
+            "updated_at": "2025-03-28T23:21:13",
+            "owner": 95,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Anderson, Mcdonald and Webb",
+            "description": "Lay four evening build foot. Mr become open majority indeed that century. Gas child available church entire born.",
+            "currency": "USD",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "💼",
+            "avatar_image": null,
+            "created_at": "2025-04-22T13:14:52",
+            "updated_at": "2025-01-03T07:52:56",
+            "owner": 86,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Reeves and Sons",
+            "description": "Win affect notice pass. May something every attorney mind.",
+            "currency": "USD",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "💼",
+            "avatar_image": null,
+            "created_at": "2025-04-23T17:44:59",
+            "updated_at": "2025-04-03T16:26:23",
+            "owner": 51,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Miller-Frye",
+            "description": "Bad any mention very watch relationship nation. From less professor direction large. By front month matter.",
+            "currency": "UAH",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "💼",
+            "avatar_image": null,
+            "created_at": "2025-04-26T14:09:35",
+            "updated_at": "2025-03-11T15:21:06",
+            "owner": 38,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Estes LLC",
+            "description": "Serve then edge look again must. Indicate successful opportunity structure. Like trip open song drug picture seem.",
+            "currency": "USD",
+            "avatar_background": "#f1c40f",
+            "avatar_emoji": "🧪",
+            "avatar_image": null,
+            "created_at": "2025-03-28T00:03:13",
+            "updated_at": "2025-01-28T11:13:48",
+            "owner": 29,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Cox-Chapman",
+            "description": "Police weight you church bag lose window. Enjoy senior clearly able media.",
+            "currency": "EUR",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "💼",
+            "avatar_image": null,
+            "created_at": "2025-05-11T20:29:46",
+            "updated_at": "2025-06-11T10:43:27",
+            "owner": 61,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Sullivan LLC",
+            "description": "North expect half skill population onto. Strategy sister book important five Democrat.",
+            "currency": "USD",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-03-30T04:36:49",
+            "updated_at": "2025-05-14T12:45:10",
+            "owner": 85,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Villa, Miller and Carroll",
+            "description": "Wait rule phone movie research next try. Social physical quality above. Stage key record born population computer.",
+            "currency": "UAH",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "💼",
+            "avatar_image": null,
+            "created_at": "2025-03-29T05:42:05",
+            "updated_at": "2025-04-19T01:39:43",
+            "owner": 83,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Stokes Ltd",
+            "description": "Exist trade social drop woman. Again imagine provide less reduce should with.",
+            "currency": "UAH",
+            "avatar_background": "#ff5733",
+            "avatar_emoji": "📊",
+            "avatar_image": null,
+            "created_at": "2025-05-28T20:21:56",
+            "updated_at": "2025-03-06T09:10:48",
+            "owner": 11,
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Acosta and Sons",
+            "description": "Population establish why war national evening site. College story national person effort. Network fall break data.",
+            "currency": "USD",
+            "avatar_background": "#ffffff",
+            "avatar_emoji": "💼",
+            "avatar_image": null,
+            "created_at": "2025-01-30T11:08:48",
+            "updated_at": "2025-01-03T04:58:51",
+            "owner": 92,
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspace",
+        "fields": {
+            "name": "Raymond-Anderson",
+            "description": "Other strategy exist pull. Meet draw hope knowledge throw.",
+            "currency": "UAH",
+            "avatar_background": "#33ff57",
+            "avatar_emoji": "📦",
+            "avatar_image": null,
+            "created_at": "2025-03-10T18:16:14",
+            "updated_at": "2025-04-18T19:52:57",
+            "owner": 63,
+            "is_active": true
+        }
+    }
+]

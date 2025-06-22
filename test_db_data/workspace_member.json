@@ -1,0 +1,5787 @@
+[
+    {
+        "model": "workspace.workspacemember",
+        "pk": 1,
+        "fields": {
+            "user": 83,
+            "workspace": 1,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 115.47,
+            "joined_at": "2025-05-13T01:25:01",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 2,
+        "fields": {
+            "user": 48,
+            "workspace": 1,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 136.84,
+            "joined_at": "2025-02-07T01:50:36",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 3,
+        "fields": {
+            "user": 32,
+            "workspace": 1,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 101.12,
+            "joined_at": "2025-03-01T14:02:13",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 4,
+        "fields": {
+            "user": 24,
+            "workspace": 1,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 44.97,
+            "joined_at": "2025-01-03T23:31:16",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 5,
+        "fields": {
+            "user": 23,
+            "workspace": 1,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 57.19,
+            "joined_at": "2025-05-10T12:16:39",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 6,
+        "fields": {
+            "user": 2,
+            "workspace": 1,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 149.09,
+            "joined_at": "2025-02-19T13:22:15",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 7,
+        "fields": {
+            "user": 82,
+            "workspace": 1,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 62.98,
+            "joined_at": "2025-02-11T07:40:10",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 8,
+        "fields": {
+            "user": 38,
+            "workspace": 1,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 115.37,
+            "joined_at": "2025-04-04T12:27:45",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 9,
+        "fields": {
+            "user": 52,
+            "workspace": 1,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 49.49,
+            "joined_at": "2025-05-02T18:29:22",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 10,
+        "fields": {
+            "user": 8,
+            "workspace": 1,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 63.9,
+            "joined_at": "2025-02-04T01:41:41",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 11,
+        "fields": {
+            "user": 11,
+            "workspace": 2,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 57.11,
+            "joined_at": "2025-05-16T00:45:21",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 12,
+        "fields": {
+            "user": 18,
+            "workspace": 2,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 82.36,
+            "joined_at": "2025-02-09T08:18:22",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 13,
+        "fields": {
+            "user": 53,
+            "workspace": 2,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 146.88,
+            "joined_at": "2025-01-13T21:28:57",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 14,
+        "fields": {
+            "user": 89,
+            "workspace": 2,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 118.71,
+            "joined_at": "2025-03-01T14:31:27",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 15,
+        "fields": {
+            "user": 39,
+            "workspace": 2,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 49.25,
+            "joined_at": "2025-05-03T02:07:45",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 16,
+        "fields": {
+            "user": 74,
+            "workspace": 3,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 23.73,
+            "joined_at": "2025-05-18T13:14:47",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 17,
+        "fields": {
+            "user": 49,
+            "workspace": 4,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 44.51,
+            "joined_at": "2025-06-02T07:44:12",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 18,
+        "fields": {
+            "user": 51,
+            "workspace": 5,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 94.29,
+            "joined_at": "2025-02-26T04:27:13",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 19,
+        "fields": {
+            "user": 68,
+            "workspace": 5,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 88.03,
+            "joined_at": "2025-02-18T02:19:07",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 20,
+        "fields": {
+            "user": 74,
+            "workspace": 5,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 71.11,
+            "joined_at": "2025-06-09T11:29:08",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 21,
+        "fields": {
+            "user": 15,
+            "workspace": 5,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 126.12,
+            "joined_at": "2025-01-13T22:11:56",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 22,
+        "fields": {
+            "user": 38,
+            "workspace": 6,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 147.61,
+            "joined_at": "2025-04-06T21:42:07",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 23,
+        "fields": {
+            "user": 43,
+            "workspace": 6,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 75.99,
+            "joined_at": "2025-03-08T16:56:44",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 24,
+        "fields": {
+            "user": 94,
+            "workspace": 6,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 141.54,
+            "joined_at": "2025-03-22T19:26:11",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 25,
+        "fields": {
+            "user": 42,
+            "workspace": 6,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 96.27,
+            "joined_at": "2025-03-11T21:06:36",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 26,
+        "fields": {
+            "user": 46,
+            "workspace": 6,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 147.62,
+            "joined_at": "2025-02-06T14:28:32",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 27,
+        "fields": {
+            "user": 88,
+            "workspace": 6,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 113.38,
+            "joined_at": "2025-06-04T19:48:47",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 28,
+        "fields": {
+            "user": 19,
+            "workspace": 7,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 130.77,
+            "joined_at": "2025-03-19T14:06:17",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 29,
+        "fields": {
+            "user": 30,
+            "workspace": 7,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 101.14,
+            "joined_at": "2025-03-31T08:38:54",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 30,
+        "fields": {
+            "user": 39,
+            "workspace": 7,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 16.55,
+            "joined_at": "2025-02-12T01:13:04",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 31,
+        "fields": {
+            "user": 36,
+            "workspace": 7,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 51.98,
+            "joined_at": "2025-03-30T17:46:49",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 32,
+        "fields": {
+            "user": 25,
+            "workspace": 7,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 99.01,
+            "joined_at": "2025-01-15T19:36:13",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 33,
+        "fields": {
+            "user": 75,
+            "workspace": 7,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 29.91,
+            "joined_at": "2025-04-16T03:24:16",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 34,
+        "fields": {
+            "user": 38,
+            "workspace": 7,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 10.37,
+            "joined_at": "2025-03-11T01:43:38",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 35,
+        "fields": {
+            "user": 96,
+            "workspace": 7,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 33.68,
+            "joined_at": "2025-01-15T01:38:36",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 36,
+        "fields": {
+            "user": 67,
+            "workspace": 7,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 10.09,
+            "joined_at": "2025-06-11T13:08:45",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 37,
+        "fields": {
+            "user": 61,
+            "workspace": 7,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 15.35,
+            "joined_at": "2025-02-07T03:31:38",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 38,
+        "fields": {
+            "user": 31,
+            "workspace": 8,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 149.69,
+            "joined_at": "2025-02-04T15:48:55",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 39,
+        "fields": {
+            "user": 41,
+            "workspace": 8,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 121.43,
+            "joined_at": "2025-03-17T01:49:31",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 40,
+        "fields": {
+            "user": 3,
+            "workspace": 8,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 126.18,
+            "joined_at": "2025-05-19T01:39:24",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 41,
+        "fields": {
+            "user": 90,
+            "workspace": 8,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 39.11,
+            "joined_at": "2025-06-17T20:45:04",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 42,
+        "fields": {
+            "user": 86,
+            "workspace": 8,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 134.13,
+            "joined_at": "2025-05-17T10:37:59",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 43,
+        "fields": {
+            "user": 20,
+            "workspace": 8,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 115.9,
+            "joined_at": "2025-04-18T19:52:41",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 44,
+        "fields": {
+            "user": 23,
+            "workspace": 8,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 110.22,
+            "joined_at": "2025-02-14T19:54:08",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 45,
+        "fields": {
+            "user": 58,
+            "workspace": 8,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 135.57,
+            "joined_at": "2025-01-23T06:19:30",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 46,
+        "fields": {
+            "user": 76,
+            "workspace": 8,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 55.21,
+            "joined_at": "2025-05-08T12:41:43",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 47,
+        "fields": {
+            "user": 31,
+            "workspace": 9,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 100.93,
+            "joined_at": "2025-02-16T05:08:31",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 48,
+        "fields": {
+            "user": 54,
+            "workspace": 9,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 121.11,
+            "joined_at": "2025-06-10T05:34:09",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 49,
+        "fields": {
+            "user": 96,
+            "workspace": 9,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 39.1,
+            "joined_at": "2025-03-28T09:00:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 50,
+        "fields": {
+            "user": 68,
+            "workspace": 9,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 87.67,
+            "joined_at": "2025-01-03T16:04:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 51,
+        "fields": {
+            "user": 60,
+            "workspace": 9,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 131.58,
+            "joined_at": "2025-02-02T20:55:46",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 52,
+        "fields": {
+            "user": 76,
+            "workspace": 9,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 147.28,
+            "joined_at": "2025-02-20T04:54:00",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 53,
+        "fields": {
+            "user": 56,
+            "workspace": 9,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 134.7,
+            "joined_at": "2025-04-25T16:03:54",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 54,
+        "fields": {
+            "user": 37,
+            "workspace": 9,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 98.74,
+            "joined_at": "2025-02-27T14:37:05",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 55,
+        "fields": {
+            "user": 25,
+            "workspace": 9,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 82.42,
+            "joined_at": "2025-03-31T17:55:40",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 56,
+        "fields": {
+            "user": 90,
+            "workspace": 10,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 43.95,
+            "joined_at": "2025-01-04T21:30:14",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 57,
+        "fields": {
+            "user": 6,
+            "workspace": 10,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 49.43,
+            "joined_at": "2025-04-08T15:08:58",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 58,
+        "fields": {
+            "user": 65,
+            "workspace": 10,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 147.26,
+            "joined_at": "2025-06-16T08:36:15",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 59,
+        "fields": {
+            "user": 63,
+            "workspace": 10,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 11.07,
+            "joined_at": "2025-01-11T00:24:35",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 60,
+        "fields": {
+            "user": 24,
+            "workspace": 10,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 80.53,
+            "joined_at": "2025-06-01T17:53:32",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 61,
+        "fields": {
+            "user": 37,
+            "workspace": 10,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 100.59,
+            "joined_at": "2025-02-23T04:26:04",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 62,
+        "fields": {
+            "user": 27,
+            "workspace": 10,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 112.92,
+            "joined_at": "2025-05-20T00:11:36",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 63,
+        "fields": {
+            "user": 98,
+            "workspace": 10,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 117.24,
+            "joined_at": "2025-04-25T02:19:02",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 64,
+        "fields": {
+            "user": 16,
+            "workspace": 11,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 122.26,
+            "joined_at": "2025-06-08T06:18:29",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 65,
+        "fields": {
+            "user": 91,
+            "workspace": 11,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 26.11,
+            "joined_at": "2025-01-15T15:53:50",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 66,
+        "fields": {
+            "user": 82,
+            "workspace": 11,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 24.16,
+            "joined_at": "2025-03-30T18:25:45",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 67,
+        "fields": {
+            "user": 95,
+            "workspace": 11,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 145.18,
+            "joined_at": "2025-03-09T07:04:42",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 68,
+        "fields": {
+            "user": 12,
+            "workspace": 11,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 71.54,
+            "joined_at": "2025-01-14T16:01:38",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 69,
+        "fields": {
+            "user": 54,
+            "workspace": 11,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 15.64,
+            "joined_at": "2025-02-06T13:37:11",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 70,
+        "fields": {
+            "user": 24,
+            "workspace": 11,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 141.0,
+            "joined_at": "2025-02-16T08:14:04",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 71,
+        "fields": {
+            "user": 61,
+            "workspace": 11,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 144.4,
+            "joined_at": "2025-03-07T02:38:58",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 72,
+        "fields": {
+            "user": 44,
+            "workspace": 11,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 70.68,
+            "joined_at": "2025-05-18T06:53:41",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 73,
+        "fields": {
+            "user": 7,
+            "workspace": 11,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 44.48,
+            "joined_at": "2025-04-05T15:41:45",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 74,
+        "fields": {
+            "user": 34,
+            "workspace": 12,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 66.72,
+            "joined_at": "2025-01-24T11:58:49",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 75,
+        "fields": {
+            "user": 15,
+            "workspace": 14,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 56.25,
+            "joined_at": "2025-05-16T13:47:51",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 76,
+        "fields": {
+            "user": 79,
+            "workspace": 14,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 147.68,
+            "joined_at": "2025-04-08T14:40:55",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 77,
+        "fields": {
+            "user": 21,
+            "workspace": 14,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 148.04,
+            "joined_at": "2025-04-30T10:26:26",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 78,
+        "fields": {
+            "user": 51,
+            "workspace": 14,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 120.62,
+            "joined_at": "2025-01-15T14:45:17",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 79,
+        "fields": {
+            "user": 7,
+            "workspace": 14,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 24.54,
+            "joined_at": "2025-06-10T03:52:22",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 80,
+        "fields": {
+            "user": 2,
+            "workspace": 14,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 33.82,
+            "joined_at": "2025-02-20T04:39:30",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 81,
+        "fields": {
+            "user": 52,
+            "workspace": 14,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 147.55,
+            "joined_at": "2025-05-07T07:59:28",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 82,
+        "fields": {
+            "user": 61,
+            "workspace": 14,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 84.56,
+            "joined_at": "2025-04-17T00:41:30",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 83,
+        "fields": {
+            "user": 17,
+            "workspace": 14,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 125.35,
+            "joined_at": "2025-02-01T22:00:11",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 84,
+        "fields": {
+            "user": 99,
+            "workspace": 14,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 133.05,
+            "joined_at": "2025-05-04T18:21:59",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 85,
+        "fields": {
+            "user": 13,
+            "workspace": 15,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 139.22,
+            "joined_at": "2025-05-13T17:12:28",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 86,
+        "fields": {
+            "user": 95,
+            "workspace": 15,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 33.13,
+            "joined_at": "2025-05-21T12:40:18",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 87,
+        "fields": {
+            "user": 57,
+            "workspace": 15,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 17.46,
+            "joined_at": "2025-05-10T03:07:19",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 88,
+        "fields": {
+            "user": 22,
+            "workspace": 15,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 12.17,
+            "joined_at": "2025-03-07T23:20:57",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 89,
+        "fields": {
+            "user": 17,
+            "workspace": 15,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 130.08,
+            "joined_at": "2025-04-07T19:57:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 90,
+        "fields": {
+            "user": 35,
+            "workspace": 15,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 146.9,
+            "joined_at": "2025-04-02T07:59:23",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 91,
+        "fields": {
+            "user": 26,
+            "workspace": 15,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 127.11,
+            "joined_at": "2025-02-22T17:12:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 92,
+        "fields": {
+            "user": 57,
+            "workspace": 16,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 46.38,
+            "joined_at": "2025-05-03T05:22:51",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 93,
+        "fields": {
+            "user": 86,
+            "workspace": 16,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 48.74,
+            "joined_at": "2025-03-15T07:31:27",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 94,
+        "fields": {
+            "user": 76,
+            "workspace": 16,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 128.36,
+            "joined_at": "2025-05-16T18:28:06",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 95,
+        "fields": {
+            "user": 100,
+            "workspace": 16,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 82.63,
+            "joined_at": "2025-03-04T19:26:37",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 96,
+        "fields": {
+            "user": 42,
+            "workspace": 16,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 101.1,
+            "joined_at": "2025-03-02T03:17:44",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 97,
+        "fields": {
+            "user": 21,
+            "workspace": 16,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 86.94,
+            "joined_at": "2025-05-05T02:06:34",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 98,
+        "fields": {
+            "user": 98,
+            "workspace": 16,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 58.71,
+            "joined_at": "2025-04-09T08:55:17",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 99,
+        "fields": {
+            "user": 98,
+            "workspace": 17,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 56.65,
+            "joined_at": "2025-01-15T12:03:06",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 100,
+        "fields": {
+            "user": 99,
+            "workspace": 19,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 41.16,
+            "joined_at": "2025-05-28T13:06:12",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 101,
+        "fields": {
+            "user": 18,
+            "workspace": 19,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 105.01,
+            "joined_at": "2025-06-20T13:01:05",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 102,
+        "fields": {
+            "user": 79,
+            "workspace": 19,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 131.35,
+            "joined_at": "2025-05-31T05:36:44",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 103,
+        "fields": {
+            "user": 44,
+            "workspace": 19,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 61.34,
+            "joined_at": "2025-05-01T21:36:51",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 104,
+        "fields": {
+            "user": 50,
+            "workspace": 19,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 120.56,
+            "joined_at": "2025-04-11T15:59:40",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 105,
+        "fields": {
+            "user": 68,
+            "workspace": 19,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 95.54,
+            "joined_at": "2025-05-10T08:35:27",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 106,
+        "fields": {
+            "user": 13,
+            "workspace": 19,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 77.64,
+            "joined_at": "2025-05-28T07:24:24",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 107,
+        "fields": {
+            "user": 5,
+            "workspace": 19,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 84.63,
+            "joined_at": "2025-02-20T04:57:22",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 108,
+        "fields": {
+            "user": 6,
+            "workspace": 19,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 53.44,
+            "joined_at": "2025-01-15T14:17:51",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 109,
+        "fields": {
+            "user": 9,
+            "workspace": 20,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 17.31,
+            "joined_at": "2025-03-28T05:30:43",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 110,
+        "fields": {
+            "user": 65,
+            "workspace": 20,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 105.85,
+            "joined_at": "2025-02-05T01:53:56",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 111,
+        "fields": {
+            "user": 18,
+            "workspace": 20,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 127.1,
+            "joined_at": "2025-03-27T13:16:26",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 112,
+        "fields": {
+            "user": 61,
+            "workspace": 20,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 56.06,
+            "joined_at": "2025-03-24T18:40:04",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 113,
+        "fields": {
+            "user": 46,
+            "workspace": 20,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 145.93,
+            "joined_at": "2025-04-17T02:47:58",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 114,
+        "fields": {
+            "user": 31,
+            "workspace": 20,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 86.97,
+            "joined_at": "2025-04-14T23:08:24",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 115,
+        "fields": {
+            "user": 14,
+            "workspace": 20,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 45.42,
+            "joined_at": "2025-05-28T05:14:50",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 116,
+        "fields": {
+            "user": 81,
+            "workspace": 21,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 55.9,
+            "joined_at": "2025-03-28T11:54:05",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 117,
+        "fields": {
+            "user": 71,
+            "workspace": 21,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 91.68,
+            "joined_at": "2025-02-27T17:24:55",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 118,
+        "fields": {
+            "user": 84,
+            "workspace": 21,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 125.0,
+            "joined_at": "2025-04-14T12:04:40",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 119,
+        "fields": {
+            "user": 40,
+            "workspace": 21,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 69.34,
+            "joined_at": "2025-02-28T16:22:30",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 120,
+        "fields": {
+            "user": 79,
+            "workspace": 21,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 135.1,
+            "joined_at": "2025-04-22T06:36:51",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 121,
+        "fields": {
+            "user": 92,
+            "workspace": 21,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 42.7,
+            "joined_at": "2025-02-09T04:48:04",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 122,
+        "fields": {
+            "user": 54,
+            "workspace": 21,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 120.2,
+            "joined_at": "2025-06-09T12:57:16",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 123,
+        "fields": {
+            "user": 7,
+            "workspace": 21,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 15.48,
+            "joined_at": "2025-05-19T12:44:58",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 124,
+        "fields": {
+            "user": 32,
+            "workspace": 21,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 51.15,
+            "joined_at": "2025-03-24T02:12:09",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 125,
+        "fields": {
+            "user": 68,
+            "workspace": 23,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 91.62,
+            "joined_at": "2025-05-18T20:47:36",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 126,
+        "fields": {
+            "user": 47,
+            "workspace": 23,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 140.97,
+            "joined_at": "2025-01-22T09:56:47",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 127,
+        "fields": {
+            "user": 90,
+            "workspace": 23,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 123.02,
+            "joined_at": "2025-02-12T13:03:03",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 128,
+        "fields": {
+            "user": 37,
+            "workspace": 24,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 102.28,
+            "joined_at": "2025-04-18T14:57:55",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 129,
+        "fields": {
+            "user": 73,
+            "workspace": 24,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 74.98,
+            "joined_at": "2025-03-05T23:09:59",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 130,
+        "fields": {
+            "user": 63,
+            "workspace": 24,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 31.04,
+            "joined_at": "2025-04-15T14:07:33",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 131,
+        "fields": {
+            "user": 75,
+            "workspace": 24,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 76.56,
+            "joined_at": "2025-04-24T12:49:30",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 132,
+        "fields": {
+            "user": 54,
+            "workspace": 24,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 127.37,
+            "joined_at": "2025-03-10T06:42:18",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 133,
+        "fields": {
+            "user": 89,
+            "workspace": 24,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 26.96,
+            "joined_at": "2025-04-13T06:34:44",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 134,
+        "fields": {
+            "user": 14,
+            "workspace": 24,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 23.36,
+            "joined_at": "2025-06-02T19:42:10",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 135,
+        "fields": {
+            "user": 42,
+            "workspace": 24,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 11.3,
+            "joined_at": "2025-05-04T00:16:39",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 136,
+        "fields": {
+            "user": 74,
+            "workspace": 24,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 94.21,
+            "joined_at": "2025-06-19T17:51:58",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 137,
+        "fields": {
+            "user": 2,
+            "workspace": 24,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 148.06,
+            "joined_at": "2025-02-23T20:19:28",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 138,
+        "fields": {
+            "user": 41,
+            "workspace": 25,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 51.84,
+            "joined_at": "2025-05-27T08:21:32",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 139,
+        "fields": {
+            "user": 9,
+            "workspace": 25,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 73.0,
+            "joined_at": "2025-02-05T12:55:39",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 140,
+        "fields": {
+            "user": 39,
+            "workspace": 26,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 96.18,
+            "joined_at": "2025-04-16T00:32:29",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 141,
+        "fields": {
+            "user": 10,
+            "workspace": 26,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 57.39,
+            "joined_at": "2025-05-05T08:07:53",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 142,
+        "fields": {
+            "user": 58,
+            "workspace": 26,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 26.44,
+            "joined_at": "2025-02-27T23:46:27",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 143,
+        "fields": {
+            "user": 98,
+            "workspace": 26,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 34.14,
+            "joined_at": "2025-05-26T15:21:51",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 144,
+        "fields": {
+            "user": 100,
+            "workspace": 26,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 14.41,
+            "joined_at": "2025-05-12T12:41:52",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 145,
+        "fields": {
+            "user": 14,
+            "workspace": 26,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 88.19,
+            "joined_at": "2025-05-11T14:56:14",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 146,
+        "fields": {
+            "user": 99,
+            "workspace": 26,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 11.43,
+            "joined_at": "2025-01-10T05:27:26",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 147,
+        "fields": {
+            "user": 91,
+            "workspace": 26,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 65.66,
+            "joined_at": "2025-03-12T23:48:17",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 148,
+        "fields": {
+            "user": 12,
+            "workspace": 26,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 10.51,
+            "joined_at": "2025-01-21T03:13:23",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 149,
+        "fields": {
+            "user": 17,
+            "workspace": 27,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 46.36,
+            "joined_at": "2025-01-01T02:44:46",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 150,
+        "fields": {
+            "user": 19,
+            "workspace": 27,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 116.68,
+            "joined_at": "2025-04-22T14:12:03",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 151,
+        "fields": {
+            "user": 28,
+            "workspace": 27,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 27.7,
+            "joined_at": "2025-03-29T11:21:50",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 152,
+        "fields": {
+            "user": 4,
+            "workspace": 27,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 61.43,
+            "joined_at": "2025-04-01T09:12:26",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 153,
+        "fields": {
+            "user": 42,
+            "workspace": 27,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 31.02,
+            "joined_at": "2025-03-11T01:19:24",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 154,
+        "fields": {
+            "user": 81,
+            "workspace": 27,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 135.46,
+            "joined_at": "2025-04-15T17:37:11",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 155,
+        "fields": {
+            "user": 79,
+            "workspace": 27,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 74.32,
+            "joined_at": "2025-06-01T18:22:48",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 156,
+        "fields": {
+            "user": 44,
+            "workspace": 27,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 125.44,
+            "joined_at": "2025-01-11T13:36:56",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 157,
+        "fields": {
+            "user": 27,
+            "workspace": 28,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 113.9,
+            "joined_at": "2025-01-21T04:15:10",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 158,
+        "fields": {
+            "user": 30,
+            "workspace": 28,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 47.87,
+            "joined_at": "2025-02-08T02:02:27",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 159,
+        "fields": {
+            "user": 53,
+            "workspace": 28,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 120.0,
+            "joined_at": "2025-01-13T18:06:38",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 160,
+        "fields": {
+            "user": 3,
+            "workspace": 28,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 25.04,
+            "joined_at": "2025-04-18T13:16:25",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 161,
+        "fields": {
+            "user": 17,
+            "workspace": 28,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 107.2,
+            "joined_at": "2025-03-12T10:58:37",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 162,
+        "fields": {
+            "user": 48,
+            "workspace": 28,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 138.7,
+            "joined_at": "2025-02-08T12:25:17",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 163,
+        "fields": {
+            "user": 10,
+            "workspace": 28,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 76.62,
+            "joined_at": "2025-03-21T10:37:26",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 164,
+        "fields": {
+            "user": 87,
+            "workspace": 28,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 125.22,
+            "joined_at": "2025-02-22T21:53:52",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 165,
+        "fields": {
+            "user": 16,
+            "workspace": 29,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 24.65,
+            "joined_at": "2025-01-04T07:53:45",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 166,
+        "fields": {
+            "user": 93,
+            "workspace": 29,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 136.42,
+            "joined_at": "2025-03-22T17:39:05",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 167,
+        "fields": {
+            "user": 62,
+            "workspace": 29,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 107.68,
+            "joined_at": "2025-04-12T00:10:45",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 168,
+        "fields": {
+            "user": 5,
+            "workspace": 29,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 138.29,
+            "joined_at": "2025-01-28T06:45:02",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 169,
+        "fields": {
+            "user": 15,
+            "workspace": 29,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 147.25,
+            "joined_at": "2025-03-08T23:25:09",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 170,
+        "fields": {
+            "user": 38,
+            "workspace": 29,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 127.66,
+            "joined_at": "2025-03-16T14:59:20",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 171,
+        "fields": {
+            "user": 25,
+            "workspace": 29,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 118.14,
+            "joined_at": "2025-04-18T12:18:12",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 172,
+        "fields": {
+            "user": 86,
+            "workspace": 30,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 118.9,
+            "joined_at": "2025-01-08T21:16:52",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 173,
+        "fields": {
+            "user": 11,
+            "workspace": 30,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 24.7,
+            "joined_at": "2025-02-18T13:19:40",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 174,
+        "fields": {
+            "user": 55,
+            "workspace": 30,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 126.63,
+            "joined_at": "2025-05-04T00:57:18",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 175,
+        "fields": {
+            "user": 13,
+            "workspace": 31,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 74.62,
+            "joined_at": "2025-05-05T02:04:56",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 176,
+        "fields": {
+            "user": 59,
+            "workspace": 31,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 46.07,
+            "joined_at": "2025-02-25T00:22:50",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 177,
+        "fields": {
+            "user": 12,
+            "workspace": 31,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 127.24,
+            "joined_at": "2025-04-23T05:24:38",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 178,
+        "fields": {
+            "user": 89,
+            "workspace": 31,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 92.07,
+            "joined_at": "2025-04-09T17:37:16",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 179,
+        "fields": {
+            "user": 69,
+            "workspace": 31,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 24.04,
+            "joined_at": "2025-02-18T22:36:55",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 180,
+        "fields": {
+            "user": 41,
+            "workspace": 31,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 72.01,
+            "joined_at": "2025-06-17T04:43:56",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 181,
+        "fields": {
+            "user": 53,
+            "workspace": 31,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 35.02,
+            "joined_at": "2025-01-30T14:11:00",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 182,
+        "fields": {
+            "user": 34,
+            "workspace": 32,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 41.98,
+            "joined_at": "2025-04-08T19:17:09",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 183,
+        "fields": {
+            "user": 15,
+            "workspace": 32,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 122.63,
+            "joined_at": "2025-01-31T23:03:02",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 184,
+        "fields": {
+            "user": 100,
+            "workspace": 32,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 39.84,
+            "joined_at": "2025-05-14T14:53:48",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 185,
+        "fields": {
+            "user": 38,
+            "workspace": 33,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 30.14,
+            "joined_at": "2025-05-07T00:28:04",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 186,
+        "fields": {
+            "user": 20,
+            "workspace": 33,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 115.17,
+            "joined_at": "2025-05-27T20:39:21",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 187,
+        "fields": {
+            "user": 21,
+            "workspace": 33,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 63.62,
+            "joined_at": "2025-02-15T07:55:53",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 188,
+        "fields": {
+            "user": 14,
+            "workspace": 33,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 75.17,
+            "joined_at": "2025-05-20T17:48:26",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 189,
+        "fields": {
+            "user": 30,
+            "workspace": 33,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 51.85,
+            "joined_at": "2025-06-16T01:23:38",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 190,
+        "fields": {
+            "user": 37,
+            "workspace": 34,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 125.49,
+            "joined_at": "2025-01-07T01:40:58",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 191,
+        "fields": {
+            "user": 48,
+            "workspace": 34,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 143.91,
+            "joined_at": "2025-05-30T09:47:40",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 192,
+        "fields": {
+            "user": 52,
+            "workspace": 34,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 142.37,
+            "joined_at": "2025-06-09T10:31:14",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 193,
+        "fields": {
+            "user": 53,
+            "workspace": 34,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 137.26,
+            "joined_at": "2025-03-29T05:51:19",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 194,
+        "fields": {
+            "user": 82,
+            "workspace": 34,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 13.41,
+            "joined_at": "2025-03-14T04:01:44",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 195,
+        "fields": {
+            "user": 30,
+            "workspace": 34,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 129.01,
+            "joined_at": "2025-01-19T17:24:57",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 196,
+        "fields": {
+            "user": 3,
+            "workspace": 35,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 127.81,
+            "joined_at": "2025-01-31T13:13:54",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 197,
+        "fields": {
+            "user": 6,
+            "workspace": 35,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 65.37,
+            "joined_at": "2025-05-07T14:53:25",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 198,
+        "fields": {
+            "user": 18,
+            "workspace": 35,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 49.17,
+            "joined_at": "2025-02-03T12:29:01",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 199,
+        "fields": {
+            "user": 99,
+            "workspace": 35,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 20.97,
+            "joined_at": "2025-04-07T22:37:36",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 200,
+        "fields": {
+            "user": 41,
+            "workspace": 35,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 149.76,
+            "joined_at": "2025-03-15T14:10:31",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 201,
+        "fields": {
+            "user": 46,
+            "workspace": 35,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 114.7,
+            "joined_at": "2025-06-05T12:15:16",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 202,
+        "fields": {
+            "user": 12,
+            "workspace": 36,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 33.48,
+            "joined_at": "2025-05-17T13:18:57",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 203,
+        "fields": {
+            "user": 97,
+            "workspace": 36,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 45.82,
+            "joined_at": "2025-04-26T20:19:01",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 204,
+        "fields": {
+            "user": 43,
+            "workspace": 36,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 119.21,
+            "joined_at": "2025-04-27T02:54:11",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 205,
+        "fields": {
+            "user": 10,
+            "workspace": 36,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 88.79,
+            "joined_at": "2025-02-23T01:48:46",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 206,
+        "fields": {
+            "user": 61,
+            "workspace": 36,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 120.5,
+            "joined_at": "2025-03-03T19:49:58",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 207,
+        "fields": {
+            "user": 69,
+            "workspace": 37,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 94.9,
+            "joined_at": "2025-04-29T04:41:42",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 208,
+        "fields": {
+            "user": 12,
+            "workspace": 37,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 65.14,
+            "joined_at": "2025-03-16T18:06:55",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 209,
+        "fields": {
+            "user": 64,
+            "workspace": 37,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 48.28,
+            "joined_at": "2025-04-06T16:23:25",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 210,
+        "fields": {
+            "user": 34,
+            "workspace": 37,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 25.2,
+            "joined_at": "2025-01-02T12:36:22",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 211,
+        "fields": {
+            "user": 57,
+            "workspace": 37,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 146.82,
+            "joined_at": "2025-01-23T04:04:58",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 212,
+        "fields": {
+            "user": 37,
+            "workspace": 37,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 35.58,
+            "joined_at": "2025-04-22T00:05:55",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 213,
+        "fields": {
+            "user": 71,
+            "workspace": 37,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 58.9,
+            "joined_at": "2025-02-14T03:26:51",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 214,
+        "fields": {
+            "user": 95,
+            "workspace": 37,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 136.53,
+            "joined_at": "2025-05-14T03:20:33",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 215,
+        "fields": {
+            "user": 100,
+            "workspace": 38,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 102.99,
+            "joined_at": "2025-06-17T13:47:21",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 216,
+        "fields": {
+            "user": 83,
+            "workspace": 38,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 105.01,
+            "joined_at": "2025-01-25T17:22:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 217,
+        "fields": {
+            "user": 92,
+            "workspace": 38,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 102.37,
+            "joined_at": "2025-05-11T08:54:23",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 218,
+        "fields": {
+            "user": 77,
+            "workspace": 38,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 46.09,
+            "joined_at": "2025-04-04T12:56:54",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 219,
+        "fields": {
+            "user": 89,
+            "workspace": 38,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 51.93,
+            "joined_at": "2025-06-20T20:14:40",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 220,
+        "fields": {
+            "user": 71,
+            "workspace": 38,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 13.28,
+            "joined_at": "2025-02-23T20:11:58",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 221,
+        "fields": {
+            "user": 47,
+            "workspace": 38,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 111.29,
+            "joined_at": "2025-01-20T19:59:16",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 222,
+        "fields": {
+            "user": 45,
+            "workspace": 38,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 126.41,
+            "joined_at": "2025-02-25T05:10:49",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 223,
+        "fields": {
+            "user": 2,
+            "workspace": 39,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 86.78,
+            "joined_at": "2025-02-07T01:13:32",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 224,
+        "fields": {
+            "user": 13,
+            "workspace": 39,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 26.98,
+            "joined_at": "2025-03-31T02:25:53",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 225,
+        "fields": {
+            "user": 93,
+            "workspace": 39,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 45.31,
+            "joined_at": "2025-06-06T16:59:28",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 226,
+        "fields": {
+            "user": 18,
+            "workspace": 39,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 123.69,
+            "joined_at": "2025-05-03T04:47:21",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 227,
+        "fields": {
+            "user": 30,
+            "workspace": 39,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 25.32,
+            "joined_at": "2025-04-08T07:31:15",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 228,
+        "fields": {
+            "user": 70,
+            "workspace": 40,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 26.59,
+            "joined_at": "2025-03-06T17:41:52",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 229,
+        "fields": {
+            "user": 21,
+            "workspace": 40,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 48.59,
+            "joined_at": "2025-04-24T04:09:46",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 230,
+        "fields": {
+            "user": 75,
+            "workspace": 40,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 99.95,
+            "joined_at": "2025-06-12T03:18:16",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 231,
+        "fields": {
+            "user": 8,
+            "workspace": 40,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 118.02,
+            "joined_at": "2025-04-05T03:23:27",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 232,
+        "fields": {
+            "user": 4,
+            "workspace": 40,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 102.03,
+            "joined_at": "2025-02-23T00:23:07",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 233,
+        "fields": {
+            "user": 1,
+            "workspace": 40,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 100.7,
+            "joined_at": "2025-02-09T05:38:10",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 234,
+        "fields": {
+            "user": 100,
+            "workspace": 40,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 95.81,
+            "joined_at": "2025-01-13T01:42:47",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 235,
+        "fields": {
+            "user": 42,
+            "workspace": 40,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 64.08,
+            "joined_at": "2025-02-09T03:18:31",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 236,
+        "fields": {
+            "user": 41,
+            "workspace": 40,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 56.53,
+            "joined_at": "2025-06-07T10:06:20",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 237,
+        "fields": {
+            "user": 81,
+            "workspace": 41,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 25.14,
+            "joined_at": "2025-04-08T00:34:33",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 238,
+        "fields": {
+            "user": 64,
+            "workspace": 41,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 101.36,
+            "joined_at": "2025-03-31T01:05:23",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 239,
+        "fields": {
+            "user": 67,
+            "workspace": 41,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 72.91,
+            "joined_at": "2025-05-12T13:13:49",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 240,
+        "fields": {
+            "user": 97,
+            "workspace": 41,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 99.58,
+            "joined_at": "2025-04-26T17:53:43",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 241,
+        "fields": {
+            "user": 33,
+            "workspace": 41,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 100.63,
+            "joined_at": "2025-06-21T15:14:21",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 242,
+        "fields": {
+            "user": 24,
+            "workspace": 41,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 85.99,
+            "joined_at": "2025-01-22T15:59:18",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 243,
+        "fields": {
+            "user": 11,
+            "workspace": 41,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 64.76,
+            "joined_at": "2025-05-08T02:37:06",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 244,
+        "fields": {
+            "user": 83,
+            "workspace": 41,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 104.64,
+            "joined_at": "2025-04-18T19:10:13",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 245,
+        "fields": {
+            "user": 83,
+            "workspace": 42,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 118.18,
+            "joined_at": "2025-04-02T04:29:27",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 246,
+        "fields": {
+            "user": 91,
+            "workspace": 43,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 76.61,
+            "joined_at": "2025-02-01T01:28:05",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 247,
+        "fields": {
+            "user": 64,
+            "workspace": 43,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 32.71,
+            "joined_at": "2025-06-01T14:42:46",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 248,
+        "fields": {
+            "user": 54,
+            "workspace": 43,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 58.01,
+            "joined_at": "2025-01-04T01:46:16",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 249,
+        "fields": {
+            "user": 67,
+            "workspace": 43,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 62.95,
+            "joined_at": "2025-01-17T07:41:50",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 250,
+        "fields": {
+            "user": 40,
+            "workspace": 43,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 146.2,
+            "joined_at": "2025-03-10T07:22:47",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 251,
+        "fields": {
+            "user": 44,
+            "workspace": 43,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 78.44,
+            "joined_at": "2025-01-11T15:15:52",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 252,
+        "fields": {
+            "user": 56,
+            "workspace": 43,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 88.9,
+            "joined_at": "2025-05-20T11:25:27",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 253,
+        "fields": {
+            "user": 48,
+            "workspace": 43,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 105.01,
+            "joined_at": "2025-03-10T07:50:47",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 254,
+        "fields": {
+            "user": 55,
+            "workspace": 43,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 94.41,
+            "joined_at": "2025-04-17T22:55:31",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 255,
+        "fields": {
+            "user": 15,
+            "workspace": 43,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 33.1,
+            "joined_at": "2025-04-06T09:20:36",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 256,
+        "fields": {
+            "user": 72,
+            "workspace": 44,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 124.63,
+            "joined_at": "2025-03-10T12:27:25",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 257,
+        "fields": {
+            "user": 73,
+            "workspace": 44,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 62.31,
+            "joined_at": "2025-04-10T17:06:43",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 258,
+        "fields": {
+            "user": 99,
+            "workspace": 45,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 100.78,
+            "joined_at": "2025-04-19T08:47:51",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 259,
+        "fields": {
+            "user": 60,
+            "workspace": 45,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 110.09,
+            "joined_at": "2025-05-28T17:22:24",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 260,
+        "fields": {
+            "user": 28,
+            "workspace": 45,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 145.53,
+            "joined_at": "2025-01-14T03:46:29",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 261,
+        "fields": {
+            "user": 11,
+            "workspace": 45,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 60.85,
+            "joined_at": "2025-06-01T03:22:12",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 262,
+        "fields": {
+            "user": 32,
+            "workspace": 45,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 56.13,
+            "joined_at": "2025-04-27T23:28:12",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 263,
+        "fields": {
+            "user": 80,
+            "workspace": 45,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 63.04,
+            "joined_at": "2025-05-05T02:18:11",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 264,
+        "fields": {
+            "user": 20,
+            "workspace": 46,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 130.62,
+            "joined_at": "2025-02-28T00:46:26",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 265,
+        "fields": {
+            "user": 82,
+            "workspace": 46,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 128.5,
+            "joined_at": "2025-04-04T21:44:45",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 266,
+        "fields": {
+            "user": 46,
+            "workspace": 46,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 132.79,
+            "joined_at": "2025-03-14T09:22:48",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 267,
+        "fields": {
+            "user": 83,
+            "workspace": 46,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 131.01,
+            "joined_at": "2025-06-06T12:43:04",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 268,
+        "fields": {
+            "user": 29,
+            "workspace": 46,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 43.76,
+            "joined_at": "2025-03-30T04:47:35",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 269,
+        "fields": {
+            "user": 14,
+            "workspace": 46,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 87.32,
+            "joined_at": "2025-06-15T19:31:09",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 270,
+        "fields": {
+            "user": 16,
+            "workspace": 47,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 116.65,
+            "joined_at": "2025-04-28T12:06:26",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 271,
+        "fields": {
+            "user": 12,
+            "workspace": 47,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 108.18,
+            "joined_at": "2025-01-28T20:06:24",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 272,
+        "fields": {
+            "user": 18,
+            "workspace": 47,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 103.5,
+            "joined_at": "2025-04-18T19:42:40",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 273,
+        "fields": {
+            "user": 41,
+            "workspace": 47,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 130.7,
+            "joined_at": "2025-03-24T11:28:58",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 274,
+        "fields": {
+            "user": 43,
+            "workspace": 47,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 118.34,
+            "joined_at": "2025-05-26T07:58:27",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 275,
+        "fields": {
+            "user": 78,
+            "workspace": 47,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 131.94,
+            "joined_at": "2025-04-23T08:01:31",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 276,
+        "fields": {
+            "user": 95,
+            "workspace": 47,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 95.98,
+            "joined_at": "2025-04-24T19:52:34",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 277,
+        "fields": {
+            "user": 62,
+            "workspace": 47,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 131.39,
+            "joined_at": "2025-03-11T10:52:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 278,
+        "fields": {
+            "user": 75,
+            "workspace": 47,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 70.29,
+            "joined_at": "2025-05-08T02:41:44",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 279,
+        "fields": {
+            "user": 99,
+            "workspace": 48,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 129.4,
+            "joined_at": "2025-05-13T07:17:43",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 280,
+        "fields": {
+            "user": 25,
+            "workspace": 48,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 84.8,
+            "joined_at": "2025-03-13T11:35:43",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 281,
+        "fields": {
+            "user": 58,
+            "workspace": 48,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 133.51,
+            "joined_at": "2025-02-16T09:31:31",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 282,
+        "fields": {
+            "user": 78,
+            "workspace": 48,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 119.55,
+            "joined_at": "2025-02-12T13:28:22",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 283,
+        "fields": {
+            "user": 21,
+            "workspace": 48,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 10.63,
+            "joined_at": "2025-06-02T09:06:37",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 284,
+        "fields": {
+            "user": 2,
+            "workspace": 49,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 22.14,
+            "joined_at": "2025-03-21T04:09:24",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 285,
+        "fields": {
+            "user": 75,
+            "workspace": 49,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 94.75,
+            "joined_at": "2025-01-13T17:55:44",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 286,
+        "fields": {
+            "user": 88,
+            "workspace": 49,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 117.94,
+            "joined_at": "2025-06-07T10:48:02",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 287,
+        "fields": {
+            "user": 15,
+            "workspace": 50,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 90.49,
+            "joined_at": "2025-02-01T19:14:21",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 288,
+        "fields": {
+            "user": 65,
+            "workspace": 50,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 92.48,
+            "joined_at": "2025-04-04T22:27:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 289,
+        "fields": {
+            "user": 78,
+            "workspace": 50,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 63.56,
+            "joined_at": "2025-02-07T11:56:38",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 290,
+        "fields": {
+            "user": 7,
+            "workspace": 50,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 58.15,
+            "joined_at": "2025-05-01T11:20:51",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 291,
+        "fields": {
+            "user": 89,
+            "workspace": 50,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 88.89,
+            "joined_at": "2025-02-24T01:28:24",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 292,
+        "fields": {
+            "user": 75,
+            "workspace": 50,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 123.3,
+            "joined_at": "2025-05-24T14:01:36",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 293,
+        "fields": {
+            "user": 67,
+            "workspace": 50,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 32.58,
+            "joined_at": "2025-02-07T00:36:32",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 294,
+        "fields": {
+            "user": 33,
+            "workspace": 50,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 110.61,
+            "joined_at": "2025-01-01T17:51:51",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 295,
+        "fields": {
+            "user": 14,
+            "workspace": 50,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 130.21,
+            "joined_at": "2025-04-02T18:06:21",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 296,
+        "fields": {
+            "user": 87,
+            "workspace": 50,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 35.06,
+            "joined_at": "2025-03-26T10:35:02",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 297,
+        "fields": {
+            "user": 61,
+            "workspace": 52,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 23.67,
+            "joined_at": "2025-02-13T08:53:47",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 298,
+        "fields": {
+            "user": 20,
+            "workspace": 52,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 62.01,
+            "joined_at": "2025-05-31T23:46:16",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 299,
+        "fields": {
+            "user": 80,
+            "workspace": 52,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 53.94,
+            "joined_at": "2025-05-11T09:18:02",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 300,
+        "fields": {
+            "user": 78,
+            "workspace": 52,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 92.45,
+            "joined_at": "2025-02-20T22:30:06",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 301,
+        "fields": {
+            "user": 1,
+            "workspace": 52,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 59.3,
+            "joined_at": "2025-03-08T12:31:28",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 302,
+        "fields": {
+            "user": 22,
+            "workspace": 52,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 67.36,
+            "joined_at": "2025-04-17T06:26:06",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 303,
+        "fields": {
+            "user": 79,
+            "workspace": 52,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 66.92,
+            "joined_at": "2025-06-03T21:02:19",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 304,
+        "fields": {
+            "user": 18,
+            "workspace": 52,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 118.65,
+            "joined_at": "2025-04-07T18:36:10",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 305,
+        "fields": {
+            "user": 68,
+            "workspace": 53,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 124.12,
+            "joined_at": "2025-03-11T03:03:26",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 306,
+        "fields": {
+            "user": 50,
+            "workspace": 53,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 101.59,
+            "joined_at": "2025-03-23T19:01:10",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 307,
+        "fields": {
+            "user": 10,
+            "workspace": 54,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 86.84,
+            "joined_at": "2025-03-28T12:44:34",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 308,
+        "fields": {
+            "user": 15,
+            "workspace": 54,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 32.43,
+            "joined_at": "2025-03-27T07:13:04",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 309,
+        "fields": {
+            "user": 96,
+            "workspace": 54,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 94.86,
+            "joined_at": "2025-03-27T14:02:14",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 310,
+        "fields": {
+            "user": 11,
+            "workspace": 54,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 37.45,
+            "joined_at": "2025-01-15T14:14:06",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 311,
+        "fields": {
+            "user": 81,
+            "workspace": 56,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 14.01,
+            "joined_at": "2025-03-16T19:48:30",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 312,
+        "fields": {
+            "user": 90,
+            "workspace": 56,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 30.94,
+            "joined_at": "2025-03-02T20:16:59",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 313,
+        "fields": {
+            "user": 22,
+            "workspace": 56,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 123.9,
+            "joined_at": "2025-03-02T08:58:34",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 314,
+        "fields": {
+            "user": 23,
+            "workspace": 56,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 100.34,
+            "joined_at": "2025-06-04T02:17:21",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 315,
+        "fields": {
+            "user": 54,
+            "workspace": 56,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 116.58,
+            "joined_at": "2025-06-01T01:47:31",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 316,
+        "fields": {
+            "user": 95,
+            "workspace": 57,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 28.73,
+            "joined_at": "2025-01-29T19:55:57",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 317,
+        "fields": {
+            "user": 2,
+            "workspace": 58,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 15.13,
+            "joined_at": "2025-04-28T00:30:30",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 318,
+        "fields": {
+            "user": 4,
+            "workspace": 58,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 69.87,
+            "joined_at": "2025-04-20T12:15:54",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 319,
+        "fields": {
+            "user": 15,
+            "workspace": 58,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 63.62,
+            "joined_at": "2025-02-08T00:25:36",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 320,
+        "fields": {
+            "user": 92,
+            "workspace": 58,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 79.55,
+            "joined_at": "2025-05-19T00:31:49",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 321,
+        "fields": {
+            "user": 87,
+            "workspace": 58,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 25.62,
+            "joined_at": "2025-03-05T02:28:50",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 322,
+        "fields": {
+            "user": 40,
+            "workspace": 58,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 58.39,
+            "joined_at": "2025-06-20T16:39:27",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 323,
+        "fields": {
+            "user": 75,
+            "workspace": 58,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 87.77,
+            "joined_at": "2025-05-01T22:00:05",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 324,
+        "fields": {
+            "user": 64,
+            "workspace": 58,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 76.56,
+            "joined_at": "2025-06-05T17:11:43",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 325,
+        "fields": {
+            "user": 22,
+            "workspace": 59,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 107.93,
+            "joined_at": "2025-05-08T22:21:46",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 326,
+        "fields": {
+            "user": 86,
+            "workspace": 59,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 119.81,
+            "joined_at": "2025-06-07T14:51:45",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 327,
+        "fields": {
+            "user": 93,
+            "workspace": 59,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 82.07,
+            "joined_at": "2025-03-24T00:25:17",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 328,
+        "fields": {
+            "user": 48,
+            "workspace": 59,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 125.54,
+            "joined_at": "2025-03-29T15:56:24",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 329,
+        "fields": {
+            "user": 40,
+            "workspace": 59,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 146.8,
+            "joined_at": "2025-04-02T23:54:25",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 330,
+        "fields": {
+            "user": 70,
+            "workspace": 59,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 140.38,
+            "joined_at": "2025-03-12T14:17:21",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 331,
+        "fields": {
+            "user": 92,
+            "workspace": 59,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 53.75,
+            "joined_at": "2025-01-30T03:45:52",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 332,
+        "fields": {
+            "user": 24,
+            "workspace": 59,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 119.17,
+            "joined_at": "2025-04-08T00:02:36",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 333,
+        "fields": {
+            "user": 38,
+            "workspace": 59,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 54.88,
+            "joined_at": "2025-02-11T04:52:45",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 334,
+        "fields": {
+            "user": 88,
+            "workspace": 60,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 85.72,
+            "joined_at": "2025-01-25T22:25:07",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 335,
+        "fields": {
+            "user": 47,
+            "workspace": 60,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 22.95,
+            "joined_at": "2025-05-13T22:17:14",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 336,
+        "fields": {
+            "user": 77,
+            "workspace": 60,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 124.13,
+            "joined_at": "2025-04-14T02:53:25",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 337,
+        "fields": {
+            "user": 30,
+            "workspace": 60,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 95.91,
+            "joined_at": "2025-05-14T08:54:08",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 338,
+        "fields": {
+            "user": 72,
+            "workspace": 61,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 102.79,
+            "joined_at": "2025-02-09T02:49:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 339,
+        "fields": {
+            "user": 27,
+            "workspace": 61,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 72.61,
+            "joined_at": "2025-01-13T13:32:19",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 340,
+        "fields": {
+            "user": 85,
+            "workspace": 61,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 18.62,
+            "joined_at": "2025-05-16T18:51:55",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 341,
+        "fields": {
+            "user": 78,
+            "workspace": 61,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 149.44,
+            "joined_at": "2025-05-12T14:57:06",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 342,
+        "fields": {
+            "user": 64,
+            "workspace": 61,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 122.3,
+            "joined_at": "2025-03-30T14:08:59",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 343,
+        "fields": {
+            "user": 18,
+            "workspace": 62,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 134.21,
+            "joined_at": "2025-02-23T03:47:36",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 344,
+        "fields": {
+            "user": 20,
+            "workspace": 62,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 49.77,
+            "joined_at": "2025-06-13T02:25:48",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 345,
+        "fields": {
+            "user": 86,
+            "workspace": 62,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 17.5,
+            "joined_at": "2025-03-27T02:05:34",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 346,
+        "fields": {
+            "user": 19,
+            "workspace": 62,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 100.64,
+            "joined_at": "2025-01-14T08:54:21",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 347,
+        "fields": {
+            "user": 16,
+            "workspace": 62,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 34.93,
+            "joined_at": "2025-06-10T06:55:37",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 348,
+        "fields": {
+            "user": 63,
+            "workspace": 62,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 70.89,
+            "joined_at": "2025-02-20T06:52:19",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 349,
+        "fields": {
+            "user": 4,
+            "workspace": 62,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 29.29,
+            "joined_at": "2025-06-01T23:29:45",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 350,
+        "fields": {
+            "user": 46,
+            "workspace": 62,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 61.92,
+            "joined_at": "2025-04-06T14:29:04",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 351,
+        "fields": {
+            "user": 66,
+            "workspace": 62,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 78.5,
+            "joined_at": "2025-03-08T04:47:47",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 352,
+        "fields": {
+            "user": 80,
+            "workspace": 62,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 102.38,
+            "joined_at": "2025-06-18T14:59:49",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 353,
+        "fields": {
+            "user": 23,
+            "workspace": 63,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 60.3,
+            "joined_at": "2025-05-23T02:34:15",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 354,
+        "fields": {
+            "user": 12,
+            "workspace": 64,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 142.24,
+            "joined_at": "2025-02-19T11:06:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 355,
+        "fields": {
+            "user": 100,
+            "workspace": 64,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 75.92,
+            "joined_at": "2025-05-28T02:01:51",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 356,
+        "fields": {
+            "user": 30,
+            "workspace": 65,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 10.44,
+            "joined_at": "2025-03-16T08:55:02",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 357,
+        "fields": {
+            "user": 55,
+            "workspace": 65,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 35.53,
+            "joined_at": "2025-03-28T04:38:37",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 358,
+        "fields": {
+            "user": 78,
+            "workspace": 65,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 48.17,
+            "joined_at": "2025-01-17T03:23:51",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 359,
+        "fields": {
+            "user": 52,
+            "workspace": 65,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 62.7,
+            "joined_at": "2025-01-05T10:12:36",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 360,
+        "fields": {
+            "user": 11,
+            "workspace": 65,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 17.0,
+            "joined_at": "2025-04-24T13:05:42",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 361,
+        "fields": {
+            "user": 86,
+            "workspace": 65,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 57.54,
+            "joined_at": "2025-04-17T02:26:25",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 362,
+        "fields": {
+            "user": 68,
+            "workspace": 65,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 149.38,
+            "joined_at": "2025-05-26T19:52:06",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 363,
+        "fields": {
+            "user": 82,
+            "workspace": 66,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 136.13,
+            "joined_at": "2025-01-24T14:48:05",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 364,
+        "fields": {
+            "user": 77,
+            "workspace": 66,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 102.58,
+            "joined_at": "2025-01-04T16:46:49",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 365,
+        "fields": {
+            "user": 6,
+            "workspace": 66,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 88.88,
+            "joined_at": "2025-04-21T20:52:04",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 366,
+        "fields": {
+            "user": 78,
+            "workspace": 66,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 149.0,
+            "joined_at": "2025-04-14T02:34:52",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 367,
+        "fields": {
+            "user": 90,
+            "workspace": 66,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 79.53,
+            "joined_at": "2025-02-07T03:25:50",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 368,
+        "fields": {
+            "user": 89,
+            "workspace": 66,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 107.21,
+            "joined_at": "2025-05-04T02:41:35",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 369,
+        "fields": {
+            "user": 51,
+            "workspace": 66,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 57.56,
+            "joined_at": "2025-06-21T11:06:38",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 370,
+        "fields": {
+            "user": 16,
+            "workspace": 66,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 116.55,
+            "joined_at": "2025-01-16T18:07:12",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 371,
+        "fields": {
+            "user": 98,
+            "workspace": 67,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 71.24,
+            "joined_at": "2025-05-16T17:22:13",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 372,
+        "fields": {
+            "user": 1,
+            "workspace": 68,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 30.69,
+            "joined_at": "2025-04-29T23:40:06",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 373,
+        "fields": {
+            "user": 24,
+            "workspace": 68,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 53.73,
+            "joined_at": "2025-04-24T07:16:00",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 374,
+        "fields": {
+            "user": 42,
+            "workspace": 68,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 68.86,
+            "joined_at": "2025-04-17T17:45:02",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 375,
+        "fields": {
+            "user": 96,
+            "workspace": 68,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 133.71,
+            "joined_at": "2025-05-06T13:16:07",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 376,
+        "fields": {
+            "user": 13,
+            "workspace": 68,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 92.17,
+            "joined_at": "2025-02-21T17:27:01",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 377,
+        "fields": {
+            "user": 58,
+            "workspace": 68,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 80.81,
+            "joined_at": "2025-04-28T21:36:36",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 378,
+        "fields": {
+            "user": 60,
+            "workspace": 68,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 60.53,
+            "joined_at": "2025-02-10T18:10:17",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 379,
+        "fields": {
+            "user": 48,
+            "workspace": 68,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 40.89,
+            "joined_at": "2025-04-25T14:06:00",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 380,
+        "fields": {
+            "user": 90,
+            "workspace": 68,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 56.55,
+            "joined_at": "2025-02-23T07:52:37",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 381,
+        "fields": {
+            "user": 43,
+            "workspace": 69,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 65.76,
+            "joined_at": "2025-04-21T00:45:01",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 382,
+        "fields": {
+            "user": 40,
+            "workspace": 69,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 43.35,
+            "joined_at": "2025-06-13T17:23:01",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 383,
+        "fields": {
+            "user": 36,
+            "workspace": 69,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 146.49,
+            "joined_at": "2025-06-18T07:30:23",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 384,
+        "fields": {
+            "user": 82,
+            "workspace": 70,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 90.44,
+            "joined_at": "2025-03-23T09:49:38",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 385,
+        "fields": {
+            "user": 92,
+            "workspace": 70,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 109.19,
+            "joined_at": "2025-03-27T22:48:00",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 386,
+        "fields": {
+            "user": 23,
+            "workspace": 70,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 119.42,
+            "joined_at": "2025-02-01T01:53:32",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 387,
+        "fields": {
+            "user": 97,
+            "workspace": 70,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 146.24,
+            "joined_at": "2025-06-18T16:33:49",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 388,
+        "fields": {
+            "user": 52,
+            "workspace": 70,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 103.25,
+            "joined_at": "2025-04-29T08:33:42",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 389,
+        "fields": {
+            "user": 21,
+            "workspace": 71,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 48.28,
+            "joined_at": "2025-05-16T19:24:57",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 390,
+        "fields": {
+            "user": 43,
+            "workspace": 71,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 18.8,
+            "joined_at": "2025-01-02T11:56:36",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 391,
+        "fields": {
+            "user": 81,
+            "workspace": 71,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 128.88,
+            "joined_at": "2025-01-16T17:10:38",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 392,
+        "fields": {
+            "user": 9,
+            "workspace": 71,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 113.65,
+            "joined_at": "2025-02-22T20:06:01",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 393,
+        "fields": {
+            "user": 56,
+            "workspace": 71,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 36.49,
+            "joined_at": "2025-01-06T10:03:51",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 394,
+        "fields": {
+            "user": 13,
+            "workspace": 71,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 80.08,
+            "joined_at": "2025-04-12T12:48:43",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 395,
+        "fields": {
+            "user": 65,
+            "workspace": 71,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 59.71,
+            "joined_at": "2025-06-15T15:33:05",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 396,
+        "fields": {
+            "user": 98,
+            "workspace": 71,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 131.27,
+            "joined_at": "2025-04-25T00:54:28",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 397,
+        "fields": {
+            "user": 11,
+            "workspace": 71,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 147.52,
+            "joined_at": "2025-04-24T00:14:40",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 398,
+        "fields": {
+            "user": 24,
+            "workspace": 71,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 77.28,
+            "joined_at": "2025-05-18T00:32:05",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 399,
+        "fields": {
+            "user": 64,
+            "workspace": 72,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 12.32,
+            "joined_at": "2025-03-05T04:23:17",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 400,
+        "fields": {
+            "user": 36,
+            "workspace": 72,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 138.08,
+            "joined_at": "2025-03-29T05:18:09",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 401,
+        "fields": {
+            "user": 72,
+            "workspace": 72,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 72.0,
+            "joined_at": "2025-03-27T15:19:28",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 402,
+        "fields": {
+            "user": 65,
+            "workspace": 72,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 35.85,
+            "joined_at": "2025-01-05T08:08:20",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 403,
+        "fields": {
+            "user": 8,
+            "workspace": 72,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 39.59,
+            "joined_at": "2025-05-23T18:40:49",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 404,
+        "fields": {
+            "user": 52,
+            "workspace": 72,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 45.55,
+            "joined_at": "2025-04-11T22:01:26",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 405,
+        "fields": {
+            "user": 88,
+            "workspace": 72,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 68.23,
+            "joined_at": "2025-04-13T14:40:25",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 406,
+        "fields": {
+            "user": 85,
+            "workspace": 73,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 116.25,
+            "joined_at": "2025-01-29T00:22:15",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 407,
+        "fields": {
+            "user": 6,
+            "workspace": 73,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 63.02,
+            "joined_at": "2025-02-19T11:45:22",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 408,
+        "fields": {
+            "user": 53,
+            "workspace": 73,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 91.38,
+            "joined_at": "2025-04-09T05:58:54",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 409,
+        "fields": {
+            "user": 9,
+            "workspace": 73,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 26.52,
+            "joined_at": "2025-02-09T18:56:52",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 410,
+        "fields": {
+            "user": 18,
+            "workspace": 73,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 62.48,
+            "joined_at": "2025-06-17T10:41:27",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 411,
+        "fields": {
+            "user": 31,
+            "workspace": 73,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 96.83,
+            "joined_at": "2025-03-05T08:17:29",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 412,
+        "fields": {
+            "user": 49,
+            "workspace": 73,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 41.28,
+            "joined_at": "2025-01-28T10:48:04",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 413,
+        "fields": {
+            "user": 46,
+            "workspace": 73,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 113.8,
+            "joined_at": "2025-02-27T05:08:25",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 414,
+        "fields": {
+            "user": 79,
+            "workspace": 73,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 114.26,
+            "joined_at": "2025-04-26T23:07:40",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 415,
+        "fields": {
+            "user": 12,
+            "workspace": 74,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 12.56,
+            "joined_at": "2025-03-15T02:17:50",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 416,
+        "fields": {
+            "user": 55,
+            "workspace": 74,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 16.52,
+            "joined_at": "2025-02-04T04:51:52",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 417,
+        "fields": {
+            "user": 85,
+            "workspace": 74,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 85.56,
+            "joined_at": "2025-01-18T20:27:12",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 418,
+        "fields": {
+            "user": 98,
+            "workspace": 74,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 122.74,
+            "joined_at": "2025-03-12T15:15:53",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 419,
+        "fields": {
+            "user": 72,
+            "workspace": 74,
+            "role": "admin",
+            "status": "invited",
+            "hour_rate": 118.1,
+            "joined_at": "2025-05-04T03:34:37",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 420,
+        "fields": {
+            "user": 99,
+            "workspace": 74,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 17.47,
+            "joined_at": "2025-04-01T07:06:55",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 421,
+        "fields": {
+            "user": 91,
+            "workspace": 75,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 105.19,
+            "joined_at": "2025-01-24T12:14:51",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 422,
+        "fields": {
+            "user": 56,
+            "workspace": 75,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 41.38,
+            "joined_at": "2025-05-06T23:16:21",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 423,
+        "fields": {
+            "user": 70,
+            "workspace": 76,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 64.14,
+            "joined_at": "2025-04-28T23:24:05",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 424,
+        "fields": {
+            "user": 16,
+            "workspace": 76,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 110.75,
+            "joined_at": "2025-01-21T14:54:57",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 425,
+        "fields": {
+            "user": 86,
+            "workspace": 76,
+            "role": "user",
+            "status": "suspended",
+            "hour_rate": 128.68,
+            "joined_at": "2025-03-07T01:44:29",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 426,
+        "fields": {
+            "user": 42,
+            "workspace": 76,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 79.48,
+            "joined_at": "2025-01-11T07:42:28",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 427,
+        "fields": {
+            "user": 28,
+            "workspace": 76,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 111.92,
+            "joined_at": "2025-05-17T22:43:44",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 428,
+        "fields": {
+            "user": 24,
+            "workspace": 76,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 111.76,
+            "joined_at": "2025-04-26T12:47:17",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 429,
+        "fields": {
+            "user": 83,
+            "workspace": 76,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 13.57,
+            "joined_at": "2025-02-06T10:28:12",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 430,
+        "fields": {
+            "user": 58,
+            "workspace": 76,
+            "role": "user",
+            "status": "active",
+            "hour_rate": 134.49,
+            "joined_at": "2025-02-07T00:01:32",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 431,
+        "fields": {
+            "user": 32,
+            "workspace": 76,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 126.49,
+            "joined_at": "2025-04-08T20:55:44",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 432,
+        "fields": {
+            "user": 48,
+            "workspace": 77,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 36.29,
+            "joined_at": "2025-01-18T18:20:26",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 433,
+        "fields": {
+            "user": 79,
+            "workspace": 77,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 84.48,
+            "joined_at": "2025-03-01T00:09:51",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 434,
+        "fields": {
+            "user": 99,
+            "workspace": 77,
+            "role": "admin",
+            "status": "active",
+            "hour_rate": 53.03,
+            "joined_at": "2025-06-07T02:08:01",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 435,
+        "fields": {
+            "user": 62,
+            "workspace": 77,
+            "role": "client",
+            "status": "pending",
+            "hour_rate": 128.07,
+            "joined_at": "2025-03-05T10:02:01",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 436,
+        "fields": {
+            "user": 75,
+            "workspace": 77,
+            "role": "user",
+            "status": "invited",
+            "hour_rate": 71.69,
+            "joined_at": "2025-05-20T01:05:13",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 437,
+        "fields": {
+            "user": 85,
+            "workspace": 77,
+            "role": "client",
+            "status": "suspended",
+            "hour_rate": 81.37,
+            "joined_at": "2025-05-29T04:31:53",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 438,
+        "fields": {
+            "user": 15,
+            "workspace": 79,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 139.02,
+            "joined_at": "2025-04-27T06:54:24",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 439,
+        "fields": {
+            "user": 97,
+            "workspace": 79,
+            "role": "user",
+            "status": "pending",
+            "hour_rate": 121.65,
+            "joined_at": "2025-02-06T13:08:13",
+            "is_active": false
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 440,
+        "fields": {
+            "user": 56,
+            "workspace": 79,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 143.78,
+            "joined_at": "2025-02-06T17:51:02",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 441,
+        "fields": {
+            "user": 84,
+            "workspace": 79,
+            "role": "admin",
+            "status": "suspended",
+            "hour_rate": 56.28,
+            "joined_at": "2025-02-20T09:25:36",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 442,
+        "fields": {
+            "user": 37,
+            "workspace": 79,
+            "role": "client",
+            "status": "invited",
+            "hour_rate": 17.55,
+            "joined_at": "2025-04-30T09:53:09",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 443,
+        "fields": {
+            "user": 49,
+            "workspace": 80,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 110.91,
+            "joined_at": "2025-04-21T05:02:56",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 444,
+        "fields": {
+            "user": 29,
+            "workspace": 80,
+            "role": "admin",
+            "status": "pending",
+            "hour_rate": 80.15,
+            "joined_at": "2025-05-03T01:37:04",
+            "is_active": true
+        }
+    },
+    {
+        "model": "workspace.workspacemember",
+        "pk": 445,
+        "fields": {
+            "user": 27,
+            "workspace": 80,
+            "role": "client",
+            "status": "active",
+            "hour_rate": 94.19,
+            "joined_at": "2025-03-08T16:50:26",
+            "is_active": true
+        }
+    }
+]
