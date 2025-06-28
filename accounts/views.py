@@ -154,13 +154,34 @@ class PasswordResetCheckAPIView(APIView):
 
 
 class PasswordResetConfirmAPIView(APIView):
+    """
+    API endpoint to confirm and apply a new password using a valid reset code.
+
+    Methods:
+        post(request): Sets the new password if the provided reset code is valid.
+    """
+
     permission_classes = [AllowAny]
 
     def post(self, request):
+        """
+        Handle POST request to reset the user's password.
+
+        Args:
+            request (Request): The HTTP request containing email, code, and new password.
+
+        Returns:
+            Response: Success message with HTTP 200 status,
+                      or error details with HTTP 400.
+        """
+
         serializer = PasswordResetConfirmSerializer(data=request.data)
 
         if not serializer.is_valid():
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                serializer.errors, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
         user = serializer.validated_data["user"]
         reset_code = serializer.validated_data["reset_code"]
@@ -171,7 +192,10 @@ class PasswordResetConfirmAPIView(APIView):
 
         reset_code.delete()
 
-        return Response({"message": "Password successfully reset"}, status=status.HTTP_200_OK)
+        return Response(
+            {"message": "Password successfully reset"}, 
+            status=status.HTTP_200_OK
+        )
 
 
 class SetPasswordAPIView(APIView):
