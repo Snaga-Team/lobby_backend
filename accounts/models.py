@@ -148,7 +148,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     avatar_emoji = models.CharField(max_length=3, verbose_name="Avatar Emoji", default="🚀")
     avatar_image = models.ImageField(
-        upload_to="workspaces/", 
+        upload_to="accounts/", 
         verbose_name="Avatar Image",
         null=True,
         blank=True
