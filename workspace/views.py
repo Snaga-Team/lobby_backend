@@ -1,13 +1,14 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.exceptions import PermissionDenied
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from rest_framework import generics, permissions
-from workspace.models import Workspace, WorkspaceMember, WorkspaceMember, WorkspaceRole
+from workspace.models import Workspace, WorkspaceMember, WorkspaceRole
 from workspace.serializers import (
     WorkspaceSerializer, WorkspaceMemberSerializer, 
-    WorkspaceDetailSerializer, WorkspaceWithRolesSerializer
+    WorkspaceDetailSerializer, WorkspaceWithRolesSerializer, RoleSerializer
 )
 from accounts.models import User
 
@@ -19,10 +20,11 @@ class WorkspaceCreateAPIView(generics.CreateAPIView):
     def perform_create(self, serializer):
         workspace = serializer.save()
 
-        admin_role = WorkspaceRole.objects.filter(name="admin").first()
+        admin_role = WorkspaceRole.objects.filter(name="admin", workspace=workspace).first()
         if not admin_role:
             raise ValueError("Admin role not found in the system.")
 
+        # Выдаем роль админа создателю воркспейса.
         WorkspaceMember.objects.create(
             user=self.request.user,
             workspace=workspace,
@@ -37,26 +39,25 @@ class WorkspaceListAPIView(generics.ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        return Workspace.objects.filter(Q(owner=user) | Q(memberships__user=user)).distinct()
+        return Workspace.objects.filter(memberships__user=user).distinct()
 
 
-class WorkspaceRoleListAPIView(generics.RetrieveAPIView):
-    serializer_class = WorkspaceWithRolesSerializer
+class WorkspaceRoleListAPIView(generics.ListAPIView):
+    serializer_class = RoleSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_object(self):
+    def get_queryset(self):
         user = self.request.user
         workspace_id = self.kwargs['workspace_id']
-
         workspace = get_object_or_404(Workspace, id=workspace_id)
 
         is_owner = workspace.owner == user
         is_member = WorkspaceMember.objects.filter(user=user, workspace=workspace).exists()
 
         if not (is_owner or is_member):
-            raise generics.PermissionDenied("You do not have access to this workspace.")
+            raise PermissionDenied("You do not have access to this workspace.")
 
-        return workspace
+        return WorkspaceRole.objects.filter(workspace=workspace).distinct()
 
 
 class AddWorkspaceMemberAPIView(APIView):

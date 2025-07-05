@@ -12,7 +12,18 @@ class WorkspaceSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Workspace
-        fields = ['id', 'name', 'description', 'created_at', 'updated_at']
+        fields = [
+            'id', 
+            'name', 
+            'description', 
+            'currency', 
+            'avatar_background', 
+            'avatar_emoji', 
+            'avatar_image', 
+            'is_active', 
+            'created_at', 
+            'updated_at'
+        ]
         read_only_fields = ['id', 'created_at', 'updated_at']
 
     def create(self, validated_data):
@@ -27,7 +38,7 @@ class RoleSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = WorkspaceRole
-        fields = ['id', 'name', 'description']
+        fields = ['id', 'name', 'description', 'settings']
         read_only_fields = ['id']
 
 
@@ -36,7 +47,18 @@ class WorkspaceWithRolesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Workspace
-        fields = ['id', 'name', 'description', 'created_at', 'updated_at', 'roles']
+        fields = fields = [
+            'id', 
+            'name', 
+            'description', 
+            'currency', 
+            'avatar_background', 
+            'avatar_emoji', 
+            'avatar_image', 
+            'is_active', 
+            'created_at', 
+            'updated_at'
+        ]
         read_only_fields = ['id', 'created_at', 'updated_at']
 
 
