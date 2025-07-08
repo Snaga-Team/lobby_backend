@@ -39,7 +39,7 @@ class WorkspaceListAPIView(generics.ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        return Workspace.objects.filter(memberships__user=user).distinct()
+        return Workspace.objects.filter(member__user=user).distinct()
 
 
 class WorkspaceRoleListAPIView(generics.ListAPIView):

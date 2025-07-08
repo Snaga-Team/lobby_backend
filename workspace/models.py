@@ -1,5 +1,10 @@
 from django.db import models
-from accounts.models import User, validate_hex_color
+
+from accounts.models import User
+from workspace.constants import ROLE_ADMIN, ROLE_USER, ROLE_CLIENT
+from tools.validators import validate_hex_color
+from tools.permissions.defaults import DEFAULT_ROLE_PERMISSIONS
+
 
 class Workspace(models.Model):
     """
@@ -53,14 +58,53 @@ class Workspace(models.Model):
     is_active = models.BooleanField(default=True, verbose_name="Is Active")
 
     def save(self, *args, **kwargs) -> None:
+        """
+        Overrides the default save behavior of the Workspace model.
+
+        When a new workspace instance is created, this method automatically generates
+        three default roles: "admin", "user", and "client", each with predefined permission
+        settings stored in the `settings` JSON field.
+
+        Uses:
+            - ROLE_ADMIN, ROLE_USER, ROLE_CLIENT: dictionaries containing the name and description of each role.
+            - DEFAULT_ROLE_PERMISSIONS: a dictionary containing default permission settings for each role.
+
+        Example of a generated role:
+            name = "admin"
+            description = "Administrator of the workspace"
+            settings = {
+                "can_create_projects": True,
+                "can_edit_projects": True,
+                ...
+            }
+
+        Args:
+            *args, **kwargs: Standard arguments passed to the save() method.
+        """
+
         is_new = self.pk is None
         super().save(*args, **kwargs)
 
         if is_new:
             WorkspaceRole.objects.bulk_create([
-                WorkspaceRole(name="admin", description="Administrator of the workspace", workspace=self),
-                WorkspaceRole(name="user", description="Regular user of the workspace", workspace=self),
-                WorkspaceRole(name="client", description="Client with limited access", workspace=self),
+                WorkspaceRole(
+                    name=ROLE_ADMIN.get("name"), 
+                    description=ROLE_ADMIN.get("description"), 
+                    workspace=self,
+                    settings=DEFAULT_ROLE_PERMISSIONS.get(ROLE_ADMIN.get("name"), {})
+                ),
+                WorkspaceRole(
+                    name=ROLE_USER.get("name"), 
+                    description=ROLE_ADMIN.get("description"), 
+                    workspace=self,
+                    settings=DEFAULT_ROLE_PERMISSIONS.get(ROLE_USER.get("name"), {})
+                ),
+                WorkspaceRole(
+                    name=ROLE_CLIENT.get("name"), 
+                    description=ROLE_ADMIN.get("description"), 
+                    workspace=self,
+                    settings=DEFAULT_ROLE_PERMISSIONS.get(ROLE_CLIENT.get("name"), {})
+                ),
             ])
 
     def __str__(self) -> str:
