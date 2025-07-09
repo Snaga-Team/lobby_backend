@@ -9,13 +9,15 @@ from accounts.serializers import ProfileSerializer
 
 
 class WorkspaceSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.id')
     
     class Meta:
         model = Workspace
         fields = [
             'id', 
             'name', 
-            'description', 
+            'description',
+            'owner', 
             'currency', 
             'avatar_background', 
             'avatar_emoji', 
@@ -24,7 +26,7 @@ class WorkspaceSerializer(serializers.ModelSerializer):
             'created_at', 
             'updated_at'
         ]
-        read_only_fields = ['id', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'created_at', 'updated_at', 'owner']
 
     def create(self, validated_data):
         request = self.context.get('request')
@@ -32,7 +34,7 @@ class WorkspaceSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("User must be authenticated")
 
         return Workspace.objects.create(owner=request.user, **validated_data)
-    
+
 
 class RoleSerializer(serializers.ModelSerializer):
     

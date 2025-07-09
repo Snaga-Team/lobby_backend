@@ -10,6 +10,7 @@ from workspace.serializers import (
     WorkspaceSerializer, WorkspaceMemberSerializer, 
     WorkspaceDetailSerializer, WorkspaceWithRolesSerializer, RoleSerializer
 )
+from tools.permissions.base import HasWorkspacePermission
 from accounts.models import User
 
 
@@ -191,49 +192,53 @@ class ChangeWorkspaceRoleAPIView(APIView):
 
 
 class WorkspaceDetailAPIView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    """
+    Retrieve or update a specific workspace.
 
-    def get(self, request, workspace_id):
+    This view provides two operations:
+        - GET: Returns detailed information about a workspace.
+          Requires the user to be the owner or a member of the workspace.
+        - PUT: Updates workspace details.
+          Requires the user to be the owner or have the 'can_edit_workspace' permission in their role settings.
+
+    Permissions:
+        - permissions.IsAuthenticated: User must be authenticated.
+        - HasWorkspacePermission: Custom permission that checks role-based access in the workspace context.
+
+    Attributes:
+        required_workspace_permission (str): Dynamically set per request method
+            - "can_view_workspace" for GET
+            - "can_edit_workspace" for PUT
+
+    Path parameters:
+        workspace_id (int): The ID of the workspace to retrieve or update.
+
+    Responses:
+        - 200 OK: Successful retrieval or update
+        - 400 Bad Request: Invalid input data during update
+        - 403 Forbidden: Access denied due to insufficient permissions
+        - 404 Not Found: Workspace does not exist
+    """
+
+    permission_classes = [permissions.IsAuthenticated, HasWorkspacePermission]
+
+    def get(self, request, workspace_id: int) -> Response:
+        self.required_workspace_permission = "can_view_workspace"
         workspace = get_object_or_404(
-            Workspace.objects.prefetch_related("memberships__user", "memberships__role"),
+            Workspace.objects.prefetch_related("member__user", "member__role"),
             id=workspace_id
         )
-        if not self.has_permission_to_view(request.user, workspace):
-            return Response({"error": "You do not have permission to view this workspace."}, status=status.HTTP_403_FORBIDDEN)
-
-        serializer = WorkspaceDetailSerializer(workspace)
+        serializer = WorkspaceSerializer(workspace)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    def put(self, request, workspace_id):
+    def put(self, request, workspace_id: int) -> Response:
+        self.required_workspace_permission = "can_edit_workspace"
         workspace = get_object_or_404(Workspace, id=workspace_id)
-
-        if not self.has_permission_to_edit(request.user, workspace):
-            return Response({"error": "You do not have permission to edit this workspace."}, status=status.HTTP_403_FORBIDDEN)
-
-        serializer = WorkspaceDetailSerializer(workspace, data=request.data, partial=True)
+        serializer = WorkspaceSerializer(workspace, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def has_permission_to_edit(self, user, workspace):
-        """ Checks if the user is an owner or admin in the workspace """
-        if workspace.owner == user:
-            return True
-        
-        membership = WorkspaceMember.objects.filter(user=user, workspace=workspace, role__name="admin").first()
-        if membership:
-            return True
-        
-        return False
-    
-    def has_permission_to_view(self, user, workspace):
-        """ Checks if the user is an owner or participant of the workspace """
-        if workspace.owner == user:
-            return True
-
-        is_member = WorkspaceMember.objects.filter(user=user, workspace=workspace).exists()
-        return is_member
 
 
 class WorkspaceOwnerChangeAPIView(APIView):
