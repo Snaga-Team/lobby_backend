@@ -44,26 +44,6 @@ class RoleSerializer(serializers.ModelSerializer):
         read_only_fields = ['id']
 
 
-class WorkspaceWithRolesSerializer(serializers.ModelSerializer):
-    roles = RoleSerializer(many=True, read_only=True)
-
-    class Meta:
-        model = Workspace
-        fields = fields = [
-            'id', 
-            'name', 
-            'description', 
-            'currency', 
-            'avatar_background', 
-            'avatar_emoji', 
-            'avatar_image', 
-            'is_active', 
-            'created_at', 
-            'updated_at'
-        ]
-        read_only_fields = ['id', 'created_at', 'updated_at']
-
-
 class WorkspaceMemberSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(write_only=True)
     role_id = serializers.IntegerField(write_only=True, required=False)
@@ -166,20 +146,3 @@ class WorkspaceMemberSerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkspaceMember
         fields = ["member_id", "role_name", "date_joined_to_workspace", "member_is_active", "user_info"]
-
-
-class WorkspaceDetailSerializer(serializers.ModelSerializer):
-    members = WorkspaceMemberSerializer(source="memberships", many=True)
-    owner_info = ProfileSerializer(source="owner", read_only=True)
-
-    class Meta:
-        model = Workspace
-        fields = [
-            "id", "name", "description", "owner_info", "avatar_background", 
-            "avatar_emoji", "avatar_image", "created_at", "updated_at", "members"
-        ]
-        read_only_fields = ["id", "created_at", "updated_at"]
-
-    def update(self, instance, validated_data):
-        validated_data.pop('owner', None)
-        return super().update(instance, validated_data)

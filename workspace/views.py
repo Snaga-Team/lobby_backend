@@ -1,14 +1,19 @@
+from typing import Optional, Tuple
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import PermissionDenied
 from rest_framework import status
+from rest_framework import generics, permissions
+
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
-from rest_framework import generics, permissions
+
 from workspace.models import Workspace, WorkspaceMember, WorkspaceRole
 from workspace.serializers import (
-    WorkspaceSerializer, WorkspaceMemberSerializer, 
-    WorkspaceDetailSerializer, WorkspaceWithRolesSerializer, RoleSerializer
+    WorkspaceSerializer, 
+    WorkspaceMemberSerializer, 
+    RoleSerializer
 )
 from tools.permissions.base import HasWorkspacePermission
 from accounts.models import User
@@ -242,77 +247,119 @@ class WorkspaceDetailAPIView(APIView):
 
 
 class WorkspaceOwnerChangeAPIView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    """
+    API view for changing the owner of a workspace.
+
+    Allows the current owner to assign a new owner to the workspace
+    by providing one of the following: `new_owner_id`, `new_owner_email`,
+    or `new_member_id`.
+
+    Only one identifier can be used per request. The new owner must already
+    be a member of the workspace. Their role will be updated to "admin" 
+    if the transfer is successful.
+
+    Permissions:
+        - User must be authenticated.
+        - User must have the `owner_member` permission (workspace owner).
+    """
+
+    permission_classes = [permissions.IsAuthenticated, HasWorkspacePermission]
+    # Валидатор вернет True, если пользователь является владельцем проекта.
+    # Настройки "owner_member" не существует и будет проигнорирована валидатором.
+    required_workspace_permission = "owner_member"
+
+    @staticmethod
+    def get_user_and_member(
+        user_id: Optional[int] = None,
+        email: Optional[str] = None,
+        member_id: Optional[int] = None,
+        workspace: object = None
+    ) -> Tuple[Optional[User], Optional[WorkspaceMember], Optional[str]]:
+        """
+        Returns a tuple (user, member, error_message) based on the provided input.
+
+        If:
+        - member_id is provided: searches for the workspace member directly.
+        - email or user_id is provided: first searches for the user, then checks if they are a member of the workspace.
+
+        :param user_id: ID of the user
+        :param email: Email of the user
+        :param member_id: ID of the WorkspaceMember
+        :param workspace: Workspace object
+        :return: (User | None, WorkspaceMember | None, error_message | None)
+        """
+
+        if member_id:
+            member = WorkspaceMember.objects.filter(id=member_id, workspace=workspace).select_related("user").first()
+            if not member:
+                return None, None, "The specified user was found, but they are not a member of this workspace."
+            return member.user, member, None
+
+        if email:
+            user = User.objects.filter(email=email).first()
+        elif user_id:
+            user = User.objects.filter(id=user_id).first()
+
+        if not user:
+            return None, None, "User not found."
+
+        member = WorkspaceMember.objects.filter(user=user, workspace=workspace).select_related("user").first()
+        if not member:
+            return user, None, "The specified user was found, but they are not a member of this workspace."
+
+        return user, member, None
 
     def post(self, request, workspace_id):
-        workspace = get_object_or_404(Workspace, id=workspace_id)
+        """
+        Handles POST request to transfer workspace ownership.
 
-        if workspace.owner != request.user:
+        Validates that exactly one identifier is provided (user ID, email, or member ID),
+        checks that the user exists and is a member of the workspace, and updates the
+        workspace's owner field accordingly. Also assigns the "admin" role to the new owner.
+
+        Returns:
+            - 200 OK with updated workspace data on success.
+            - 400 BAD REQUEST with an error message if validation fails.
+        """
+
+        workspace = Workspace.objects.filter(id=workspace_id).select_related("owner").first()
+        if not workspace:
             return Response(
-                {"error": "Only the current owner can change the workspace owner."},
-                status=status.HTTP_403_FORBIDDEN
+                {"error": "Workspace is not found"},
+                status=status.HTTP_400_BAD_REQUEST
             )
 
         new_owner_id = request.data.get("new_owner_id")
         new_owner_email = request.data.get("new_owner_email")
         new_member_id = request.data.get("new_member_id")
 
-        if not any([new_owner_id, new_owner_email, new_member_id]):
+        provided = [new_owner_id, new_owner_email, new_member_id]
+        if sum(bool(x) for x in provided) != 1:
             return Response(
-                {"error": "One of new_owner_id, new_owner_email, or new_member_id is required."},
+                {"error": "You must provide exactly one of: new_owner_id, new_owner_email, or new_member_id."},
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        new_owner = None
-        if new_member_id:
-            membership = WorkspaceMember.objects.filter(
-                id=new_member_id, workspace=workspace
-            ).select_related("user").first()
-            if membership:
-                new_owner = membership.user
-        elif new_owner_id:
-            new_owner = User.objects.filter(id=new_owner_id).first()
-        elif new_owner_email:
-            new_owner = User.objects.filter(email=new_owner_email).first()
+        try:
+            admin_role = WorkspaceRole.objects.get(name='admin', workspace=workspace)
+        except WorkspaceRole.DoesNotExist:
+            return Response({"error": "Admin role not found."}, status.HTTP_400_BAD_REQUEST)
 
-        if not new_owner:
-            return Response(
-                {"error": "User not found."},
-                status=status.HTTP_400_BAD_REQUEST
-            )
+        user, member, error = self.get_user_and_member(
+            user_id=new_owner_id if new_owner_id else None,
+            email=new_owner_email if new_owner_email else None,
+            member_id=new_member_id if new_member_id else None, 
+            workspace=workspace
+        )
 
-        if not new_member_id:
-            new_owner_membership = WorkspaceMember.objects.filter(
-                user=new_owner, workspace=workspace
-            ).first()
-            if not new_owner_membership:
-                return Response(
-                    {"error": "The new owner must be a member of the workspace."},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
+        if error:
+            return Response({"error": error}, status.HTTP_400_BAD_REQUEST)
 
-        current_owner = workspace.owner
-        current_owner_membership = WorkspaceMember.objects.filter(
-            user=current_owner, workspace=workspace
-        ).first()
+        member.role = admin_role
+        member.save(update_fields=["role"])
 
-        if not current_owner_membership:
-            admin_role = WorkspaceRole.objects.filter(name="admin").first()
-            if not admin_role:
-                return Response(
-                    {"error": "Admin role not found in the system."},
-                    status=status.HTTP_500_INTERNAL_SERVER_ERROR
-                )
-            WorkspaceMember.objects.create(
-                user=current_owner,
-                workspace=workspace,
-                role=admin_role,
-                is_active=True
-            )
+        workspace.owner = user
+        workspace.save(update_fields=["owner"])
 
-
-        workspace.owner = new_owner
-        workspace.save()
-
-        serializer = WorkspaceDetailSerializer(workspace)
+        serializer = WorkspaceSerializer(workspace)
         return Response(serializer.data, status=status.HTTP_200_OK)
