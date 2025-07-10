@@ -13,7 +13,8 @@ from workspace.models import Workspace, WorkspaceMember, WorkspaceRole
 from workspace.serializers import (
     WorkspaceSerializer, 
     WorkspaceMemberSerializer, 
-    RoleSerializer
+    RoleSerializer,
+    MemberSerializer
 )
 from tools.permissions.base import HasWorkspacePermission
 from accounts.models import User
@@ -46,11 +47,23 @@ class WorkspaceListAPIView(generics.ListAPIView):
     def get_queryset(self):
         user = self.request.user
         return Workspace.objects.filter(member__user=user).distinct()
+    
+
+class MembersListAPIView(generics.ListAPIView):
+    serializer_class = MemberSerializer
+    permission_classes = [permissions.IsAuthenticated, HasWorkspacePermission]
+    required_workspace_permission = "can_view_workspace"
+
+    def get_queryset(self):
+        workspace_id = self.kwargs['workspace_id']
+        get_object_or_404(Workspace, id=workspace_id)
+        return WorkspaceMember.objects.filter(workspace_id=workspace_id).distinct()
 
 
 class WorkspaceRoleListAPIView(generics.ListAPIView):
     serializer_class = RoleSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, HasWorkspacePermission]
+    required_workspace_permission = "can_view_workspace"
 
     def get_queryset(self):
         user = self.request.user
@@ -228,7 +241,6 @@ class WorkspaceDetailAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated, HasWorkspacePermission]
 
     def get(self, request, workspace_id: int) -> Response:
-        self.required_workspace_permission = "can_view_workspace"
         workspace = get_object_or_404(
             Workspace.objects.prefetch_related("member__user", "member__role"),
             id=workspace_id
@@ -237,7 +249,6 @@ class WorkspaceDetailAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def put(self, request, workspace_id: int) -> Response:
-        self.required_workspace_permission = "can_edit_workspace"
         workspace = get_object_or_404(Workspace, id=workspace_id)
         serializer = WorkspaceSerializer(workspace, data=request.data, partial=True)
         if serializer.is_valid():

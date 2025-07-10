@@ -4,6 +4,11 @@ from tools.permissions.constants import DEFAULT_ALWAYS_ALLOWED_PERMISSIONS
 
 
 class HasWorkspacePermission(BasePermission):
+    METHOD_PERMISSION_MAP = {
+        "GET": "can_view_workspace",
+        "PUT": "can_edit_workspace",
+    }
+
     def has_permission(self, request, view):
         workspace_id = view.kwargs.get("workspace_id")
         if not workspace_id:
@@ -25,6 +30,10 @@ class HasWorkspacePermission(BasePermission):
             return False
 
         required_permission = getattr(view, "required_workspace_permission", None)
+
+        if not required_permission:
+            required_permission = self.METHOD_PERMISSION_MAP.get(request.method)
+
         if not required_permission:
             return False
         

@@ -95,13 +95,13 @@ class Workspace(models.Model):
                 ),
                 WorkspaceRole(
                     name=ROLE_USER.get("name"), 
-                    description=ROLE_ADMIN.get("description"), 
+                    description=ROLE_USER.get("description"), 
                     workspace=self,
                     settings=DEFAULT_ROLE_PERMISSIONS.get(ROLE_USER.get("name"), {})
                 ),
                 WorkspaceRole(
                     name=ROLE_CLIENT.get("name"), 
-                    description=ROLE_ADMIN.get("description"), 
+                    description=ROLE_CLIENT.get("description"), 
                     workspace=self,
                     settings=DEFAULT_ROLE_PERMISSIONS.get(ROLE_CLIENT.get("name"), {})
                 ),

@@ -44,6 +44,24 @@ class RoleSerializer(serializers.ModelSerializer):
         read_only_fields = ['id']
 
 
+class RoleSubSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = WorkspaceRole
+        fields = ['id', 'name', 'description']
+        read_only_fields = ['id']
+
+
+class MemberSerializer(serializers.ModelSerializer):
+    user_info = ProfileSerializer(source="user")
+    role_info = RoleSubSerializer(source="role")
+
+    class Meta:
+        model = WorkspaceMember
+        fields = ['id', "user_info", 'workspace', 'role_info', 'status', 'hour_rate', 'joined_at', 'is_active']
+        read_only_fields = ['id', 'joined_at', "user_info"]
+
+
 class WorkspaceMemberSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(write_only=True)
     role_id = serializers.IntegerField(write_only=True, required=False)
