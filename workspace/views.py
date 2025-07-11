@@ -149,46 +149,53 @@ class AddWorkspaceMemberAPIView(APIView):
 
 
 class DeactivateWorkspaceMemberAPIView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, HasWorkspacePermission]
+    # Перенастроить права, пока разрешаем всем кто имеет право на 
+    # создание юзеров, деактиивировать их. 
+    # Потом поменять на права "can_deactivate_users"
+    required_workspace_permission = "can_invite_users"
 
     def patch(self, request, workspace_id):
-        workspace = get_object_or_404(
-            Workspace.objects.filter(Q(owner=request.user) | Q(memberships__user=request.user)).distinct(),
-            id=workspace_id
-        )
+        workspace = Workspace.objects.filter(id=workspace_id).select_related("owner").first()
+        if not workspace:
+            return Response(
+                {"error": "Workspace is not found"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
         
         user_id = request.data.get("user_id")
         email = request.data.get("email")
-        if user_id and email:
-            return Response({"error": "Provide either user_id or email, not both."}, status=status.HTTP_400_BAD_REQUEST)
+
+        provided = [user_id, email]
+        if sum(bool(x) for x in provided) != 1:
+            return Response(
+                {"error": "You must provide exactly one of: user_id or email."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
         
         if user_id:
-            target_membership = get_object_or_404(WorkspaceMember, workspace=workspace, user_id=user_id)
+            target_member = WorkspaceMember.objects.filter(workspace=workspace, user_id=user_id).first()
         else:
-            target_membership = get_object_or_404(WorkspaceMember, workspace=workspace, user__email=email)
+            target_member = WorkspaceMember.objects.filter(workspace=workspace, user__email=email).first()
 
-        if not self.has_permission_to_deactivate(request.user, workspace, target_membership):
-            return Response({"error": "You do not have permission to deactivate this user."}, status=status.HTTP_403_FORBIDDEN)
+        if not target_member:
+            return Response(
+                {"error": "User is not found."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
-        if not target_membership.is_active:
-            return Response({"message": "User is already deactivated."}, status=status.HTTP_400_BAD_REQUEST)
+        if not target_member.is_active:
+            return Response({"error": "User is already deactivated."}, status=status.HTTP_400_BAD_REQUEST)
 
-        target_membership.is_active = False
-        target_membership.save()
+        target_member.is_active = False
+        target_member.save(update_fields=["is_active"])
 
-        return Response({"message": "User has been deactivated."}, status=status.HTTP_200_OK)
+        response_serializer = MemberSerializer(target_member)
 
-    def has_permission_to_deactivate(self, user, workspace, target_membership):
-        """ Checks whether it is possible to deactivate the participant """
-        if workspace.owner == user:
-            return True
-
-        user_membership = WorkspaceMember.objects.filter(user=user, workspace=workspace).first()
-        if user_membership and user_membership.role and user_membership.role.name == "admin":
-            # Admin can deactivate only ordinary users (not admins)
-            return target_membership.role is None or target_membership.role.name not in ["admin", ]
-
-        return False
+        return Response({
+            "message": "User has been deactivated.",
+            "member": response_serializer.data
+        }, status=status.HTTP_200_OK)
 
 
 class ChangeWorkspaceRoleAPIView(APIView):
