@@ -83,15 +83,9 @@ class AddWorkspaceMemberAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated, HasWorkspacePermission]
     required_workspace_permission = "can_invite_users"
 
-    @staticmethod
-    def get_workspace_role(role_id, role_name, workspace):
-        if role_id:
-            return WorkspaceRole.objects.filter(id=role_id, workspace=workspace).first()
-        elif role_name:
-            return WorkspaceRole.objects.filter(name=role_name, workspace=workspace).first()
-        return None
-
     def post(self, request, workspace_id):
+        # !!! Если пользователь уже был мембером, то деактивировав его мы не сможем его активировать снова. !!!
+
         workspace = (
             Workspace.objects
             .filter(id=workspace_id)

@@ -17,6 +17,23 @@ Example:
     }
 """
 
+'''
+        "can_edit_workspace": True,
+        "can_delete_workspace": True,
+
+        "can_create_projects": True,
+        "can_edit_projects": True,
+        "can_delete_projects": True,
+
+        "can_invite_users": True,
+        "can_deactivate_users": True,
+        "can_change_roles": True,
+
+        "can_view_reports": True
+'''
+
+
+
 DEFAULT_ROLE_PERMISSIONS = {
     "admin": {
         "can_edit_workspace": True,
