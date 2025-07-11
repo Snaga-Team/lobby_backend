@@ -12,7 +12,7 @@ from django.db.models import Q
 from workspace.models import Workspace, WorkspaceMember, WorkspaceRole
 from workspace.serializers import (
     WorkspaceSerializer, 
-    WorkspaceMemberSerializer, 
+    CreateWorkspaceMemberSerializer, 
     RoleSerializer,
     MemberSerializer
 )
@@ -80,38 +80,78 @@ class WorkspaceRoleListAPIView(generics.ListAPIView):
 
 
 class AddWorkspaceMemberAPIView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, HasWorkspacePermission]
+    required_workspace_permission = "can_invite_users"
+
+    @staticmethod
+    def get_workspace_role(role_id, role_name, workspace):
+        if role_id:
+            return WorkspaceRole.objects.filter(id=role_id, workspace=workspace).first()
+        elif role_name:
+            return WorkspaceRole.objects.filter(name=role_name, workspace=workspace).first()
+        return None
 
     def post(self, request, workspace_id):
-        workspace = get_object_or_404(Workspace, id=workspace_id)
-
-        if not self.has_permission_to_add(request.user, workspace, request.data):
-            return Response({"error": "You do not have permission to add users."}, status=status.HTTP_403_FORBIDDEN)
-
-        serializer = WorkspaceMemberSerializer(
-            data=request.data, 
-            context={"request": request, "workspace": workspace}
+        workspace = (
+            Workspace.objects
+            .filter(id=workspace_id)
+            .prefetch_related("member__user")
+            .first()
         )
-        if serializer.is_valid():
-            result = serializer.save()
-            return Response({"message": "User added to workspace"} if isinstance(result, WorkspaceMember) else result, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-    def has_permission_to_add(self, user, workspace, request_data):
-        """
-        Checks whether the user can add participants to `Workspace`
-            - The owner can add any users
-            - Admin can only add ordinary participants (not other admins)
-        """
-        if workspace.owner == user:
-            return True
+        if not workspace:
+            return Response(
+                {"error": "Workspace is not found"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
-        user_membership = WorkspaceMember.objects.filter(user=user, workspace=workspace, role__name="admin").first()
-        if user_membership:
-            new_role_name = request_data.get("role", "").lower()
-            return new_role_name != "admin"
+        new_member_email = request.data.get("email")
+        if not new_member_email:
+            return Response({"error": "Email is required."}, status=status.HTTP_400_BAD_REQUEST)
         
-        return False
+        new_member_user = User.objects.filter(email=new_member_email).first()
+        
+        if new_member_user:
+            is_already_member = any(
+                member.user_id == new_member_user.id for member in workspace.member.all()
+            )
+            if is_already_member:
+                return Response(
+                    {"error": "User is already a member of this workspace."},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            
+        role_id = request.data.get("role_id")
+        role_name = request.data.get("role_name")
+
+        if role_id:
+            role = WorkspaceRole.objects.filter(id=role_id, workspace=workspace).first()
+            if not role:
+                return Response(
+                    {"error": f"Role with id {role_id} does not exist in this workspace."},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+        elif role_name:
+            role = WorkspaceRole.objects.filter(name=role_name, workspace=workspace).first()
+            if not role:
+                return Response(
+                    {"error": f"Role with name '{role_name}' does not exist in this workspace."},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+        else:
+            return Response(
+                {"error": "Either 'role_id' or 'role_name' must be provided."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        serializer = CreateWorkspaceMemberSerializer(
+            data=request.data, 
+            context={'workspace': workspace}
+        )
+        serializer.is_valid(raise_exception=True)
+        member = serializer.save(user=new_member_user, role=role)
+
+        response_serializer = MemberSerializer(member)
+        return Response(response_serializer.data, status=status.HTTP_201_CREATED)
 
 
 class DeactivateWorkspaceMemberAPIView(APIView):
