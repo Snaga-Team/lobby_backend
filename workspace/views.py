@@ -148,12 +148,281 @@ class AddWorkspaceMemberAPIView(APIView):
         return Response(response_serializer.data, status=status.HTTP_201_CREATED)
 
 
-class DeactivateWorkspaceMemberAPIView(APIView):
+class BaseToggleWorkspaceMemberAPIView(APIView):
+    """
+    Abstract base class to toggle a workspace member's active status (activate or deactivate).
+
+    This view handles the shared logic between activation and deactivation:
+        - Validates that exactly one of `user_id` or `email` is provided.
+        - Looks up the workspace and verifies membership.
+        - Checks if the user's current active status matches the target state.
+        - Updates the `is_active` field of the WorkspaceMember instance.
+        - Returns a standardized success or error response.
+
+    Subclasses must define the following class attributes:
+        - is_active_target (bool): True to activate the user, False to deactivate.
+        - action_word (str): Text used in messages (e.g., "activated" or "deactivated").
+
+    Required permissions:
+        - Authenticated user.
+        - User must have `required_workspace_permission` within the workspace.
+          (Currently set to `can_invite_users`, but should be replaced with `can_deactivate_users`.)
+
+    HTTP Method:
+        PATCH
+
+    Path parameters:
+        workspace_id (int): The ID of the workspace.
+
+    Request body:
+        {
+            "user_id": <int>,   # optional
+            "email": "<str>"    # optional
+        }
+
+    Conditions:
+        - Exactly one of `user_id` or `email` must be provided.
+        - User must exist and be a member of the workspace.
+        - User must not already be in the desired active state.
+
+    Responses:
+        200 OK:
+            {
+                "message": "User has been <action_word>.",
+                "member": { ... }  # Serialized member data
+            }
+
+        400 BAD REQUEST:
+            - Missing or invalid input.
+            - User does not exist or is not a member.
+            - User is already in the desired state.
+
+    This class should not be used directly — subclass it and define the required attributes.
+    """
+
     permission_classes = [permissions.IsAuthenticated, HasWorkspacePermission]
     # Перенастроить права, пока разрешаем всем кто имеет право на 
     # создание юзеров, деактиивировать их. 
     # Потом поменять на права "can_deactivate_users"
     required_workspace_permission = "can_invite_users"
+
+    is_active_target: bool = None  # must be set in subclass: True for activate, False for deactivate
+    action_word: str = ""          # "activated" or "deactivated"
+
+    def patch(self, request, workspace_id):
+        workspace = Workspace.objects.filter(id=workspace_id).select_related("owner").first()
+        if not workspace:
+            return Response({"error": "Workspace is not found"}, status=status.HTTP_400_BAD_REQUEST)
+
+        user_id = request.data.get("user_id")
+        email = request.data.get("email")
+
+        if sum(bool(x) for x in [user_id, email]) != 1:
+            return Response(
+                {"error": "You must provide exactly one of: user_id or email."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        target_user = User.objects.filter(id=user_id).first() if user_id else User.objects.filter(email=email).first()
+
+        if not target_user:
+            return Response({"error": "User is not found."}, status=status.HTTP_400_BAD_REQUEST)
+
+        target_member = WorkspaceMember.objects.filter(workspace=workspace, user=target_user).first()
+
+        if not target_member:
+            return Response({"error": "User is not member in this workspace."}, status=status.HTTP_400_BAD_REQUEST)
+
+        if target_member.is_active == self.is_active_target:
+            return Response(
+                {"error": f"User is already {self.action_word}."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        target_member.is_active = self.is_active_target
+        target_member.save(update_fields=["is_active"])
+
+        serializer = MemberSerializer(target_member)
+
+        return Response(
+            {
+                "message": f"User has been {self.action_word}.",
+                "member": serializer.data
+            },
+            status=status.HTTP_200_OK
+        )
+
+
+class DeactivateWorkspaceMemberAPIView(BaseToggleWorkspaceMemberAPIView):
+    """
+    API endpoint to deactivate a workspace member.
+    """
+    is_active_target = False
+    action_word = "deactivated"
+
+
+class ActivateWorkspaceMemberAPIView(BaseToggleWorkspaceMemberAPIView):
+    """
+    API endpoint to activate a workspace member.
+    """
+    is_active_target = True
+    action_word = "activated"
+
+
+# class DeactivateWorkspaceMemberAPIView(APIView):
+#     """
+#     API endpoint to deactivate a workspace member.
+
+#     Required permissions:
+#         - Authenticated user.
+#         - The user must have the `can_invite_users` permission in the given workspace.
+#           (Note: This may later be updated to a more appropriate permission like `can_deactivate_users`.)
+
+#     HTTP Method:
+#         PATCH
+
+#     Path parameters:
+#         workspace_id (int): The ID of the workspace from which the user should be deactivated.
+
+#     Request body (must include either `user_id` or `email`):
+#         {
+#             "user_id": <int>,         # (optional) ID of the user to deactivate
+#             "email": "<email>"        # (optional) Email of the user to deactivate
+#         }
+
+#     Conditions:
+#         - Exactly one of `user_id` or `email` must be provided.
+#         - The user must exist and be a member of the workspace.
+#         - The user must currently be active.
+
+#     Responses:
+#         200 OK:
+#             {
+#                 "message": "User has been deactivated.",
+#                 "member": { ... }  # Serialized member data
+#             }
+
+#         400 BAD REQUEST:
+#             - Missing or invalid input.
+#             - User does not exist.
+#             - User is not a member of the specified workspace.
+#             - User is already deactivated.
+
+#     Example request:
+#         PATCH /api/workspaces/12/deactivate-member/
+#         {
+#             "email": "member@example.com"
+#         }
+#     """
+
+#     permission_classes = [permissions.IsAuthenticated, HasWorkspacePermission]
+#     # Перенастроить права, пока разрешаем всем кто имеет право на 
+#     # создание юзеров, деактиивировать их. 
+#     # Потом поменять на права "can_deactivate_users"
+#     required_workspace_permission = "can_invite_users"
+
+#     def patch(self, request, workspace_id):
+#         workspace = Workspace.objects.filter(id=workspace_id).select_related("owner").first()
+#         if not workspace:
+#             return Response(
+#                 {"error": "Workspace is not found"},
+#                 status=status.HTTP_400_BAD_REQUEST
+#             )
+        
+#         user_id = request.data.get("user_id")
+#         email = request.data.get("email")
+
+#         provided = [user_id, email]
+#         if sum(bool(x) for x in provided) != 1:
+#             return Response(
+#                 {"error": "You must provide exactly one of: user_id or email."},
+#                 status=status.HTTP_400_BAD_REQUEST
+#             )
+        
+#         if user_id:
+#             target_user = User.objects.filter(id=user_id).first()
+#         else:
+#             target_user = User.objects.filter(email=email).first()
+
+#         if not target_member:
+#             return Response(
+#                 {"error": "User is not member in this workspace."},
+#                 status=status.HTTP_400_BAD_REQUEST
+#             )
+        
+#         target_member = WorkspaceMember.objects.filter(workspace=workspace, user_id=target_user.id).first()
+
+#         if not target_user:
+#             return Response(
+#                 {"error": "User is not found."},
+#                 status=status.HTTP_400_BAD_REQUEST
+#             )
+
+#         if not target_member.is_active:
+#             return Response({"error": "User is already deactivated."}, status=status.HTTP_400_BAD_REQUEST)
+
+#         target_member.is_active = False
+#         target_member.save(update_fields=["is_active"])
+
+#         response_serializer = MemberSerializer(target_member)
+
+#         return Response({
+#             "message": "User has been deactivated.",
+#             "member": response_serializer.data
+#         }, status=status.HTTP_200_OK)
+
+
+class ChangeWorkspaceRoleAPIView(APIView):
+    """
+    API endpoint to change a member's role within a workspace.
+
+    Required permissions:
+        - Authenticated user.
+        - The user must have the `can_change_roles` permission in the given workspace.
+
+    HTTP Method:
+        PATCH
+
+    Path parameters:
+        workspace_id (int): The ID of the workspace in which the role change is to be performed.
+
+    Request body (must include either `user_id` or `email`, and the `new_role`):
+        {
+            "user_id": <int>,          # (optional) ID of the user whose role should be changed
+            "email": "<email>",        # (optional) Email of the user
+            "new_role": "<str>"        # (required) Name of the new role (e.g., "user", "client", "admin")
+        }
+
+    Conditions:
+        - Exactly one of `user_id` or `email` must be provided.
+        - The specified `new_role` must exist within the current workspace.
+        - Only the owner of the workspace can change the role of a member with the `admin` role.
+
+    Responses:
+        200 OK:
+            {
+                "message": "User's role changed to <new_role>.",
+                "member": { ... }  # Serialized member data
+            }
+
+        400 BAD REQUEST:
+            - Invalid input (missing fields, non-existent user/role, etc.)
+            - User not found or is not a member of the workspace
+            - Attempt to change the role of an inactive (deactivated) member
+
+        403 FORBIDDEN:
+            - Attempt to demote a user with the `admin` role by someone who is not the workspace owner
+
+    Example request:
+        PATCH /api/workspaces/5/change-role/
+        {
+            "email": "user@example.com",
+            "new_role": "client"
+        }
+    """
+
+    permission_classes = [permissions.IsAuthenticated, HasWorkspacePermission]
+    required_workspace_permission = "can_change_roles"
 
     def patch(self, request, workspace_id):
         workspace = Workspace.objects.filter(id=workspace_id).select_related("owner").first()
@@ -172,82 +441,63 @@ class DeactivateWorkspaceMemberAPIView(APIView):
                 {"error": "You must provide exactly one of: user_id or email."},
                 status=status.HTTP_400_BAD_REQUEST
             )
-        
-        if user_id:
-            target_member = WorkspaceMember.objects.filter(workspace=workspace, user_id=user_id).first()
-        else:
-            target_member = WorkspaceMember.objects.filter(workspace=workspace, user__email=email).first()
 
-        if not target_member:
+        new_role_name = request.data.get("new_role")
+        if not isinstance(new_role_name, str) or not new_role_name.strip():
+            return Response(
+                {"error": "`new_role` is required and must be a string."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        new_role_name = new_role_name.strip().lower()
+        
+        new_role = WorkspaceRole.objects.filter(workspace=workspace, name=new_role_name).first()
+        if not new_role:
+            return Response(
+                {"error": "Role is not found."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        if user_id:
+            target_user = User.objects.filter(id=user_id).first()
+        else:
+            target_user = User.objects.filter(email=email).first()
+
+        if not target_user:
             return Response(
                 {"error": "User is not found."},
                 status=status.HTTP_400_BAD_REQUEST
             )
-
+        
+        target_member = WorkspaceMember.objects.filter(workspace=workspace, user_id=target_user.id).first()
+        
+        if not target_member:
+            return Response(
+                {"error": "User is not member in this workspace."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
         if not target_member.is_active:
-            return Response({"error": "User is already deactivated."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {"error": "Cannot change role of a deactivated user."}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
-        target_member.is_active = False
-        target_member.save(update_fields=["is_active"])
+        # только овнер может понижать роль админам
+        if target_member.role.name == 'admin' and workspace.owner != request.user:
+            return Response(
+                {"error": "Cannot change admin role"}, 
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        target_member.role = new_role
+        target_member.save(update_fields=["role"])
 
         response_serializer = MemberSerializer(target_member)
 
         return Response({
-            "message": "User has been deactivated.",
+            "message": f"User's role changed to {new_role_name}.",
             "member": response_serializer.data
         }, status=status.HTTP_200_OK)
-
-
-class ChangeWorkspaceRoleAPIView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
-
-    def patch(self, request, workspace_id):
-        """Changing user roles in the `Workspace`"""
-        workspace = get_object_or_404(
-            Workspace.objects.filter(Q(owner=request.user) | Q(memberships__user=request.user)).distinct(),
-            id=workspace_id
-        )
-        
-        user_id = request.data.get("user_id")
-        email = request.data.get("email")
-        new_role_name = request.data.get("new_role", "").strip().lower()
-
-        if user_id and email:
-            return Response({"error": "Provide either `user_id` or `email`, not both."}, status=status.HTTP_400_BAD_REQUEST)
-        if not new_role_name:
-            return Response({"error": "`new_role` is required."}, status=status.HTTP_400_BAD_REQUEST)
-
-        if user_id:
-            target_membership = get_object_or_404(WorkspaceMember, workspace=workspace, user_id=user_id)
-        else:
-            target_membership = get_object_or_404(WorkspaceMember, workspace=workspace, user__email=email)
-
-        if not target_membership.is_active:
-            return Response({"error": "Cannot change role of a deactivated user."}, status=status.HTTP_400_BAD_REQUEST)
-
-        new_role = get_object_or_404(WorkspaceRole, workspace=workspace, name=new_role_name)
-
-        if not self.has_permission_to_change_role(request.user, workspace, target_membership, new_role_name):
-            return Response({"error": "You do not have permission to change this user's role."}, status=status.HTTP_403_FORBIDDEN)
-
-        target_membership.role = new_role
-        target_membership.save()
-
-        return Response({"message": f"User's role changed to {new_role_name}."}, status=status.HTTP_200_OK)
-
-    def has_permission_to_change_role(self, user, workspace, target_membership, new_role_name):
-        """
-        Checks if the user can change the role
-            - Owner can assign any roles
-            - Admin can only assign `user`, `client`, but not `admin`
-        """
-        if workspace.owner == user:
-            return True
-
-        user_membership = WorkspaceMember.objects.filter(user=user, workspace=workspace, role__name="admin").first()
-        if user_membership:
-            return not (new_role_name == "admin" or (target_membership.role and target_membership.role.name == "admin"))
-        return False
 
 
 class WorkspaceDetailAPIView(APIView):
