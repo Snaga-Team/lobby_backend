@@ -6,6 +6,7 @@ from django.utils.dateparse import parse_datetime
 
 from accounts.models import User
 from workspace.models import Workspace, WorkspaceRole, WorkspaceMember
+from project.models import Project, ProjectMember
 
 
 class Command(BaseCommand):
@@ -47,6 +48,8 @@ class Command(BaseCommand):
             "user.json": self.load_users,
             "workspace.json": self.load_workspaces,
             "workspace_member.json": self.load_workspace_members,
+            "project.json": self.load_projects,
+            "project_member.json": self.load_projects_member,
         }
 
         if options["only"]:
@@ -148,7 +151,7 @@ class Command(BaseCommand):
                 continue
 
             if user_id == workspace.owner_id:
-                continue  # не добавляем владельца как участника
+                role_name = "admin"
 
             try:
                 role = WorkspaceRole.objects.get(workspace=workspace, name=role_name)
@@ -170,3 +173,63 @@ class Command(BaseCommand):
             created_count += 1
 
         self.stdout.write(self.style.SUCCESS(f"{created_count} workspace members created."))
+
+    def load_projects(self, path: Path):
+        """
+        Loads projects from JSON into the database.
+        """
+
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+
+        created_count = 0
+        for entry in data:
+            fields = entry["fields"]
+
+            workspace = Workspace.objects.get(pk=fields.get("workspace"))
+
+            project = Project(
+                name=fields.get("name"),
+                key=fields.get("key"),
+                description=fields.get("description"),
+                workspace=workspace,
+                is_public=fields.get("is_public", True),
+                is_billable=fields.get("is_billable", True),
+                is_active=fields.get("is_active", True),
+                avatar_background=fields.get("avatar_background"),
+                avatar_emoji=fields.get("avatar_emoji", "🚀"),
+                created_at=parse_datetime(fields.get("created_at")),
+                updated_at=parse_datetime(fields.get("updated_at")),
+            )
+            project.save()
+            created_count += 1
+        
+        self.stdout.write(self.style.SUCCESS(f"{created_count} projects created."))
+
+    def load_projects_member(self, path: Path):
+        """
+        Loads project members from JSON into the database.
+        """
+
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+
+        created_count = 0
+        for entry in data:
+            fields = entry["fields"]
+
+            project = Project.objects.get(pk=fields.get("project"))
+            user = User.objects.get(pk=fields.get("user"))
+
+            project = ProjectMember(
+                user=user,
+                project=project,
+                joined_at=parse_datetime(fields.get("joined_at")),
+                is_active=fields.get("is_active", True),
+                created_at=parse_datetime(fields.get("created_at")),
+                updated_at=parse_datetime(fields.get("updated_at")),
+            )
+            project.save()
+            created_count += 1
+        
+        self.stdout.write(self.style.SUCCESS(f"{created_count} project members created."))
