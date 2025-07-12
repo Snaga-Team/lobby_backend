@@ -187,12 +187,14 @@ class Command(BaseCommand):
             fields = entry["fields"]
 
             workspace = Workspace.objects.get(pk=fields.get("workspace"))
+            owner = User.objects.get(pk=fields.get("owner"))
 
             project = Project(
                 name=fields.get("name"),
                 key=fields.get("key"),
                 description=fields.get("description"),
                 workspace=workspace,
+                owner=owner,
                 is_public=fields.get("is_public", True),
                 is_billable=fields.get("is_billable", True),
                 is_active=fields.get("is_active", True),
@@ -224,7 +226,6 @@ class Command(BaseCommand):
             project = ProjectMember(
                 user=user,
                 project=project,
-                joined_at=parse_datetime(fields.get("joined_at")),
                 is_active=fields.get("is_active", True),
                 created_at=parse_datetime(fields.get("created_at")),
                 updated_at=parse_datetime(fields.get("updated_at")),

@@ -11,10 +11,10 @@ class ProjectAdmin(admin.ModelAdmin):
 
 @admin.register(ProjectMember)
 class ProjectMemberAdmin(admin.ModelAdmin):
-    list_display = ("user", "project", "is_active", "joined_at", "created_at")
+    list_display = ("user", "project", "is_active", "created_at", "updated_at")
     list_filter = ("is_active", "project__workspace")
     search_fields = ("user__email", "project__name")
-    readonly_fields = ("joined_at", "created_at", "updated_at")
+    readonly_fields = ("created_at", "updated_at")
 
 
 @admin.register(ProjectBilling)

@@ -14,7 +14,8 @@
             "avatar_emoji": "🧪",
             "avatar_image": null,
             "created_at": "2025-05-29T16:00:02.687042",
-            "updated_at": "2025-06-08T16:00:02.687042"
+            "updated_at": "2025-06-08T16:00:02.687042",
+            "owner": 82
         }
     },
     {
@@ -32,7 +33,8 @@
             "avatar_emoji": "💼",
             "avatar_image": null,
             "created_at": "2025-06-30T16:00:02.687214",
-            "updated_at": "2025-07-05T16:00:02.687214"
+            "updated_at": "2025-07-05T16:00:02.687214",
+            "owner": 8
         }
     },
     {
@@ -50,7 +52,8 @@
             "avatar_emoji": "📊",
             "avatar_image": null,
             "created_at": "2025-06-24T16:00:02.687265",
-            "updated_at": "2025-06-26T16:00:02.687265"
+            "updated_at": "2025-06-26T16:00:02.687265",
+            "owner": 32
         }
     },
     {
@@ -68,7 +71,8 @@
             "avatar_emoji": "💼",
             "avatar_image": null,
             "created_at": "2025-06-10T16:00:02.687343",
-            "updated_at": "2025-06-12T16:00:02.687343"
+            "updated_at": "2025-06-12T16:00:02.687343",
+            "owner": 11
         }
     },
     {
@@ -86,7 +90,8 @@
             "avatar_emoji": "🧪",
             "avatar_image": null,
             "created_at": "2025-06-24T16:00:02.687392",
-            "updated_at": "2025-06-28T16:00:02.687392"
+            "updated_at": "2025-06-28T16:00:02.687392",
+            "owner": 39
         }
     },
     {
@@ -104,7 +109,8 @@
             "avatar_emoji": "💼",
             "avatar_image": null,
             "created_at": "2025-05-04T16:00:02.687436",
-            "updated_at": "2025-05-07T16:00:02.687436"
+            "updated_at": "2025-05-07T16:00:02.687436",
+            "owner": 53
         }
     },
     {
@@ -122,7 +128,8 @@
             "avatar_emoji": "📦",
             "avatar_image": null,
             "created_at": "2025-05-26T16:00:02.687485",
-            "updated_at": "2025-06-03T16:00:02.687485"
+            "updated_at": "2025-06-03T16:00:02.687485",
+            "owner": 39
         }
     },
     {
@@ -140,7 +147,8 @@
             "avatar_emoji": "📊",
             "avatar_image": null,
             "created_at": "2025-05-06T16:00:02.687549",
-            "updated_at": "2025-05-09T16:00:02.687549"
+            "updated_at": "2025-05-09T16:00:02.687549",
+            "owner": 89
         }
     },
     {
@@ -158,7 +166,8 @@
             "avatar_emoji": "📦",
             "avatar_image": null,
             "created_at": "2025-06-16T16:00:02.687601",
-            "updated_at": "2025-06-17T16:00:02.687601"
+            "updated_at": "2025-06-17T16:00:02.687601",
+            "owner": 85
         }
     },
     {
@@ -176,7 +185,8 @@
             "avatar_emoji": "🚀",
             "avatar_image": null,
             "created_at": "2025-06-12T16:00:02.687654",
-            "updated_at": "2025-06-21T16:00:02.687654"
+            "updated_at": "2025-06-21T16:00:02.687654",
+            "owner": 16
         }
     },
     {
@@ -194,7 +204,8 @@
             "avatar_emoji": "📊",
             "avatar_image": null,
             "created_at": "2025-06-23T16:00:02.687681",
-            "updated_at": "2025-06-30T16:00:02.687681"
+            "updated_at": "2025-06-30T16:00:02.687681",
+            "owner": 16
         }
     },
     {
@@ -212,7 +223,8 @@
             "avatar_emoji": "📦",
             "avatar_image": null,
             "created_at": "2025-06-09T16:00:02.687706",
-            "updated_at": "2025-06-11T16:00:02.687706"
+            "updated_at": "2025-06-11T16:00:02.687706",
+            "owner": 16
         }
     },
     {
@@ -230,7 +242,8 @@
             "avatar_emoji": "📊",
             "avatar_image": null,
             "created_at": "2025-05-14T16:00:02.687726",
-            "updated_at": "2025-05-17T16:00:02.687726"
+            "updated_at": "2025-05-17T16:00:02.687726",
+            "owner": 16
         }
     },
     {
@@ -248,7 +261,8 @@
             "avatar_emoji": "💼",
             "avatar_image": null,
             "created_at": "2025-06-03T16:00:02.687757",
-            "updated_at": "2025-06-10T16:00:02.687757"
+            "updated_at": "2025-06-10T16:00:02.687757",
+            "owner": 61
         }
     },
     {
@@ -266,7 +280,8 @@
             "avatar_emoji": "💼",
             "avatar_image": null,
             "created_at": "2025-04-14T16:00:02.687789",
-            "updated_at": "2025-04-22T16:00:02.687789"
+            "updated_at": "2025-04-22T16:00:02.687789",
+            "owner": 61
         }
     },
     {
@@ -284,7 +299,8 @@
             "avatar_emoji": "📦",
             "avatar_image": null,
             "created_at": "2025-05-28T16:00:02.687880",
-            "updated_at": "2025-06-04T16:00:02.687880"
+            "updated_at": "2025-06-04T16:00:02.687880",
+            "owner": 61
         }
     },
     {
@@ -302,7 +318,8 @@
             "avatar_emoji": "🚀",
             "avatar_image": null,
             "created_at": "2025-05-18T16:00:02.687923",
-            "updated_at": "2025-05-28T16:00:02.687923"
+            "updated_at": "2025-05-28T16:00:02.687923",
+            "owner": 61
         }
     },
     {
@@ -320,7 +337,8 @@
             "avatar_emoji": "💼",
             "avatar_image": null,
             "created_at": "2025-05-23T16:00:02.687961",
-            "updated_at": "2025-06-01T16:00:02.687961"
+            "updated_at": "2025-06-01T16:00:02.687961",
+            "owner": 65
         }
     },
     {
@@ -338,7 +356,8 @@
             "avatar_emoji": "📦",
             "avatar_image": null,
             "created_at": "2025-04-09T16:00:02.687999",
-            "updated_at": "2025-04-15T16:00:02.687999"
+            "updated_at": "2025-04-15T16:00:02.687999",
+            "owner": 74
         }
     },
     {
@@ -356,7 +375,8 @@
             "avatar_emoji": "💼",
             "avatar_image": null,
             "created_at": "2025-04-18T16:00:02.688026",
-            "updated_at": "2025-04-28T16:00:02.688026"
+            "updated_at": "2025-04-28T16:00:02.688026",
+            "owner": 65
         }
     },
     {
@@ -374,7 +394,8 @@
             "avatar_emoji": "💼",
             "avatar_image": null,
             "created_at": "2025-06-20T16:00:02.688066",
-            "updated_at": "2025-06-29T16:00:02.688066"
+            "updated_at": "2025-06-29T16:00:02.688066",
+            "owner": 38
         }
     },
     {
@@ -392,7 +413,8 @@
             "avatar_emoji": "🚀",
             "avatar_image": null,
             "created_at": "2025-05-23T16:00:02.688162",
-            "updated_at": "2025-05-27T16:00:02.688162"
+            "updated_at": "2025-05-27T16:00:02.688162",
+            "owner": 43
         }
     },
     {
@@ -410,7 +432,8 @@
             "avatar_emoji": "📦",
             "avatar_image": null,
             "created_at": "2025-06-24T16:00:02.688256",
-            "updated_at": "2025-07-03T16:00:02.688256"
+            "updated_at": "2025-07-03T16:00:02.688256",
+            "owner": 29
         }
     },
     {
@@ -428,7 +451,8 @@
             "avatar_emoji": "🔧",
             "avatar_image": null,
             "created_at": "2025-06-20T16:00:02.688298",
-            "updated_at": "2025-06-28T16:00:02.688298"
+            "updated_at": "2025-06-28T16:00:02.688298",
+            "owner": 29
         }
     },
     {
@@ -446,7 +470,8 @@
             "avatar_emoji": "🚀",
             "avatar_image": null,
             "created_at": "2025-04-26T16:00:02.688330",
-            "updated_at": "2025-04-27T16:00:02.688330"
+            "updated_at": "2025-04-27T16:00:02.688330",
+            "owner": 29
         }
     },
     {
@@ -464,7 +489,8 @@
             "avatar_emoji": "📊",
             "avatar_image": null,
             "created_at": "2025-06-02T16:00:02.688379",
-            "updated_at": "2025-06-12T16:00:02.688379"
+            "updated_at": "2025-06-12T16:00:02.688379",
+            "owner": 27
         }
     },
     {
@@ -482,7 +508,8 @@
             "avatar_emoji": "🚀",
             "avatar_image": null,
             "created_at": "2025-05-10T16:00:02.688408",
-            "updated_at": "2025-05-11T16:00:02.688408"
+            "updated_at": "2025-05-11T16:00:02.688408",
+            "owner": 27
         }
     },
     {
@@ -500,7 +527,8 @@
             "avatar_emoji": "💼",
             "avatar_image": null,
             "created_at": "2025-05-03T16:00:02.688445",
-            "updated_at": "2025-05-08T16:00:02.688445"
+            "updated_at": "2025-05-08T16:00:02.688445",
+            "owner": 86
         }
     },
     {
@@ -518,7 +546,8 @@
             "avatar_emoji": "🧪",
             "avatar_image": null,
             "created_at": "2025-05-23T16:00:02.688525",
-            "updated_at": "2025-06-02T16:00:02.688525"
+            "updated_at": "2025-06-02T16:00:02.688525",
+            "owner": 76
         }
     },
     {
@@ -536,7 +565,8 @@
             "avatar_emoji": "🚀",
             "avatar_image": null,
             "created_at": "2025-05-27T16:00:02.688584",
-            "updated_at": "2025-05-31T16:00:02.688584"
+            "updated_at": "2025-05-31T16:00:02.688584",
+            "owner": 90
         }
     },
     {
@@ -554,7 +584,8 @@
             "avatar_emoji": "🚀",
             "avatar_image": null,
             "created_at": "2025-04-11T16:00:02.688656",
-            "updated_at": "2025-04-18T16:00:02.688656"
+            "updated_at": "2025-04-18T16:00:02.688656",
+            "owner": 90
         }
     },
     {
@@ -572,7 +603,8 @@
             "avatar_emoji": "🚀",
             "avatar_image": null,
             "created_at": "2025-05-05T16:00:02.688690",
-            "updated_at": "2025-05-08T16:00:02.688690"
+            "updated_at": "2025-05-08T16:00:02.688690",
+            "owner": 1
         }
     },
     {
@@ -590,7 +622,8 @@
             "avatar_emoji": "🔧",
             "avatar_image": null,
             "created_at": "2025-05-16T16:00:02.688751",
-            "updated_at": "2025-05-18T16:00:02.688751"
+            "updated_at": "2025-05-18T16:00:02.688751",
+            "owner": 60
         }
     },
     {
@@ -608,7 +641,8 @@
             "avatar_emoji": "📦",
             "avatar_image": null,
             "created_at": "2025-04-30T16:00:02.688787",
-            "updated_at": "2025-05-01T16:00:02.688787"
+            "updated_at": "2025-05-01T16:00:02.688787",
+            "owner": 90
         }
     },
     {
@@ -626,7 +660,8 @@
             "avatar_emoji": "🧪",
             "avatar_image": null,
             "created_at": "2025-05-10T16:00:02.688814",
-            "updated_at": "2025-05-14T16:00:02.688814"
+            "updated_at": "2025-05-14T16:00:02.688814",
+            "owner": 63
         }
     },
     {
@@ -644,7 +679,8 @@
             "avatar_emoji": "🚀",
             "avatar_image": null,
             "created_at": "2025-06-30T16:00:02.688941",
-            "updated_at": "2025-07-02T16:00:02.688941"
+            "updated_at": "2025-07-02T16:00:02.688941",
+            "owner": 52
         }
     },
     {
@@ -662,7 +698,8 @@
             "avatar_emoji": "💼",
             "avatar_image": null,
             "created_at": "2025-06-09T16:00:02.688993",
-            "updated_at": "2025-06-12T16:00:02.688993"
+            "updated_at": "2025-06-12T16:00:02.688993",
+            "owner": 52
         }
     },
     {
@@ -680,7 +717,8 @@
             "avatar_emoji": "📦",
             "avatar_image": null,
             "created_at": "2025-04-25T16:00:02.689020",
-            "updated_at": "2025-04-29T16:00:02.689020"
+            "updated_at": "2025-04-29T16:00:02.689020",
+            "owner": 24
         }
     }
 ]

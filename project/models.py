@@ -30,6 +30,7 @@ class Project(models.Model):
 
     name = models.CharField(verbose_name="Name", max_length=150)
     key = models.CharField(verbose_name="Key", max_length=10)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="project_owner", verbose_name="Owner")
     description = models.TextField(verbose_name="Description", blank=True, null=True)
     workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE, related_name="project_workspace", verbose_name="Workspace")
     is_public = models.BooleanField(default=True, verbose_name="Is Public")
@@ -76,7 +77,6 @@ class ProjectMember(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="project_member", verbose_name="User")
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="members", verbose_name="Project")
-    joined_at = models.DateTimeField(auto_now_add=True, verbose_name="Date of joined")
     is_active = models.BooleanField(default=True, verbose_name="Is Active")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date of create")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Date of update")

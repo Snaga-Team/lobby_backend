@@ -5,7 +5,6 @@
         "fields": {
             "user": 88,
             "project": 1,
-            "joined_at": "2025-06-01T16:00:02.687042",
             "is_active": true,
             "created_at": "2025-06-01T16:00:02.687042",
             "updated_at": "2025-06-02T16:00:02.687042"
@@ -17,7 +16,6 @@
         "fields": {
             "user": 8,
             "project": 1,
-            "joined_at": "2025-05-29T16:00:02.687042",
             "is_active": true,
             "created_at": "2025-05-29T16:00:02.687042",
             "updated_at": "2025-05-30T16:00:02.687042"
@@ -29,7 +27,6 @@
         "fields": {
             "user": 24,
             "project": 1,
-            "joined_at": "2025-05-30T16:00:02.687042",
             "is_active": true,
             "created_at": "2025-05-30T16:00:02.687042",
             "updated_at": "2025-05-31T16:00:02.687042"
@@ -41,7 +38,6 @@
         "fields": {
             "user": 23,
             "project": 1,
-            "joined_at": "2025-05-30T16:00:02.687042",
             "is_active": true,
             "created_at": "2025-05-30T16:00:02.687042",
             "updated_at": "2025-05-31T16:00:02.687042"
@@ -53,7 +49,6 @@
         "fields": {
             "user": 82,
             "project": 1,
-            "joined_at": "2025-05-31T16:00:02.687042",
             "is_active": true,
             "created_at": "2025-05-31T16:00:02.687042",
             "updated_at": "2025-06-01T16:00:02.687042"
@@ -65,7 +60,6 @@
         "fields": {
             "user": 2,
             "project": 1,
-            "joined_at": "2025-06-03T16:00:02.687042",
             "is_active": true,
             "created_at": "2025-06-03T16:00:02.687042",
             "updated_at": "2025-06-04T16:00:02.687042"
@@ -77,7 +71,6 @@
         "fields": {
             "user": 88,
             "project": 2,
-            "joined_at": "2025-06-30T16:00:02.687214",
             "is_active": true,
             "created_at": "2025-06-30T16:00:02.687214",
             "updated_at": "2025-07-01T16:00:02.687214"
@@ -89,7 +82,6 @@
         "fields": {
             "user": 8,
             "project": 2,
-            "joined_at": "2025-07-01T16:00:02.687214",
             "is_active": true,
             "created_at": "2025-07-01T16:00:02.687214",
             "updated_at": "2025-07-02T16:00:02.687214"
@@ -101,7 +93,6 @@
         "fields": {
             "user": 48,
             "project": 2,
-            "joined_at": "2025-07-05T16:00:02.687214",
             "is_active": true,
             "created_at": "2025-07-05T16:00:02.687214",
             "updated_at": "2025-07-06T16:00:02.687214"
@@ -113,7 +104,6 @@
         "fields": {
             "user": 88,
             "project": 3,
-            "joined_at": "2025-06-28T16:00:02.687265",
             "is_active": true,
             "created_at": "2025-06-28T16:00:02.687265",
             "updated_at": "2025-06-29T16:00:02.687265"
@@ -125,7 +115,6 @@
         "fields": {
             "user": 83,
             "project": 3,
-            "joined_at": "2025-06-28T16:00:02.687265",
             "is_active": true,
             "created_at": "2025-06-28T16:00:02.687265",
             "updated_at": "2025-06-29T16:00:02.687265"
@@ -137,7 +126,6 @@
         "fields": {
             "user": 82,
             "project": 3,
-            "joined_at": "2025-06-25T16:00:02.687265",
             "is_active": true,
             "created_at": "2025-06-25T16:00:02.687265",
             "updated_at": "2025-06-26T16:00:02.687265"
@@ -149,7 +137,6 @@
         "fields": {
             "user": 32,
             "project": 3,
-            "joined_at": "2025-06-27T16:00:02.687265",
             "is_active": true,
             "created_at": "2025-06-27T16:00:02.687265",
             "updated_at": "2025-06-28T16:00:02.687265"
@@ -161,7 +148,6 @@
         "fields": {
             "user": 38,
             "project": 3,
-            "joined_at": "2025-06-28T16:00:02.687265",
             "is_active": true,
             "created_at": "2025-06-28T16:00:02.687265",
             "updated_at": "2025-06-29T16:00:02.687265"
@@ -173,7 +159,6 @@
         "fields": {
             "user": 8,
             "project": 3,
-            "joined_at": "2025-06-28T16:00:02.687265",
             "is_active": true,
             "created_at": "2025-06-28T16:00:02.687265",
             "updated_at": "2025-06-29T16:00:02.687265"
@@ -185,7 +170,6 @@
         "fields": {
             "user": 48,
             "project": 3,
-            "joined_at": "2025-06-27T16:00:02.687265",
             "is_active": true,
             "created_at": "2025-06-27T16:00:02.687265",
             "updated_at": "2025-06-28T16:00:02.687265"
@@ -197,7 +181,6 @@
         "fields": {
             "user": 24,
             "project": 3,
-            "joined_at": "2025-06-27T16:00:02.687265",
             "is_active": true,
             "created_at": "2025-06-27T16:00:02.687265",
             "updated_at": "2025-06-28T16:00:02.687265"
@@ -209,7 +192,6 @@
         "fields": {
             "user": 85,
             "project": 4,
-            "joined_at": "2025-06-11T16:00:02.687343",
             "is_active": true,
             "created_at": "2025-06-11T16:00:02.687343",
             "updated_at": "2025-06-12T16:00:02.687343"
@@ -221,7 +203,6 @@
         "fields": {
             "user": 18,
             "project": 4,
-            "joined_at": "2025-06-11T16:00:02.687343",
             "is_active": true,
             "created_at": "2025-06-11T16:00:02.687343",
             "updated_at": "2025-06-12T16:00:02.687343"
@@ -233,7 +214,6 @@
         "fields": {
             "user": 11,
             "project": 4,
-            "joined_at": "2025-06-10T16:00:02.687343",
             "is_active": true,
             "created_at": "2025-06-10T16:00:02.687343",
             "updated_at": "2025-06-11T16:00:02.687343"
@@ -245,7 +225,6 @@
         "fields": {
             "user": 39,
             "project": 4,
-            "joined_at": "2025-06-10T16:00:02.687343",
             "is_active": true,
             "created_at": "2025-06-10T16:00:02.687343",
             "updated_at": "2025-06-11T16:00:02.687343"
@@ -257,7 +236,6 @@
         "fields": {
             "user": 85,
             "project": 5,
-            "joined_at": "2025-06-25T16:00:02.687392",
             "is_active": true,
             "created_at": "2025-06-25T16:00:02.687392",
             "updated_at": "2025-06-26T16:00:02.687392"
@@ -269,7 +247,6 @@
         "fields": {
             "user": 18,
             "project": 5,
-            "joined_at": "2025-06-27T16:00:02.687392",
             "is_active": true,
             "created_at": "2025-06-27T16:00:02.687392",
             "updated_at": "2025-06-28T16:00:02.687392"
@@ -281,7 +258,6 @@
         "fields": {
             "user": 11,
             "project": 5,
-            "joined_at": "2025-06-25T16:00:02.687392",
             "is_active": true,
             "created_at": "2025-06-25T16:00:02.687392",
             "updated_at": "2025-06-26T16:00:02.687392"
@@ -293,7 +269,6 @@
         "fields": {
             "user": 39,
             "project": 5,
-            "joined_at": "2025-06-28T16:00:02.687392",
             "is_active": true,
             "created_at": "2025-06-28T16:00:02.687392",
             "updated_at": "2025-06-29T16:00:02.687392"
@@ -305,7 +280,6 @@
         "fields": {
             "user": 53,
             "project": 5,
-            "joined_at": "2025-06-25T16:00:02.687392",
             "is_active": true,
             "created_at": "2025-06-25T16:00:02.687392",
             "updated_at": "2025-06-26T16:00:02.687392"
@@ -317,7 +291,6 @@
         "fields": {
             "user": 85,
             "project": 6,
-            "joined_at": "2025-05-08T16:00:02.687436",
             "is_active": true,
             "created_at": "2025-05-08T16:00:02.687436",
             "updated_at": "2025-05-09T16:00:02.687436"
@@ -329,7 +302,6 @@
         "fields": {
             "user": 53,
             "project": 6,
-            "joined_at": "2025-05-07T16:00:02.687436",
             "is_active": true,
             "created_at": "2025-05-07T16:00:02.687436",
             "updated_at": "2025-05-08T16:00:02.687436"
@@ -341,7 +313,6 @@
         "fields": {
             "user": 39,
             "project": 6,
-            "joined_at": "2025-05-08T16:00:02.687436",
             "is_active": true,
             "created_at": "2025-05-08T16:00:02.687436",
             "updated_at": "2025-05-09T16:00:02.687436"
@@ -353,7 +324,6 @@
         "fields": {
             "user": 89,
             "project": 6,
-            "joined_at": "2025-05-07T16:00:02.687436",
             "is_active": true,
             "created_at": "2025-05-07T16:00:02.687436",
             "updated_at": "2025-05-08T16:00:02.687436"
@@ -365,7 +335,6 @@
         "fields": {
             "user": 11,
             "project": 6,
-            "joined_at": "2025-05-07T16:00:02.687436",
             "is_active": true,
             "created_at": "2025-05-07T16:00:02.687436",
             "updated_at": "2025-05-08T16:00:02.687436"
@@ -377,7 +346,6 @@
         "fields": {
             "user": 85,
             "project": 7,
-            "joined_at": "2025-05-31T16:00:02.687485",
             "is_active": true,
             "created_at": "2025-05-31T16:00:02.687485",
             "updated_at": "2025-06-01T16:00:02.687485"
@@ -389,7 +357,6 @@
         "fields": {
             "user": 11,
             "project": 7,
-            "joined_at": "2025-05-29T16:00:02.687485",
             "is_active": true,
             "created_at": "2025-05-29T16:00:02.687485",
             "updated_at": "2025-05-30T16:00:02.687485"
@@ -401,7 +368,6 @@
         "fields": {
             "user": 89,
             "project": 7,
-            "joined_at": "2025-05-28T16:00:02.687485",
             "is_active": true,
             "created_at": "2025-05-28T16:00:02.687485",
             "updated_at": "2025-05-29T16:00:02.687485"
@@ -413,7 +379,6 @@
         "fields": {
             "user": 39,
             "project": 7,
-            "joined_at": "2025-05-27T16:00:02.687485",
             "is_active": true,
             "created_at": "2025-05-27T16:00:02.687485",
             "updated_at": "2025-05-28T16:00:02.687485"
@@ -425,7 +390,6 @@
         "fields": {
             "user": 85,
             "project": 8,
-            "joined_at": "2025-05-07T16:00:02.687549",
             "is_active": true,
             "created_at": "2025-05-07T16:00:02.687549",
             "updated_at": "2025-05-08T16:00:02.687549"
@@ -437,7 +401,6 @@
         "fields": {
             "user": 89,
             "project": 8,
-            "joined_at": "2025-05-06T16:00:02.687549",
             "is_active": true,
             "created_at": "2025-05-06T16:00:02.687549",
             "updated_at": "2025-05-07T16:00:02.687549"
@@ -449,7 +412,6 @@
         "fields": {
             "user": 11,
             "project": 8,
-            "joined_at": "2025-05-10T16:00:02.687549",
             "is_active": true,
             "created_at": "2025-05-10T16:00:02.687549",
             "updated_at": "2025-05-11T16:00:02.687549"
@@ -461,7 +423,6 @@
         "fields": {
             "user": 39,
             "project": 8,
-            "joined_at": "2025-05-06T16:00:02.687549",
             "is_active": true,
             "created_at": "2025-05-06T16:00:02.687549",
             "updated_at": "2025-05-07T16:00:02.687549"
@@ -473,7 +434,6 @@
         "fields": {
             "user": 18,
             "project": 8,
-            "joined_at": "2025-05-09T16:00:02.687549",
             "is_active": true,
             "created_at": "2025-05-09T16:00:02.687549",
             "updated_at": "2025-05-10T16:00:02.687549"
@@ -485,7 +445,6 @@
         "fields": {
             "user": 53,
             "project": 8,
-            "joined_at": "2025-05-07T16:00:02.687549",
             "is_active": true,
             "created_at": "2025-05-07T16:00:02.687549",
             "updated_at": "2025-05-08T16:00:02.687549"
@@ -497,7 +456,6 @@
         "fields": {
             "user": 85,
             "project": 9,
-            "joined_at": "2025-06-19T16:00:02.687601",
             "is_active": true,
             "created_at": "2025-06-19T16:00:02.687601",
             "updated_at": "2025-06-20T16:00:02.687601"
@@ -509,7 +467,6 @@
         "fields": {
             "user": 11,
             "project": 9,
-            "joined_at": "2025-06-18T16:00:02.687601",
             "is_active": true,
             "created_at": "2025-06-18T16:00:02.687601",
             "updated_at": "2025-06-19T16:00:02.687601"
@@ -521,7 +478,6 @@
         "fields": {
             "user": 89,
             "project": 9,
-            "joined_at": "2025-06-19T16:00:02.687601",
             "is_active": true,
             "created_at": "2025-06-19T16:00:02.687601",
             "updated_at": "2025-06-20T16:00:02.687601"
@@ -533,7 +489,6 @@
         "fields": {
             "user": 39,
             "project": 9,
-            "joined_at": "2025-06-17T16:00:02.687601",
             "is_active": true,
             "created_at": "2025-06-17T16:00:02.687601",
             "updated_at": "2025-06-18T16:00:02.687601"
@@ -545,7 +500,6 @@
         "fields": {
             "user": 16,
             "project": 10,
-            "joined_at": "2025-06-12T16:00:02.687654",
             "is_active": true,
             "created_at": "2025-06-12T16:00:02.687654",
             "updated_at": "2025-06-13T16:00:02.687654"
@@ -557,7 +511,6 @@
         "fields": {
             "user": 74,
             "project": 10,
-            "joined_at": "2025-06-13T16:00:02.687654",
             "is_active": true,
             "created_at": "2025-06-13T16:00:02.687654",
             "updated_at": "2025-06-14T16:00:02.687654"
@@ -569,7 +522,6 @@
         "fields": {
             "user": 16,
             "project": 11,
-            "joined_at": "2025-06-24T16:00:02.687681",
             "is_active": true,
             "created_at": "2025-06-24T16:00:02.687681",
             "updated_at": "2025-06-25T16:00:02.687681"
@@ -581,7 +533,6 @@
         "fields": {
             "user": 74,
             "project": 11,
-            "joined_at": "2025-06-24T16:00:02.687681",
             "is_active": true,
             "created_at": "2025-06-24T16:00:02.687681",
             "updated_at": "2025-06-25T16:00:02.687681"
@@ -593,7 +544,6 @@
         "fields": {
             "user": 16,
             "project": 12,
-            "joined_at": "2025-06-14T16:00:02.687706",
             "is_active": true,
             "created_at": "2025-06-14T16:00:02.687706",
             "updated_at": "2025-06-15T16:00:02.687706"
@@ -605,7 +555,6 @@
         "fields": {
             "user": 16,
             "project": 13,
-            "joined_at": "2025-05-15T16:00:02.687726",
             "is_active": true,
             "created_at": "2025-05-15T16:00:02.687726",
             "updated_at": "2025-05-16T16:00:02.687726"
@@ -617,7 +566,6 @@
         "fields": {
             "user": 74,
             "project": 13,
-            "joined_at": "2025-05-17T16:00:02.687726",
             "is_active": true,
             "created_at": "2025-05-17T16:00:02.687726",
             "updated_at": "2025-05-18T16:00:02.687726"
@@ -629,7 +577,6 @@
         "fields": {
             "user": 61,
             "project": 14,
-            "joined_at": "2025-06-04T16:00:02.687757",
             "is_active": true,
             "created_at": "2025-06-04T16:00:02.687757",
             "updated_at": "2025-06-05T16:00:02.687757"
@@ -641,7 +588,6 @@
         "fields": {
             "user": 61,
             "project": 15,
-            "joined_at": "2025-04-17T16:00:02.687789",
             "is_active": true,
             "created_at": "2025-04-17T16:00:02.687789",
             "updated_at": "2025-04-18T16:00:02.687789"
@@ -653,7 +599,6 @@
         "fields": {
             "user": 61,
             "project": 16,
-            "joined_at": "2025-05-31T16:00:02.687880",
             "is_active": true,
             "created_at": "2025-05-31T16:00:02.687880",
             "updated_at": "2025-06-01T16:00:02.687880"
@@ -665,7 +610,6 @@
         "fields": {
             "user": 49,
             "project": 16,
-            "joined_at": "2025-05-29T16:00:02.687880",
             "is_active": true,
             "created_at": "2025-05-29T16:00:02.687880",
             "updated_at": "2025-05-30T16:00:02.687880"
@@ -677,7 +621,6 @@
         "fields": {
             "user": 61,
             "project": 17,
-            "joined_at": "2025-05-23T16:00:02.687923",
             "is_active": true,
             "created_at": "2025-05-23T16:00:02.687923",
             "updated_at": "2025-05-24T16:00:02.687923"
@@ -689,7 +632,6 @@
         "fields": {
             "user": 65,
             "project": 18,
-            "joined_at": "2025-05-24T16:00:02.687961",
             "is_active": true,
             "created_at": "2025-05-24T16:00:02.687961",
             "updated_at": "2025-05-25T16:00:02.687961"
@@ -701,7 +643,6 @@
         "fields": {
             "user": 74,
             "project": 18,
-            "joined_at": "2025-05-28T16:00:02.687961",
             "is_active": true,
             "created_at": "2025-05-28T16:00:02.687961",
             "updated_at": "2025-05-29T16:00:02.687961"
@@ -713,7 +654,6 @@
         "fields": {
             "user": 51,
             "project": 18,
-            "joined_at": "2025-05-27T16:00:02.687961",
             "is_active": true,
             "created_at": "2025-05-27T16:00:02.687961",
             "updated_at": "2025-05-28T16:00:02.687961"
@@ -725,7 +665,6 @@
         "fields": {
             "user": 68,
             "project": 18,
-            "joined_at": "2025-05-23T16:00:02.687961",
             "is_active": true,
             "created_at": "2025-05-23T16:00:02.687961",
             "updated_at": "2025-05-24T16:00:02.687961"
@@ -737,7 +676,6 @@
         "fields": {
             "user": 65,
             "project": 19,
-            "joined_at": "2025-04-11T16:00:02.687999",
             "is_active": true,
             "created_at": "2025-04-11T16:00:02.687999",
             "updated_at": "2025-04-12T16:00:02.687999"
@@ -749,7 +687,6 @@
         "fields": {
             "user": 74,
             "project": 19,
-            "joined_at": "2025-04-13T16:00:02.687999",
             "is_active": true,
             "created_at": "2025-04-13T16:00:02.687999",
             "updated_at": "2025-04-14T16:00:02.687999"
@@ -761,7 +698,6 @@
         "fields": {
             "user": 65,
             "project": 20,
-            "joined_at": "2025-04-20T16:00:02.688026",
             "is_active": true,
             "created_at": "2025-04-20T16:00:02.688026",
             "updated_at": "2025-04-21T16:00:02.688026"
@@ -773,7 +709,6 @@
         "fields": {
             "user": 75,
             "project": 21,
-            "joined_at": "2025-06-22T16:00:02.688066",
             "is_active": true,
             "created_at": "2025-06-22T16:00:02.688066",
             "updated_at": "2025-06-23T16:00:02.688066"
@@ -785,7 +720,6 @@
         "fields": {
             "user": 38,
             "project": 21,
-            "joined_at": "2025-06-24T16:00:02.688066",
             "is_active": true,
             "created_at": "2025-06-24T16:00:02.688066",
             "updated_at": "2025-06-25T16:00:02.688066"
@@ -797,7 +731,6 @@
         "fields": {
             "user": 43,
             "project": 21,
-            "joined_at": "2025-06-22T16:00:02.688066",
             "is_active": true,
             "created_at": "2025-06-22T16:00:02.688066",
             "updated_at": "2025-06-23T16:00:02.688066"
@@ -809,7 +742,6 @@
         "fields": {
             "user": 88,
             "project": 21,
-            "joined_at": "2025-06-23T16:00:02.688066",
             "is_active": true,
             "created_at": "2025-06-23T16:00:02.688066",
             "updated_at": "2025-06-24T16:00:02.688066"
@@ -821,7 +753,6 @@
         "fields": {
             "user": 46,
             "project": 21,
-            "joined_at": "2025-06-24T16:00:02.688066",
             "is_active": true,
             "created_at": "2025-06-24T16:00:02.688066",
             "updated_at": "2025-06-25T16:00:02.688066"
@@ -833,7 +764,6 @@
         "fields": {
             "user": 42,
             "project": 21,
-            "joined_at": "2025-06-20T16:00:02.688066",
             "is_active": true,
             "created_at": "2025-06-20T16:00:02.688066",
             "updated_at": "2025-06-21T16:00:02.688066"
@@ -845,7 +775,6 @@
         "fields": {
             "user": 94,
             "project": 21,
-            "joined_at": "2025-06-22T16:00:02.688066",
             "is_active": true,
             "created_at": "2025-06-22T16:00:02.688066",
             "updated_at": "2025-06-23T16:00:02.688066"
@@ -857,7 +786,6 @@
         "fields": {
             "user": 75,
             "project": 22,
-            "joined_at": "2025-05-23T16:00:02.688162",
             "is_active": true,
             "created_at": "2025-05-23T16:00:02.688162",
             "updated_at": "2025-05-24T16:00:02.688162"
@@ -869,7 +797,6 @@
         "fields": {
             "user": 88,
             "project": 22,
-            "joined_at": "2025-05-27T16:00:02.688162",
             "is_active": true,
             "created_at": "2025-05-27T16:00:02.688162",
             "updated_at": "2025-05-28T16:00:02.688162"
@@ -881,7 +808,6 @@
         "fields": {
             "user": 43,
             "project": 22,
-            "joined_at": "2025-05-26T16:00:02.688162",
             "is_active": true,
             "created_at": "2025-05-26T16:00:02.688162",
             "updated_at": "2025-05-27T16:00:02.688162"
@@ -893,7 +819,6 @@
         "fields": {
             "user": 46,
             "project": 22,
-            "joined_at": "2025-05-27T16:00:02.688162",
             "is_active": true,
             "created_at": "2025-05-27T16:00:02.688162",
             "updated_at": "2025-05-28T16:00:02.688162"
@@ -905,7 +830,6 @@
         "fields": {
             "user": 42,
             "project": 22,
-            "joined_at": "2025-05-27T16:00:02.688162",
             "is_active": true,
             "created_at": "2025-05-27T16:00:02.688162",
             "updated_at": "2025-05-28T16:00:02.688162"
@@ -917,7 +841,6 @@
         "fields": {
             "user": 38,
             "project": 22,
-            "joined_at": "2025-05-25T16:00:02.688162",
             "is_active": true,
             "created_at": "2025-05-25T16:00:02.688162",
             "updated_at": "2025-05-26T16:00:02.688162"
@@ -929,7 +852,6 @@
         "fields": {
             "user": 94,
             "project": 22,
-            "joined_at": "2025-05-24T16:00:02.688162",
             "is_active": true,
             "created_at": "2025-05-24T16:00:02.688162",
             "updated_at": "2025-05-25T16:00:02.688162"
@@ -941,7 +863,6 @@
         "fields": {
             "user": 29,
             "project": 23,
-            "joined_at": "2025-06-24T16:00:02.688256",
             "is_active": true,
             "created_at": "2025-06-24T16:00:02.688256",
             "updated_at": "2025-06-25T16:00:02.688256"
@@ -953,7 +874,6 @@
         "fields": {
             "user": 29,
             "project": 24,
-            "joined_at": "2025-06-23T16:00:02.688298",
             "is_active": true,
             "created_at": "2025-06-23T16:00:02.688298",
             "updated_at": "2025-06-24T16:00:02.688298"
@@ -965,7 +885,6 @@
         "fields": {
             "user": 96,
             "project": 24,
-            "joined_at": "2025-06-24T16:00:02.688298",
             "is_active": true,
             "created_at": "2025-06-24T16:00:02.688298",
             "updated_at": "2025-06-25T16:00:02.688298"
@@ -977,7 +896,6 @@
         "fields": {
             "user": 36,
             "project": 24,
-            "joined_at": "2025-06-21T16:00:02.688298",
             "is_active": true,
             "created_at": "2025-06-21T16:00:02.688298",
             "updated_at": "2025-06-22T16:00:02.688298"
@@ -989,7 +907,6 @@
         "fields": {
             "user": 29,
             "project": 25,
-            "joined_at": "2025-04-30T16:00:02.688330",
             "is_active": true,
             "created_at": "2025-04-30T16:00:02.688330",
             "updated_at": "2025-05-01T16:00:02.688330"
@@ -1001,7 +918,6 @@
         "fields": {
             "user": 67,
             "project": 25,
-            "joined_at": "2025-04-29T16:00:02.688330",
             "is_active": true,
             "created_at": "2025-04-29T16:00:02.688330",
             "updated_at": "2025-04-30T16:00:02.688330"
@@ -1013,7 +929,6 @@
         "fields": {
             "user": 61,
             "project": 25,
-            "joined_at": "2025-04-27T16:00:02.688330",
             "is_active": true,
             "created_at": "2025-04-27T16:00:02.688330",
             "updated_at": "2025-04-28T16:00:02.688330"
@@ -1025,7 +940,6 @@
         "fields": {
             "user": 30,
             "project": 25,
-            "joined_at": "2025-04-27T16:00:02.688330",
             "is_active": true,
             "created_at": "2025-04-27T16:00:02.688330",
             "updated_at": "2025-04-28T16:00:02.688330"
@@ -1037,7 +951,6 @@
         "fields": {
             "user": 27,
             "project": 26,
-            "joined_at": "2025-06-03T16:00:02.688379",
             "is_active": true,
             "created_at": "2025-06-03T16:00:02.688379",
             "updated_at": "2025-06-04T16:00:02.688379"
@@ -1049,7 +962,6 @@
         "fields": {
             "user": 23,
             "project": 26,
-            "joined_at": "2025-06-05T16:00:02.688379",
             "is_active": true,
             "created_at": "2025-06-05T16:00:02.688379",
             "updated_at": "2025-06-06T16:00:02.688379"
@@ -1061,7 +973,6 @@
         "fields": {
             "user": 27,
             "project": 27,
-            "joined_at": "2025-05-11T16:00:02.688408",
             "is_active": true,
             "created_at": "2025-05-11T16:00:02.688408",
             "updated_at": "2025-05-12T16:00:02.688408"
@@ -1073,7 +984,6 @@
         "fields": {
             "user": 27,
             "project": 28,
-            "joined_at": "2025-05-03T16:00:02.688445",
             "is_active": true,
             "created_at": "2025-05-03T16:00:02.688445",
             "updated_at": "2025-05-04T16:00:02.688445"
@@ -1085,7 +995,6 @@
         "fields": {
             "user": 3,
             "project": 28,
-            "joined_at": "2025-05-05T16:00:02.688445",
             "is_active": true,
             "created_at": "2025-05-05T16:00:02.688445",
             "updated_at": "2025-05-06T16:00:02.688445"
@@ -1097,7 +1006,6 @@
         "fields": {
             "user": 76,
             "project": 28,
-            "joined_at": "2025-05-03T16:00:02.688445",
             "is_active": true,
             "created_at": "2025-05-03T16:00:02.688445",
             "updated_at": "2025-05-04T16:00:02.688445"
@@ -1109,7 +1017,6 @@
         "fields": {
             "user": 31,
             "project": 28,
-            "joined_at": "2025-05-08T16:00:02.688445",
             "is_active": true,
             "created_at": "2025-05-08T16:00:02.688445",
             "updated_at": "2025-05-09T16:00:02.688445"
@@ -1121,7 +1028,6 @@
         "fields": {
             "user": 20,
             "project": 28,
-            "joined_at": "2025-05-07T16:00:02.688445",
             "is_active": true,
             "created_at": "2025-05-07T16:00:02.688445",
             "updated_at": "2025-05-08T16:00:02.688445"
@@ -1133,7 +1039,6 @@
         "fields": {
             "user": 23,
             "project": 28,
-            "joined_at": "2025-05-05T16:00:02.688445",
             "is_active": true,
             "created_at": "2025-05-05T16:00:02.688445",
             "updated_at": "2025-05-06T16:00:02.688445"
@@ -1145,7 +1050,6 @@
         "fields": {
             "user": 58,
             "project": 28,
-            "joined_at": "2025-05-03T16:00:02.688445",
             "is_active": true,
             "created_at": "2025-05-03T16:00:02.688445",
             "updated_at": "2025-05-04T16:00:02.688445"
@@ -1157,7 +1061,6 @@
         "fields": {
             "user": 41,
             "project": 28,
-            "joined_at": "2025-05-04T16:00:02.688445",
             "is_active": true,
             "created_at": "2025-05-04T16:00:02.688445",
             "updated_at": "2025-05-05T16:00:02.688445"
@@ -1169,7 +1072,6 @@
         "fields": {
             "user": 86,
             "project": 28,
-            "joined_at": "2025-05-08T16:00:02.688445",
             "is_active": true,
             "created_at": "2025-05-08T16:00:02.688445",
             "updated_at": "2025-05-09T16:00:02.688445"
@@ -1181,7 +1083,6 @@
         "fields": {
             "user": 27,
             "project": 29,
-            "joined_at": "2025-05-23T16:00:02.688525",
             "is_active": true,
             "created_at": "2025-05-23T16:00:02.688525",
             "updated_at": "2025-05-24T16:00:02.688525"
@@ -1193,7 +1094,6 @@
         "fields": {
             "user": 23,
             "project": 29,
-            "joined_at": "2025-05-26T16:00:02.688525",
             "is_active": true,
             "created_at": "2025-05-26T16:00:02.688525",
             "updated_at": "2025-05-27T16:00:02.688525"
@@ -1205,7 +1105,6 @@
         "fields": {
             "user": 76,
             "project": 29,
-            "joined_at": "2025-05-27T16:00:02.688525",
             "is_active": true,
             "created_at": "2025-05-27T16:00:02.688525",
             "updated_at": "2025-05-28T16:00:02.688525"
@@ -1217,7 +1116,6 @@
         "fields": {
             "user": 58,
             "project": 29,
-            "joined_at": "2025-05-26T16:00:02.688525",
             "is_active": true,
             "created_at": "2025-05-26T16:00:02.688525",
             "updated_at": "2025-05-27T16:00:02.688525"
@@ -1229,7 +1127,6 @@
         "fields": {
             "user": 27,
             "project": 30,
-            "joined_at": "2025-05-29T16:00:02.688584",
             "is_active": true,
             "created_at": "2025-05-29T16:00:02.688584",
             "updated_at": "2025-05-30T16:00:02.688584"
@@ -1241,7 +1138,6 @@
         "fields": {
             "user": 3,
             "project": 30,
-            "joined_at": "2025-06-01T16:00:02.688584",
             "is_active": true,
             "created_at": "2025-06-01T16:00:02.688584",
             "updated_at": "2025-06-02T16:00:02.688584"
@@ -1253,7 +1149,6 @@
         "fields": {
             "user": 76,
             "project": 30,
-            "joined_at": "2025-05-28T16:00:02.688584",
             "is_active": true,
             "created_at": "2025-05-28T16:00:02.688584",
             "updated_at": "2025-05-29T16:00:02.688584"
@@ -1265,7 +1160,6 @@
         "fields": {
             "user": 86,
             "project": 30,
-            "joined_at": "2025-05-31T16:00:02.688584",
             "is_active": true,
             "created_at": "2025-05-31T16:00:02.688584",
             "updated_at": "2025-06-01T16:00:02.688584"
@@ -1277,7 +1171,6 @@
         "fields": {
             "user": 23,
             "project": 30,
-            "joined_at": "2025-05-28T16:00:02.688584",
             "is_active": true,
             "created_at": "2025-05-28T16:00:02.688584",
             "updated_at": "2025-05-29T16:00:02.688584"
@@ -1289,7 +1182,6 @@
         "fields": {
             "user": 90,
             "project": 30,
-            "joined_at": "2025-06-01T16:00:02.688584",
             "is_active": true,
             "created_at": "2025-06-01T16:00:02.688584",
             "updated_at": "2025-06-02T16:00:02.688584"
@@ -1301,7 +1193,6 @@
         "fields": {
             "user": 27,
             "project": 31,
-            "joined_at": "2025-04-13T16:00:02.688656",
             "is_active": true,
             "created_at": "2025-04-13T16:00:02.688656",
             "updated_at": "2025-04-14T16:00:02.688656"
@@ -1313,7 +1204,6 @@
         "fields": {
             "user": 90,
             "project": 31,
-            "joined_at": "2025-04-13T16:00:02.688656",
             "is_active": true,
             "created_at": "2025-04-13T16:00:02.688656",
             "updated_at": "2025-04-14T16:00:02.688656"
@@ -1325,7 +1215,6 @@
         "fields": {
             "user": 76,
             "project": 31,
-            "joined_at": "2025-04-15T16:00:02.688656",
             "is_active": true,
             "created_at": "2025-04-15T16:00:02.688656",
             "updated_at": "2025-04-16T16:00:02.688656"
@@ -1337,7 +1226,6 @@
         "fields": {
             "user": 1,
             "project": 32,
-            "joined_at": "2025-05-10T16:00:02.688690",
             "is_active": true,
             "created_at": "2025-05-10T16:00:02.688690",
             "updated_at": "2025-05-11T16:00:02.688690"
@@ -1349,7 +1237,6 @@
         "fields": {
             "user": 56,
             "project": 32,
-            "joined_at": "2025-05-10T16:00:02.688690",
             "is_active": true,
             "created_at": "2025-05-10T16:00:02.688690",
             "updated_at": "2025-05-11T16:00:02.688690"
@@ -1361,7 +1248,6 @@
         "fields": {
             "user": 25,
             "project": 32,
-            "joined_at": "2025-05-08T16:00:02.688690",
             "is_active": true,
             "created_at": "2025-05-08T16:00:02.688690",
             "updated_at": "2025-05-09T16:00:02.688690"
@@ -1373,7 +1259,6 @@
         "fields": {
             "user": 37,
             "project": 32,
-            "joined_at": "2025-05-07T16:00:02.688690",
             "is_active": true,
             "created_at": "2025-05-07T16:00:02.688690",
             "updated_at": "2025-05-08T16:00:02.688690"
@@ -1385,7 +1270,6 @@
         "fields": {
             "user": 1,
             "project": 33,
-            "joined_at": "2025-05-20T16:00:02.688751",
             "is_active": true,
             "created_at": "2025-05-20T16:00:02.688751",
             "updated_at": "2025-05-21T16:00:02.688751"
@@ -1397,7 +1281,6 @@
         "fields": {
             "user": 60,
             "project": 33,
-            "joined_at": "2025-05-20T16:00:02.688751",
             "is_active": true,
             "created_at": "2025-05-20T16:00:02.688751",
             "updated_at": "2025-05-21T16:00:02.688751"
@@ -1409,7 +1292,6 @@
         "fields": {
             "user": 56,
             "project": 33,
-            "joined_at": "2025-05-19T16:00:02.688751",
             "is_active": true,
             "created_at": "2025-05-19T16:00:02.688751",
             "updated_at": "2025-05-20T16:00:02.688751"
@@ -1421,7 +1303,6 @@
         "fields": {
             "user": 52,
             "project": 34,
-            "joined_at": "2025-05-04T16:00:02.688787",
             "is_active": true,
             "created_at": "2025-05-04T16:00:02.688787",
             "updated_at": "2025-05-05T16:00:02.688787"
@@ -1433,7 +1314,6 @@
         "fields": {
             "user": 90,
             "project": 34,
-            "joined_at": "2025-05-05T16:00:02.688787",
             "is_active": true,
             "created_at": "2025-05-05T16:00:02.688787",
             "updated_at": "2025-05-06T16:00:02.688787"
@@ -1445,7 +1325,6 @@
         "fields": {
             "user": 52,
             "project": 35,
-            "joined_at": "2025-05-11T16:00:02.688814",
             "is_active": true,
             "created_at": "2025-05-11T16:00:02.688814",
             "updated_at": "2025-05-12T16:00:02.688814"
@@ -1457,7 +1336,6 @@
         "fields": {
             "user": 27,
             "project": 35,
-            "joined_at": "2025-05-10T16:00:02.688814",
             "is_active": true,
             "created_at": "2025-05-10T16:00:02.688814",
             "updated_at": "2025-05-11T16:00:02.688814"
@@ -1469,7 +1347,6 @@
         "fields": {
             "user": 24,
             "project": 35,
-            "joined_at": "2025-05-10T16:00:02.688814",
             "is_active": true,
             "created_at": "2025-05-10T16:00:02.688814",
             "updated_at": "2025-05-11T16:00:02.688814"
@@ -1481,7 +1358,6 @@
         "fields": {
             "user": 37,
             "project": 35,
-            "joined_at": "2025-05-12T16:00:02.688814",
             "is_active": true,
             "created_at": "2025-05-12T16:00:02.688814",
             "updated_at": "2025-05-13T16:00:02.688814"
@@ -1493,7 +1369,6 @@
         "fields": {
             "user": 90,
             "project": 35,
-            "joined_at": "2025-05-10T16:00:02.688814",
             "is_active": true,
             "created_at": "2025-05-10T16:00:02.688814",
             "updated_at": "2025-05-11T16:00:02.688814"
@@ -1505,7 +1380,6 @@
         "fields": {
             "user": 98,
             "project": 35,
-            "joined_at": "2025-05-14T16:00:02.688814",
             "is_active": true,
             "created_at": "2025-05-14T16:00:02.688814",
             "updated_at": "2025-05-15T16:00:02.688814"
@@ -1517,7 +1391,6 @@
         "fields": {
             "user": 65,
             "project": 35,
-            "joined_at": "2025-05-13T16:00:02.688814",
             "is_active": true,
             "created_at": "2025-05-13T16:00:02.688814",
             "updated_at": "2025-05-14T16:00:02.688814"
@@ -1529,7 +1402,6 @@
         "fields": {
             "user": 6,
             "project": 35,
-            "joined_at": "2025-05-13T16:00:02.688814",
             "is_active": true,
             "created_at": "2025-05-13T16:00:02.688814",
             "updated_at": "2025-05-14T16:00:02.688814"
@@ -1541,7 +1413,6 @@
         "fields": {
             "user": 63,
             "project": 35,
-            "joined_at": "2025-05-13T16:00:02.688814",
             "is_active": true,
             "created_at": "2025-05-13T16:00:02.688814",
             "updated_at": "2025-05-14T16:00:02.688814"
@@ -1553,7 +1424,6 @@
         "fields": {
             "user": 52,
             "project": 36,
-            "joined_at": "2025-07-04T16:00:02.688941",
             "is_active": true,
             "created_at": "2025-07-04T16:00:02.688941",
             "updated_at": "2025-07-05T16:00:02.688941"
@@ -1565,7 +1435,6 @@
         "fields": {
             "user": 63,
             "project": 36,
-            "joined_at": "2025-06-30T16:00:02.688941",
             "is_active": true,
             "created_at": "2025-06-30T16:00:02.688941",
             "updated_at": "2025-07-01T16:00:02.688941"
@@ -1577,7 +1446,6 @@
         "fields": {
             "user": 37,
             "project": 36,
-            "joined_at": "2025-07-02T16:00:02.688941",
             "is_active": true,
             "created_at": "2025-07-02T16:00:02.688941",
             "updated_at": "2025-07-03T16:00:02.688941"
@@ -1589,7 +1457,6 @@
         "fields": {
             "user": 52,
             "project": 37,
-            "joined_at": "2025-06-12T16:00:02.688993",
             "is_active": true,
             "created_at": "2025-06-12T16:00:02.688993",
             "updated_at": "2025-06-13T16:00:02.688993"
@@ -1601,7 +1468,6 @@
         "fields": {
             "user": 63,
             "project": 37,
-            "joined_at": "2025-06-12T16:00:02.688993",
             "is_active": true,
             "created_at": "2025-06-12T16:00:02.688993",
             "updated_at": "2025-06-13T16:00:02.688993"
@@ -1613,7 +1479,6 @@
         "fields": {
             "user": 52,
             "project": 38,
-            "joined_at": "2025-04-30T16:00:02.689020",
             "is_active": true,
             "created_at": "2025-04-30T16:00:02.689020",
             "updated_at": "2025-05-01T16:00:02.689020"
@@ -1625,7 +1490,6 @@
         "fields": {
             "user": 90,
             "project": 38,
-            "joined_at": "2025-04-26T16:00:02.689020",
             "is_active": true,
             "created_at": "2025-04-26T16:00:02.689020",
             "updated_at": "2025-04-27T16:00:02.689020"
@@ -1637,7 +1501,6 @@
         "fields": {
             "user": 24,
             "project": 38,
-            "joined_at": "2025-04-28T16:00:02.689020",
             "is_active": true,
             "created_at": "2025-04-28T16:00:02.689020",
             "updated_at": "2025-04-29T16:00:02.689020"
@@ -1649,7 +1512,6 @@
         "fields": {
             "user": 27,
             "project": 38,
-            "joined_at": "2025-04-29T16:00:02.689020",
             "is_active": true,
             "created_at": "2025-04-29T16:00:02.689020",
             "updated_at": "2025-04-30T16:00:02.689020"
@@ -1661,7 +1523,6 @@
         "fields": {
             "user": 63,
             "project": 38,
-            "joined_at": "2025-04-25T16:00:02.689020",
             "is_active": true,
             "created_at": "2025-04-25T16:00:02.689020",
             "updated_at": "2025-04-26T16:00:02.689020"

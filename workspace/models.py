@@ -167,6 +167,7 @@ class WorkspaceMember(models.Model):
         PENDING = 'pending', 'Pending'
         SUSPENDED = 'suspended', 'Suspended'
 
+    # Хз как правильно member или members в related_name. В projects будет members
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="workspace_member", verbose_name="User")
     workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE, related_name="member", verbose_name="Workspace")
     role = models.ForeignKey(WorkspaceRole, on_delete=models.SET_NULL, related_name="member", verbose_name="Role", null=True, blank=True)

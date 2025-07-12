@@ -10,7 +10,7 @@ class HasWorkspacePermission(BasePermission):
     }
 
     def has_permission(self, request, view):
-        workspace_id = view.kwargs.get("workspace_id")
+        workspace_id = view.kwargs.get("workspace_id") or request.data.get("workspace")
         if not workspace_id:
             return False
         
