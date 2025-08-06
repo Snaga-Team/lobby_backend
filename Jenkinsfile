@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        DEPLOY_PATH = "${params.DEPLOY_PATH}"
+    }
+
     stages {
         stage('Deploy') {
             steps {
