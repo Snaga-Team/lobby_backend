@@ -9,6 +9,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
+                    git config --global --add safe.directory "${DEPLOY_PATH}"
                     cd $DEPLOY_PATH
                     git pull origin prod
                     docker-compose down
