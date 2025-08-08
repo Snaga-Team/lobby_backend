@@ -91,6 +91,11 @@ class HasProjectPermission(BasePermission):
         if required_permission == "can_view_project":
             if is_project_member or (project.is_public and role_settings.get("can_view_public_projects", False)):
                 return True
+        
+        if required_permission == 'can_invite_users_to_project':
+            # если админ, то он отвалился ранее
+            if role_settings.get("can_invite_users_to_project", True):
+                return True
 
         return role_settings.get(required_permission, False)
     

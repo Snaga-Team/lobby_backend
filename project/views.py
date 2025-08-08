@@ -6,7 +6,11 @@ from rest_framework import generics, permissions
 from django.shortcuts import get_object_or_404
 
 from project.models import Project, ProjectMember
-from project.serializers import ProjectSerializer
+from project.serializers import (
+    ProjectSerializer, 
+    MemberSerializer, 
+    CreateProjectMemberSerializer
+)
 from tools.permissions.base import HasWorkspacePermission, HasProjectPermission
 from accounts.models import User
 
@@ -54,3 +58,50 @@ class ProjectDetailAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class AddProjectMemberAPIView(APIView):
+    permission_classes = [permissions.IsAuthenticated, HasProjectPermission]
+    required_project_permission = "can_invite_users_to_project"
+
+    def post(self, request, project_id):
+        # !!! Если пользователь уже был мембером, то деактивировав его мы не сможем его активировать снова. !!!
+
+        project = (
+            Project.objects
+            .filter(id=project_id)
+            .prefetch_related("members__user")
+            .first()
+        )
+        if not project:
+            return Response(
+                {"error": "Project is not found"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        new_member_email = request.data.get("email")
+        if not new_member_email:
+            return Response({"error": "Email is required."}, status=status.HTTP_400_BAD_REQUEST)
+        
+        new_member_user = User.objects.filter(email=new_member_email).first()
+        
+        if new_member_user:
+            is_already_member = any(
+                member.user_id == new_member_user.id for member in project.members.all()
+            )
+            if is_already_member:
+                return Response(
+                    {"error": "User is already a member of this project."},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+        else:
+            return Response({"error": "User is not found"}, status=status.HTTP_400_BAD_REQUEST)
+
+        serializer = CreateProjectMemberSerializer(
+            data=request.data, 
+            context={'project': project}
+        )
+        serializer.is_valid(raise_exception=True)
+        member = serializer.save(user=new_member_user)
+
+        response_serializer = MemberSerializer(member)
+        return Response(response_serializer.data, status=status.HTTP_201_CREATED)

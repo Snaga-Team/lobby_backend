@@ -81,7 +81,7 @@ class WorkspaceRoleListAPIView(generics.ListAPIView):
 
 class AddWorkspaceMemberAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated, HasWorkspacePermission]
-    required_workspace_permission = "can_invite_users"
+    required_workspace_permission = "can_invite_users_to_project"
 
     def post(self, request, workspace_id):
         # !!! Если пользователь уже был мембером, то деактивировав его мы не сможем его активировать снова. !!!
