@@ -1,10 +1,14 @@
 from django.urls import path
 from workspace.views import (
-    WorkspaceCreateAPIView, WorkspaceListAPIView, 
-    AddWorkspaceMemberAPIView, WorkspaceDetailAPIView,
-    DeactivateWorkspaceMemberAPIView, ActivateWorkspaceMemberAPIView,
+    WorkspaceCreateAPIView, 
+    WorkspaceListAPIView, 
+    AddWorkspaceMemberAPIView, 
+    WorkspaceDetailAPIView,
+    DeactivateWorkspaceMemberAPIView, 
+    ActivateWorkspaceMemberAPIView,
     ChangeWorkspaceRoleAPIView,
-    WorkspaceOwnerChangeAPIView, WorkspaceRoleListAPIView,
+    WorkspaceOwnerChangeAPIView, 
+    WorkspaceRoleListAPIView,
     MembersListAPIView
 )
 
