@@ -10,7 +10,13 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from accounts.models import User, PasswordResetCode
+from accounts.models import User
+from core.services.auth_codes import (
+    gen_code, 
+    can_send, 
+    store_code, 
+    verify_code,
+)
 from accounts.serializers import (
     RegistrationSerializer,
     SetPasswordSerializer,
@@ -90,10 +96,11 @@ class PasswordResetRequestAPIView(APIView):
         email = serializer.validated_data["email"]
         user = User.objects.get(email=email)
 
-        code = f"{random.randint(100000, 999999)}"
+        if not can_send(email):
+            return Response({"detail": "Too often. try later."}, status=429)
 
-        PasswordResetCode.objects.filter(user=user).delete()
-        PasswordResetCode.objects.create(user=user, code=code)
+        code = gen_code()
+        store_code(user.id, code)
 
         html_content = render_to_string(
             "emails/password_reset_email.html",
@@ -184,13 +191,14 @@ class PasswordResetConfirmAPIView(APIView):
             )
 
         user = serializer.validated_data["user"]
-        reset_code = serializer.validated_data["reset_code"]
+        code = serializer.validated_data["code"]
         new_password = serializer.validated_data["password"]
+
+        if not verify_code(user.id, code):
+            return Response({"detail": "Invalid or expired code"}, status=status.HTTP_400_BAD_REQUEST)
 
         user.password = make_password(new_password)
         user.save()
-
-        reset_code.delete()
 
         return Response(
             {"message": "Password successfully reset"}, 

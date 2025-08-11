@@ -7,7 +7,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.password_validation import validate_password
 from rest_framework_simplejwt.tokens import AccessToken
 
-from accounts.models import PasswordResetCode
+from core.services.auth_codes import peek_code
 
 User = get_user_model()
 
@@ -191,7 +191,7 @@ class PasswordResetCheckSerializer(serializers.Serializer):
     """
 
     email = serializers.EmailField()
-    code = serializers.CharField(max_length=6)
+    code = serializers.CharField(max_length=6, min_length=6)
 
     def validate(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -215,16 +215,10 @@ class PasswordResetCheckSerializer(serializers.Serializer):
         except User.DoesNotExist:
             raise serializers.ValidationError({"email": "User not found."})
 
-        try:
-            reset_code = PasswordResetCode.objects.get(user=user, code=code)
-        except PasswordResetCode.DoesNotExist:
-            raise serializers.ValidationError({"code": "Invalid code."})
-
-        if reset_code.is_expired():
-            raise serializers.ValidationError({"code": "Code expired."})
+        if not peek_code(user.id, code):
+            raise serializers.ValidationError({"code": "Invalid or expired code."})
 
         data["user"] = user
-        data["reset_code"] = reset_code
         return data
 
 

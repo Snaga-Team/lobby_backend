@@ -1,10 +1,6 @@
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.db import models
-from django.utils.timezone import now
-
 from tools.validators import validate_hex_color
-
-import uuid
 from typing import Any
 
 
@@ -145,43 +141,3 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self) -> str:
         return self.email
- 
-
-class PasswordResetCode(models.Model):
-    """
-    Model for one-time password reset or profile activation code.
-
-    This model is used to:
-        - Send a 6-digit code to the user for password reset or account activation.
-        - Generate a unique token (UUID) that can be used to create an activation URL.
-
-    Fields:
-        user (User): The user associated with the reset code.
-        code (str): A 6-digit numeric code sent to the user.
-        created_at (datetime): Timestamp of when the code was created.
-        token (UUID): A unique token used for activation links.
-
-    Methods:
-        is_expired():
-            Checks if the code has expired. A code is valid for 10 minutes (600 seconds).
-            Returns True if expired, otherwise False.
-    """
-
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reset_codes", verbose_name="User")
-    code = models.CharField(max_length=6, verbose_name="Reset Code")
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created At")
-    token = models.UUIDField(default=uuid.uuid4, unique=True, verbose_name="Activation Token")
-
-    def is_expired(self) -> bool:
-        """
-        Checks whether the code is expired (older than 10 minutes).
-
-        Returns:
-            bool: True if expired, otherwise False.
-        """
-        return (now() - self.created_at).total_seconds() > 600  # 600 sec = 10 min
-
-    def __str__(self) -> str:
-        email = self.user.email
-        code = self.code
-        return f"ResetCode for {email} ({code})"

@@ -3,6 +3,9 @@ import environ
 from pathlib import Path
 from datetime import timedelta
 
+from django.core.cache import caches
+from django.conf import settings
+
 env = environ.Env()
 environ.Env.read_env()
 
@@ -94,6 +97,24 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "default-locmem",
+    },
+    "auth_codes": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": os.getenv("REDIS_URL_AUTH", "redis://redis:6379/1"),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+        "TIMEOUT": None,
+        "KEY_PREFIX": "",
+        "KEY_FUNCTION": "core.services.cache_keys.raw_key",
+        "VERSION": 1,
+    },
+}
 
 
 LANGUAGE_CODE = 'en-us'
