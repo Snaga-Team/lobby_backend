@@ -44,7 +44,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         """
 
         if data['password'] != data['password2']:
-            raise serializers.ValidationError("Passwords must match.")
+            raise serializers.ValidationError({"detail": "Passwords must match."})
         
         # Validate password strength using Django's built-in system
         validate_password(data['password'])
@@ -100,7 +100,7 @@ class SetPasswordSerializer(serializers.Serializer):
             access_token = AccessToken(token)
             user = User.objects.get(id=access_token['user_id'])
         except Exception:
-            raise serializers.ValidationError({"token": "Invalid or expired token"})
+            raise serializers.ValidationError({"detail": "Invalid or expired token"})
 
         # Activate user if not active
         if not user.is_active:
@@ -178,7 +178,7 @@ class PasswordResetRequestSerializer(serializers.Serializer):
         """
 
         if not User.objects.filter(email=value).exists():
-            raise serializers.ValidationError("User with this email does not exist.")
+            raise serializers.ValidationError({"detail": "User with this email does not exist."})
         return value
 
 
@@ -213,10 +213,10 @@ class PasswordResetCheckSerializer(serializers.Serializer):
         try:
             user = User.objects.get(email=email)
         except User.DoesNotExist:
-            raise serializers.ValidationError({"email": "User not found."})
+            raise serializers.ValidationError({"detail": "User not found."})
 
         if not peek_code(user.id, code):
-            raise serializers.ValidationError({"code": "Invalid or expired code."})
+            raise serializers.ValidationError({"detail": "Invalid or expired code."})
 
         data["user"] = user
         return data
@@ -253,6 +253,6 @@ class PasswordResetConfirmSerializer(PasswordResetCheckSerializer):
         data = super().validate(data)
 
         if "password" not in data:
-            raise serializers.ValidationError({"password": "Password is required."})
+            raise serializers.ValidationError({"detail": "Password is required."})
 
         return data

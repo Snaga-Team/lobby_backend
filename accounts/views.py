@@ -52,16 +52,11 @@ class RegistrationAPIView(APIView):
         """
 
         serializer = RegistrationSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(
-                {"message": "User registered successfully"},
-                status=status.HTTP_201_CREATED
-            )
-
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
         return Response(
-            serializer.errors,
-            status=status.HTTP_400_BAD_REQUEST
+            {"message": "User registered successfully"},
+            status=status.HTTP_201_CREATED,
         )
 
 
@@ -91,7 +86,7 @@ class PasswordResetRequestAPIView(APIView):
 
         serializer = PasswordResetRequestSerializer(data=request.data)
         if not serializer.is_valid():
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"detail": "User with this email does not exist."}, status=status.HTTP_400_BAD_REQUEST)
 
         email = serializer.validated_data["email"]
         user = User.objects.get(email=email)
@@ -147,12 +142,7 @@ class PasswordResetCheckAPIView(APIView):
         """
 
         serializer = PasswordResetCheckSerializer(data=request.data)
-
-        if not serializer.is_valid():
-            return Response(
-                serializer.errors, 
-                status=status.HTTP_400_BAD_REQUEST
-            )
+        serializer.is_valid(raise_exception=True)
 
         return Response(
             {"message": "Code is valid"}, 
@@ -183,12 +173,7 @@ class PasswordResetConfirmAPIView(APIView):
         """
 
         serializer = PasswordResetConfirmSerializer(data=request.data)
-
-        if not serializer.is_valid():
-            return Response(
-                serializer.errors, 
-                status=status.HTTP_400_BAD_REQUEST
-            )
+        serializer.is_valid(raise_exception=True)
 
         user = serializer.validated_data["user"]
         code = serializer.validated_data["code"]
@@ -230,14 +215,11 @@ class SetPasswordAPIView(APIView):
         """
 
         serializer = SetPasswordSerializer(data=request.data)
-        if serializer.is_valid():
-            return Response(
-                serializer.validated_data, 
-                status=status.HTTP_200_OK
-            )
+        serializer.is_valid(raise_exception=True)
+        
         return Response(
-            serializer.errors, 
-            status=status.HTTP_400_BAD_REQUEST
+            serializer.validated_data, 
+            status=status.HTTP_200_OK
         )
 
 
@@ -278,15 +260,12 @@ class ProfileAPIView(APIView):
         """
 
         serializer = ProfileSerializer(request.user, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(
-                serializer.data, 
-                status=status.HTTP_200_OK
-            )
+        serializer.is_valid(raise_exception=True)
+
+        serializer.save()
         return Response(
-            serializer.errors, 
-            status=status.HTTP_400_BAD_REQUEST
+            serializer.data, 
+            status=status.HTTP_200_OK
         )
 
 
@@ -319,7 +298,7 @@ class UserProfileAPIView(APIView):
             user = User.objects.get(id=pk)
         except User.DoesNotExist:
             return Response(
-                {"message": "User not found"},
+                {"detail": "User not found"},
                 status=status.HTTP_404_NOT_FOUND
             )
 
