@@ -30,7 +30,7 @@ class ProjectSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         request = self.context.get('request')
         if not request or not request.user.is_authenticated:
-            raise serializers.ValidationError("User must be authenticated")
+            raise serializers.ValidationError({"detail": "User must be authenticated"})
 
         return Project.objects.create(owner=request.user, **validated_data)
 

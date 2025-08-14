@@ -54,10 +54,10 @@ class ProjectDetailAPIView(APIView):
     def put(self, request, project_id: int) -> Response:
         project = get_object_or_404(Project, id=project_id)
         serializer = ProjectSerializer(project, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        serializer.is_valid(raise_exception=True)
+        
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 class AddProjectMemberAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated, HasProjectPermission]
@@ -74,13 +74,13 @@ class AddProjectMemberAPIView(APIView):
         )
         if not project:
             return Response(
-                {"error": "Project is not found"},
+                {"detail": "Project is not found"},
                 status=status.HTTP_400_BAD_REQUEST
             )
 
         new_member_email = request.data.get("email")
         if not new_member_email:
-            return Response({"error": "Email is required."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"detail": "Email is required."}, status=status.HTTP_400_BAD_REQUEST)
         
         new_member_user = User.objects.filter(email=new_member_email).first()
         
@@ -90,11 +90,11 @@ class AddProjectMemberAPIView(APIView):
             )
             if is_already_member:
                 return Response(
-                    {"error": "User is already a member of this project."},
+                    {"detail": "User is already a member of this project."},
                     status=status.HTTP_400_BAD_REQUEST
                 )
         else:
-            return Response({"error": "User is not found"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"detail": "User is not found"}, status=status.HTTP_400_BAD_REQUEST)
 
         serializer = CreateProjectMemberSerializer(
             data=request.data, 
