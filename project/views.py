@@ -1,6 +1,5 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.exceptions import PermissionDenied
 from rest_framework import status
 from rest_framework import generics, permissions
 from django.shortcuts import get_object_or_404
@@ -59,6 +58,7 @@ class ProjectDetailAPIView(APIView):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
 class AddProjectMemberAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated, HasProjectPermission]
     required_project_permission = "can_invite_users_to_project"
@@ -105,3 +105,73 @@ class AddProjectMemberAPIView(APIView):
 
         response_serializer = MemberSerializer(member)
         return Response(response_serializer.data, status=status.HTTP_201_CREATED)
+
+
+class BaseToggleProjectMemberAPIView(APIView):
+    permission_classes = [permissions.IsAuthenticated, HasProjectPermission]
+    # Перенастроить права, пока разрешаем всем кто имеет право на 
+    # создание юзеров, деактиивировать их. 
+    # Потом поменять на права "can_deactivate_users"
+    required_workspace_permission = "can_invite_users_to_project"
+
+    is_active_target: bool = None
+    action_word: str = ""
+
+    def patch(self, request, project_id):
+        project = Project.objects.select_related("owner", "workspace").get(id=project_id)
+        if not project:
+            return Response({"detail": "Project is not found"}, status=status.HTTP_400_BAD_REQUEST)
+
+        user_id = request.data.get("user_id")
+        email = request.data.get("email")
+
+        if sum(bool(x) for x in [user_id, email]) != 1:
+            return Response(
+                {"detail": "You must provide exactly one of: user_id or email."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        target_user = User.objects.filter(id=user_id).first() if user_id else User.objects.filter(email=email).first()
+
+        if not target_user:
+            return Response({"detail": "User is not found."}, status=status.HTTP_400_BAD_REQUEST)
+
+        target_member = ProjectMember.objects.filter(project=project, user=target_user).first()
+
+        if not target_member:
+            return Response({"detail": "User is not member in this project."}, status=status.HTTP_400_BAD_REQUEST)
+
+        if target_member.is_active == self.is_active_target:
+            return Response(
+                {"detail": f"User is already {self.action_word}."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        target_member.is_active = self.is_active_target
+        target_member.save(update_fields=["is_active"])
+
+        serializer = MemberSerializer(target_member)
+
+        return Response(
+            {
+                "message": f"User has been {self.action_word}.",
+                "member": serializer.data
+            },
+            status=status.HTTP_200_OK
+        )
+
+
+class DeactivateProjectMemberAPIView(BaseToggleProjectMemberAPIView):
+    """
+    API endpoint to deactivate a Project member.
+    """
+    is_active_target = False
+    action_word = "deactivated"
+
+
+class ActivateProjectMemberAPIView(BaseToggleProjectMemberAPIView):
+    """
+    API endpoint to activate a project member.
+    """
+    is_active_target = True
+    action_word = "activated"
