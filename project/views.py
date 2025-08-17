@@ -175,3 +175,12 @@ class ActivateProjectMemberAPIView(BaseToggleProjectMemberAPIView):
     """
     is_active_target = True
     action_word = "activated"
+
+
+class ProjectMembersListAPIView(generics.ListAPIView):
+    serializer_class = MemberSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        project_id = self.kwargs.get("project_id")
+        return ProjectMember.objects.filter(project_id=project_id)
