@@ -7,6 +7,8 @@ from project.views import (
     ActivateProjectMemberAPIView,
     DeactivateProjectMemberAPIView,
     ProjectMembersListAPIView,
+    DeactivateProjectAPIView,
+    ActivateProjectAPIView,
 )
 
 urlpatterns = [
@@ -18,4 +20,7 @@ urlpatterns = [
     path("<int:project_id>/deactivate_member/", DeactivateProjectMemberAPIView.as_view(), name="deactivate-project-member"),
     path("<int:project_id>/activate_member/", ActivateProjectMemberAPIView.as_view(), name="activate-project-member"),
     path("<int:project_id>/list_member/", ProjectMembersListAPIView.as_view(), name="project-list-member"),
+
+    path("<int:project_id>/deactivate/", DeactivateProjectAPIView.as_view(), name="deactivate-project"),
+    path("<int:project_id>/activate/", ActivateProjectAPIView.as_view(), name="activate-project"),
 ]

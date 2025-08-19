@@ -171,7 +171,7 @@ class DeactivateProjectMemberAPIView(BaseToggleProjectMemberAPIView):
 
 class ActivateProjectMemberAPIView(BaseToggleProjectMemberAPIView):
     """
-    API endpoint to activate a project member.
+    API endpoint to activate a Project member.
     """
     is_active_target = True
     action_word = "activated"
@@ -184,3 +184,51 @@ class ProjectMembersListAPIView(generics.ListAPIView):
     def get_queryset(self):
         project_id = self.kwargs.get("project_id")
         return ProjectMember.objects.filter(project_id=project_id)
+
+
+class BaseToggleProjectActivationAPIView(APIView):
+    permission_classes = [permissions.IsAuthenticated, HasProjectPermission]
+    required_workspace_permission = "can_delete_projects"
+
+    is_active_target: bool = None
+    action_word: str = ""
+
+    def patch(self, request, project_id):
+        project = Project.objects.select_related("owner", "workspace").get(id=project_id)
+        if not project:
+            return Response({"detail": "Project is not found"}, status=status.HTTP_400_BAD_REQUEST)
+
+        if project.is_active == self.is_active_target:
+            return Response(
+                {"detail": f"Project is already {self.action_word}."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        project.is_active = self.is_active_target
+        project.save(update_fields=["is_active"])
+
+        serializer = ProjectSerializer(project)
+
+        return Response(
+            {
+                "message": f"Project has been {self.action_word}.",
+                "data": serializer.data
+            },
+            status=status.HTTP_200_OK
+        )
+
+
+class DeactivateProjectAPIView(BaseToggleProjectActivationAPIView):
+    """
+    API endpoint to deactivate a Project.
+    """
+    is_active_target = False
+    action_word = "deactivated"
+
+
+class ActivateProjectAPIView(BaseToggleProjectActivationAPIView):
+    """
+    API endpoint to activate a Project.
+    """
+    is_active_target = True
+    action_word = "activated"
