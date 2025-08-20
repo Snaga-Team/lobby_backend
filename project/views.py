@@ -1,3 +1,5 @@
+from typing import Optional, Tuple
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -232,3 +234,80 @@ class ActivateProjectAPIView(BaseToggleProjectActivationAPIView):
     """
     is_active_target = True
     action_word = "activated"
+
+
+class ChangeProjectOwnerAPIView(APIView):
+    permission_classes = [permissions.IsAuthenticated, HasProjectPermission]
+    # пока могут только владельцы могут менять владельца проекта
+    required_project_permission = "can_change_project_owner"
+
+    @staticmethod
+    def get_user_and_member(
+        user_id: Optional[int] = None,
+        email: Optional[str] = None,
+        member_id: Optional[int] = None,
+        project: object = None
+    ) -> Tuple[Optional[User], Optional[ProjectMember], Optional[str]]:
+        """
+        Returns a tuple (user, member, error_message) based on the provided input.
+
+        If:
+        - member_id is provided: searches for the project member directly.
+        - email or user_id is provided: first searches for the user, then checks if they are a member of the project.
+
+        :param user_id: ID of the user
+        :param email: Email of the user
+        :param member_id: ID of the ProjectMember
+        :param project: Project object
+        :return: (User | None, ProjectMember | None, error_message | None)
+        """
+
+        if member_id:
+            member = ProjectMember.objects.filter(id=member_id, project=project).select_related("user").first()
+            if not member:
+                return None, None, "The specified user was found, but they are not a member of this project."
+            return member.user, member, None
+
+        if email:
+            user = User.objects.filter(email=email).first()
+        elif user_id:
+            user = User.objects.filter(id=user_id).first()
+
+        if not user:
+            return None, None, "User not found."
+
+        member = ProjectMember.objects.filter(user=user, project=project).select_related("user").first()
+        if not member:
+            return user, None, "The specified user was found, but they are not a member of this project."
+
+        return user, member, None
+
+    def post(self, request, project_id):
+        project = get_object_or_404(Project, id=project_id)
+
+        new_owner_id = request.data.get("new_owner_id")
+        new_owner_email = request.data.get("new_owner_email")
+        new_member_id = request.data.get("new_member_id")
+
+        provided = [new_owner_id, new_owner_email, new_member_id]
+        if sum(bool(x) for x in provided) != 1:
+            return Response(
+                {"detail": "You must provide exactly one of: new_owner_id, new_owner_email, or new_member_id."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        user, member, error = self.get_user_and_member(
+            user_id=new_owner_id if new_owner_id else None,
+            email=new_owner_email if new_owner_email else None,
+            member_id=new_member_id if new_member_id else None, 
+            project=project
+        )
+
+        if error:
+            return Response({"detail": error}, status.HTTP_400_BAD_REQUEST)
+
+        project.owner = user
+        project.save(update_fields=["owner"])
+
+        serializer = ProjectSerializer(project)
+        return Response(serializer.data, status=status.HTTP_200_OK)

@@ -9,6 +9,7 @@ from project.views import (
     ProjectMembersListAPIView,
     DeactivateProjectAPIView,
     ActivateProjectAPIView,
+    ChangeProjectOwnerAPIView,
 )
 
 urlpatterns = [
@@ -23,4 +24,5 @@ urlpatterns = [
 
     path("<int:project_id>/deactivate/", DeactivateProjectAPIView.as_view(), name="deactivate-project"),
     path("<int:project_id>/activate/", ActivateProjectAPIView.as_view(), name="activate-project"),
+    path("<int:project_id>/change_owner/", ChangeProjectOwnerAPIView.as_view(), name="change-project-owner"),
 ]
