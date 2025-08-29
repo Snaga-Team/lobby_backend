@@ -117,12 +117,18 @@ class User(AbstractBaseUser, PermissionsMixin):
     avatar_background = models.CharField(
         max_length=7,
         verbose_name="Avatar Background",
-        default="#ffffff", 
+        default=None, 
         validators=[validate_hex_color], 
         null=True,
         blank=True
     )
-    avatar_emoji = models.CharField(max_length=3, verbose_name="Avatar Emoji", default="🚀")
+    avatar_emoji = models.CharField(
+        max_length=3, 
+        verbose_name="Avatar Emoji", 
+        default=None, 
+        null=True,
+        blank=True
+    )
     avatar_image = models.ImageField(
         upload_to="accounts/", 
         verbose_name="Avatar Image",
